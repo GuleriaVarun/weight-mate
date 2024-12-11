@@ -1,0 +1,99 @@
+:host {
+    .card {
+        border-radius: 15px;
+        color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        text-align: center;
+    }
+
+    .card-header h2 {
+        font-size: 24px;
+    }
+
+    // ion-searchbar {
+    //     --color: #fff;
+    // }
+
+    ion-content {
+        --background: transparent;
+        --color: #fff;
+    }
+
+    ion-content {
+        display: flex;
+        padding: 0.3em;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        // color: #333;
+    }
+
+    .food-list {
+        background: #ffffff;
+        margin: 1em;
+    }
+
+    .food-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 10px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .food-item:last-child {
+        border-bottom: none;
+    }
+
+    .food-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .food-name {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #222;
+    }
+
+    .nutrients {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    .button-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .add-button {
+        background: linear-gradient(142deg, #000000, #075333, #074253);
+        color: white;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background-color 0.3s;
+    }
+
+    .add-button:hover {
+        background-color: #0056b3;
+    }
+
+    .count {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #20bdce;
+    }
+
+}

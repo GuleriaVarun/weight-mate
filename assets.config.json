@@ -1,0 +1,20 @@
+{
+  "platforms": {
+    "android": {
+      "icon": {
+        "source": "src/assets/icon.png"
+      },
+      "splash": {
+        "source": "src/assets/splash.png"
+      }
+    },
+    "ios": {
+      "icon": {
+        "source": "src/assets/icon.png"
+      },
+      "splash": {
+        "source": "src/assets/splash.png"
+      }
+    }
+  }
+}

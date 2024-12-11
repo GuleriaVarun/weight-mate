@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Weight Mate</string>
+    <string name="title_activity_main">Weight Mate</string>
+    <string name="package_name">com.weightmate.app</string>
+    <string name="custom_url_scheme">com.weightmate.app</string>
+</resources>

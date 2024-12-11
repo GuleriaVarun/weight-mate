@@ -1,0 +1,371 @@
+<div class="footer">
+    <div class="footer-item">
+        <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+        <span class="icon-label">{{ 'dashboard' | translate }}</span>
+    </div>
+
+    <div class="footer-item" (click)="openGoalModal()">
+        <div class="icon"><ion-icon name="search-outline"></ion-icon></div>
+        <span class="icon-label" id="open-goal-modal">{{ 'discover' | translate }}</span>
+    </div>
+
+    <div class="footer-item">
+        <div class="center-icon" id="open-modal"><ion-icon name="add-outline"></ion-icon></div>
+    </div>
+
+    <div class="footer-item" (click)="openFeedbackModal()">
+        <div class="icon"> <ion-icon name="send-outline"></ion-icon>
+        </div>
+        <span class="icon-label" id="open-feedback-modal">{{ 'feedback' | translate }}</span>
+    </div>
+
+    <div class="footer-item" (click)="openAccountModal()">
+        <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
+        <span class="icon-label" id="open-account-modal">{{ 'account' | translate }}</span>
+    </div>
+</div>
+
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)" [initialBreakpoint]="1"
+    [breakpoints]="[0, 0.25, 0.5, 0.75, 1]" handleBehavior="cycle">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar class="custom-toolbar">
+                <ion-buttons slot="start">
+                    <ion-button class="cancel-button" (click)="cancel()">
+                        <ion-icon class="cancel-button" (click)="cancel()" slot="icon-only"
+                            name="close-circle-outline"></ion-icon>
+                    </ion-button> </ion-buttons>
+                <ion-title class="modal-title">{{ 'logFood' | translate }}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding profile-content" style="color: #fff; --color: #fff">
+            <ion-accordion-group (ionChange)="mealToggle($event)">
+                <ion-accordion value="add">
+                    <ion-item slot="header" color="light">
+                        <ion-label>Add Meal</ion-label>
+                    </ion-item>
+                    <div class="ion-padding meal-class" slot="content">
+                        <ion-title class="meal-type meal-title">{{ 'chooseMeal' | translate }}</ion-title>
+                        <ion-grid>
+                            <ion-row class="meal-type">
+                                <ion-col>
+                                    <ion-icon style="color: white" class="profile-icon" id="breakfast"
+                                        (click)="selectMealType('breakfast')" name="partly-sunny-outline"></ion-icon>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-icon style="color: white" class="profile-icon" id="lunch"
+                                        (click)="selectMealType('lunch')" name="sunny-outline"></ion-icon>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-icon style="color: white" class="profile-icon" id="snacks"
+                                        (click)="selectMealType('snacks')" name="pizza-outline"></ion-icon>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-icon style="color: white" class="profile-icon" id="dinner"
+                                        (click)="selectMealType('dinner')" name="moon-outline"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row class="meal-label">
+                                <ion-col (click)="selectMealType('breakfast')">
+                                    <ion-label>{{ 'breakfast' | translate }}</ion-label>
+                                </ion-col>
+                                <ion-col (click)="selectMealType('lunch')">
+                                    <ion-label>{{ 'lunch' | translate }}</ion-label>
+                                </ion-col>
+                                <ion-col (click)="selectMealType('snacks')">
+                                    <ion-label>{{ 'snacks' | translate }}</ion-label>
+                                </ion-col>
+                                <ion-col (click)="selectMealType('dinner')">
+                                    <ion-label>{{ 'dinner' | translate }}</ion-label>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                        <app-log-food *ngIf="selectedMealType" [mealType]="selectedMealType"></app-log-food>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="update">
+                    <ion-item slot="header" color="light">
+                        <ion-label>Delete Meal</ion-label>
+                    </ion-item>
+                    <div class="ion-padding meal-class" slot="content">
+                        <table class="update-food-table">
+                            <tr class="mate">
+                                <th>Food</th>
+                                <th>Meal Type</th>
+                                <th>Qty</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr *ngFor="let food of updateLoggedFood" style="text-align: center;">
+                                <td>{{food.name}}</td>
+                                <td>{{food.mealType}}</td>
+                                <td>{{food.count}}</td>
+                                <td><ion-button color="danger" style="height: 2em;"
+                                        (click)="deleteFood(food, $event)">Delete</ion-button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </ion-accordion>
+            </ion-accordion-group>
+        </ion-content>
+    </ng-template>
+
+</ion-modal>
+
+<ion-modal [isOpen]="isGoalModalOpen" trigger="open-goal-modal" (willDismiss)="onWillDismiss($event)"
+    [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75, 1]" handleBehavior="cycle">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar class="custom-toolbar">
+                <ion-buttons slot="start">
+                    <ion-button class="cancel-button" (click)="cancel()">
+                        <ion-icon class="cancel-button" (click)="cancel()" slot="icon-only"
+                            name="close-circle-outline"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+                <ion-title class="modal-title">{{ 'discover' | translate }}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding profile-content">
+            <div class="card-title">{{ 'recipies' | translate }}</div>
+            <div style="width: 100%; margin-top: 0.5em; margin-bottom: 2em;">
+                <iframe id="youtubeIframe" style="width: inherit;" height="315"
+                    src="https://www.youtube.com/embed/playlist?list=PLZ1eGoTTiYT4glwkHHa7zGh4Ir2Pjr3Pm&feature=shared"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <hr>
+            <div class="card-title">{{ 'exercises' | translate }}</div>
+            <div style="width: 100%; margin-bottom: 2em;">
+                <ion-accordion-group>
+                    <ion-accordion value="second">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 1: Full Body Strength Training</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Focus on squats, push-ups, and glute bridges to build muscle and burn fat.
+                        </div>
+                    </ion-accordion>
+                    <ion-accordion value="third">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 2: Cardio + Core</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Go for a 20–30 minute cardio session followed by core exercises like crunches and
+                            leg raises.
+                        </div>
+                    </ion-accordion>
+                    <ion-accordion value="three">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 3: Lower Body Focus</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Target your legs with squats, lunges, and glute bridges to strengthen and tone.
+                        </div>
+                    </ion-accordion>
+                    <ion-accordion value="four">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 4: Cardio + Upper Body</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Do 20–30 minutes of HIIT cardio followed by push-ups and dumbbell exercises for your
+                            upper body.
+                        </div>
+                    </ion-accordion>
+                    <ion-accordion value="five">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 5: Active Recovery / Yoga</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Engage in yoga or a light walk to improve flexibility and promote recovery.
+                        </div>
+                    </ion-accordion>
+                    <ion-accordion value="six">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 6: Total Body Circuit</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Perform a full-body circuit with jump squats, burpees, and mountain climbers.
+                        </div>
+                    </ion-accordion>
+                    <ion-accordion value="seven">
+                        <ion-item slot="header" color="dark">
+                            <ion-label>Day 7: Cardio + Flexibility</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                            Finish the week with a moderate cardio session and focus on full-body stretches.
+                        </div>
+                    </ion-accordion>
+                </ion-accordion-group>
+            </div>
+        </ion-content>
+    </ng-template>
+</ion-modal>
+
+<ion-modal [isOpen]="isFeedbackModalOpen" trigger="open-feedback-modal" (willDismiss)="onWillDismiss($event)"
+    [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar class="custom-toolbar">
+                <ion-buttons slot="start">
+                    <ion-button class="cancel-button" (click)="cancel()">
+                        <ion-icon class="cancel-button" (click)="cancel()" slot="icon-only"
+                            name="close-circle-outline"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+                <ion-title class="modal-title">{{ 'shareFeedback' | translate }}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding profile-content">
+            <div class="about-section" style="color: #fff; margin-bottom: 0.5em;">
+                <p>Help us improve by sharing valuable feedback for this app. Your feedback would let us improve app's
+                    overall experience.</p>
+            </div>
+            <ion-textarea class="textareaClass" style="color: #fff; border-color: #fff;" labelPlacement="floating"
+                [(ngModel)]="feedback.message">
+                <div slot="label">{{ 'comment' | translate }} <ion-text color="danger">{{ 'required' | translate
+                        }}</ion-text></div>
+            </ion-textarea>
+
+            <ion-button id="send-feedback-button" expand="block" color="danger" (click)="sendFeedback()">{{
+                'sendFeedback' | translate
+                }}</ion-button>
+        </ion-content>
+    </ng-template>
+</ion-modal>
+
+<ion-modal class="account-modal" [isOpen]="isAccountModalOpen" trigger="open-account-modal"
+    (willDismiss)="onWillDismiss($event)" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75, 1]"
+    handleBehavior="cycle">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar class="custom-toolbar">
+                <ion-buttons slot="start">
+                    <ion-button class="cancel-button" (click)="cancel()">
+                        <ion-icon class="cancel-button" (click)="cancel()" slot="icon-only"
+                            name="close-circle-outline"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+                <ion-title>{{ 'account' | translate }}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content class="ion-padding profile-content">
+            <!-- Profile Section -->
+            <div class="profile-container">
+                <div class="profile-avatar">
+                    <img *ngIf="tabActionService.userInfo.gender === 'female'" src="assets/img/img_avatar2.png"
+                        alt="Profile Avatar" class="avatar-img">
+                    <img *ngIf="tabActionService.userInfo.gender === 'male'" src="assets/img/img_avatar.png"
+                        alt="Profile Avatar" class="avatar-img">
+                </div>
+                <div class="profile-details">
+                    <h2 class="profile-name">{{tabActionService.userInfo.name}}</h2>
+                </div>
+            </div>
+
+            <ion-accordion-group>
+                <ion-accordion value="first">
+                    <ion-item slot="header">
+                        <ion-icon style="color: black" class="profile-icon" slot="start"
+                            name="person-circle-outline"></ion-icon>
+                        <ion-label>{{ 'profile' | translate }}</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label>{{ 'name' | translate }}</ion-label>
+                                <ion-input value="{{tabActionService.userInfo.name}}" disabled></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>{{ 'age' | translate }}</ion-label>
+                                <ion-input value="{{tabActionService.userInfo.age}}" disabled></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>{{ 'height' | translate }}</ion-label>
+                                <ion-input value="{{tabActionService.userInfo.heightFt}}" disabled></ion-input>
+                                <ion-input value="{{tabActionService.userInfo.heightInc}}" disabled></ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="second">
+                    <ion-item slot="header">
+                        <ion-icon style="color: black" class="profile-icon" slot="start"
+                            name="settings-outline"></ion-icon>
+                        <ion-label>{{ 'settings' | translate }}</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-list>
+                            <ion-item (click)="themeService.switchToLightTheme()">
+                                <ion-label>{{ 'lightTheme' | translate }}</ion-label>
+                            </ion-item>
+                            <ion-item (click)="themeService.switchToDarkTheme()">
+                                <ion-label>{{ 'darkTheme' | translate }}</ion-label>
+                            </ion-item>
+                            <ion-item (click)="themeService.switchToDefaultTheme()">
+                                <ion-label>{{ 'defaultTheme' | translate }}</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="third">
+                    <ion-item slot="header">
+                        <ion-icon style="color: black" class="profile-icon" slot="start"
+                            name="globe-outline"></ion-icon>
+                        <ion-label>{{ 'changeLanguage' | translate }}</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-list>
+                            <ion-item *ngFor="let language of languageList"
+                                (click)="languageService.changeLanguage(language)">
+                                <ion-label>{{language.name}}</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+
+                <ion-accordion value="fivth">
+                    <ion-item slot="header">
+                        <ion-icon style="color: black" class="profile-icon" slot="start"
+                            name="information-circle-outline"></ion-icon>
+                        <ion-label>{{ 'about' | translate }}</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <div class="about-section">
+                            <h2>About WeightMate</h2>
+                            <p>WeightMate is a comprehensive calorie tracker app designed to help you stay on top of
+                                your fitness goals. With WeightMate, you can easily log your food intake, track your
+                                calories, and monitor your progress.</p>
+
+                            <p>In addition to calorie tracking, WeightMate offers a variety of food ideas,making it
+                                simple to make informed decisions about
+                                your diet. Whether you're looking to lose weight, maintain a healthy lifestyle, or
+                                simply track your fitness journey, WeightMate has got you covered.</p>
+
+                            <p>Start your healthier lifestyle journey today by tracking your calories.
+                            </p>
+
+                            <div class="copyright">
+                                <p>&copy; 2024 Guleria. All rights reserved.</p>
+                                <p>App Dev: Varun Guleria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="forth">
+                    <ion-item slot="header">
+                        <ion-icon style="color: black" class="profile-icon" slot="start"
+                            name="log-out-outline"></ion-icon>
+                        <ion-label>{{ 'logout' | translate }}</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-label>{{ 'logoutMsg' | translate }}</ion-label>
+                        <ion-button expand="block" color="danger" (click)="logout()">{{ 'logout' | translate
+                            }}</ion-button>
+                    </div>
+                </ion-accordion>
+            </ion-accordion-group>
+        </ion-content>
+    </ng-template>
+</ion-modal>

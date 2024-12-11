@@ -1,0 +1,199 @@
+.welcomeDialog {
+    margin: 3em;
+
+    .mate {
+        color: #20bdce
+    }
+
+    h2 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-message {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: beige;
+        margin-bottom: 10px;
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.dialog {
+    background: rgba(0, 0, 0, .25);
+    color: white;
+    padding: 40px;
+    width: 340px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transform: scale(1.1);
+    animation: popUp 0.5s ease forwards;
+}
+
+.dialog h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.dialog label {
+    font-size: 0.95rem;
+    display: block;
+    margin: 12px 0 5px;
+}
+
+.dialog input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    color: black;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.dialog select {
+    width: 100%;
+    padding: 12px;
+    color: black;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.dialog input:focus {
+    border-color: linear-gradient(142deg, #000000, #075333, #074253);
+    outline: none;
+}
+
+.dialog button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(142deg, #000000, #075333, #074253);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dialog button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.calorie-info {
+    text-align: center;
+    margin: 20px;
+}
+
+.welcome-img {
+    text-align: center;
+}
+
+.calorie-section {
+    margin-top: 20px;
+}
+
+.calorie-value {
+    display: block;
+    font-size: 1.5rem;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+
+.requires {
+    font-size: large;
+    color: #20bdce;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+
+:host {
+    .selectClass {
+        background: white;
+        margin: 0.5em;
+        color: black;
+        margin-bottom: 1em;
+        border-radius: 0.5em;
+    }
+
+    ion-alert {
+        --border-radius: 0.5em;
+    }
+
+    .full-width-dialog {
+        width: fit-content !important;
+        margin: 2em;
+    }
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #ddd;
+        border-top-color: #20bdce;
+        border-radius: 50%;
+        margin: auto;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

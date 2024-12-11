@@ -1,0 +1,256 @@
+/* Footer Item Styling */
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e0e0e0;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.2em;
+}
+
+/* Icon Styling */
+.icon {
+  font-size: 1.3rem;
+  /* Large icons */
+  margin-bottom: 5px;
+  color: #e0e0e0;
+}
+
+/* Label Styling */
+.label {
+  font-size: 0.75rem;
+  /* Smaller label text */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Center Button Styling */
+.center-button {
+  position: relative;
+  top: -35px;
+  /* Raised above the footer */
+}
+
+.center-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #20bdce;
+  /* Bright color for highlight */
+  color: white;
+  font-size: 2.2rem;
+  border-radius: 50%;
+  /* Circle shape */
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+  /* Shadow for elevated effect */
+}
+
+/* Styling the modal title */
+.modal-title {
+  letter-spacing: 1px;
+}
+
+/* Styling Cancel Button */
+.cancel-button {
+  color: #ffffff;
+  /* White color for cancel button */
+  font-weight: bold;
+  /* Bold font for emphasis */
+  --background: transparent;
+  /* No background */
+  --border-radius: 12px;
+  /* Rounded button edges */
+  --padding-start: 10px;
+  /* Slight padding for better alignment */
+}
+
+/* Styling Confirm Button */
+.confirm-button {
+  color: #ffffff;
+  /* White text color */
+  font-weight: bold;
+  --border-radius: 12px;
+  --padding-end: 15px;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .modal-title {
+    font-size: 1.2rem;
+    /* Adjust title size for smaller screens */
+  }
+
+  .cancel-button,
+  .confirm-button {
+    font-size: 14px;
+    /* Smaller font size for buttons on mobile */
+  }
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+.profile-email {
+  font-size: 16px;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Account Options List */
+.account-options {
+  padding: 0;
+  margin-top: 20px;
+}
+
+ion-item {
+  --inner-padding-end: 15px;
+  --padding-start: 10px;
+  --background: #fff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+ion-item:hover {
+  --background: #20bdce;
+}
+
+.update-food-table {
+  width: 100%;
+}
+
+.update-food-table th {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #20bdce;
+  color: white;
+}
+
+.logged-food {
+  --background: transparent;
+  color: white;
+  margin-bottom: 0;
+}
+
+:host {
+  ion-icon.profile-icon {
+    font-size: 24px;
+    color: #333 !important;
+  }
+
+  ion-icon {
+    --color: #333 !important;
+  }
+}
+
+ion-label {
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+}
+
+ion-accordion {
+  background: transparent !important;
+  color: #333;
+}
+
+.ion-padding {
+  color: white;
+}
+
+.textareaClass {
+  height: 20vh;
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.meal-class {
+  height: 70vh;
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  color: #fff;
+}
+
+/* Active Item Style */
+ion-item.selected {
+  --background: #20bdce;
+  --color: white;
+}
+
+.meal-type {
+  margin: auto;
+  text-align: center;
+}
+
+.meal-label {
+  margin: auto;
+  text-align: center;
+}
+
+.meal-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.background-div {
+  position: relative;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+:host {}

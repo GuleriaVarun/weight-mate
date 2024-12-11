@@ -1,0 +1,157 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$weightMate-primary: mat.define-palette(mat.$indigo-palette);
+$weightMate-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$weightMate-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$weightMate-theme: mat.define-light-theme((color: (primary: $weightMate-primary,
+        accent: $weightMate-accent,
+        warn: $weightMate-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($weightMate-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --background-default: linear-gradient(142deg, #000000, #075333, #532a07, #074253);
+  --icon-default: #fff;
+  --card-background-main: rgba(0, 0, 0, 0.25);
+  --footer-background-main: rgba(0, 0, 0, 0.25);
+  --light-on-dark: #fff;
+  --header: #152d1d;
+  --profile-content-bg: #0e2c18f7;
+}
+
+ion-header {
+  background-color: var(--card-background-main);
+}
+
+.profile-content {
+  overflow: auto;
+  --background: var(--profile-content-bg);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.mate {
+  color: #20bdce
+}
+
+.disableClass {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.icon-label {
+  color: var(--icon-default);
+}
+
+ion-icon {
+  color: var(--icon-default);
+}
+
+.gradient-background {
+  background: var(--background-default);
+  background-size: 180% 180%;
+  animation: gradient-animation-splash 15s ease infinite;
+}
+
+@keyframes gradient-animation-splash {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.main-card,
+.micro-main-card,
+.other-main-card {
+  background-color: var(--card-background-main);
+  border-radius: 12px;
+  color: white;
+  padding: 12px 12px !important;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.swiper-container {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  max-width: 300px;
+  color: var(--light-on-dark);
+}
+
+.custom-toolbar {
+  --background: var(--header);
+  --color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-card .card-icon {
+  font-size: 3em;
+  margin-bottom: 8px;
+}
+
+.main-card .card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+ion-modal {
+  --border-radius: 2.5em;
+}
+
+/* Main Footer Container */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--footer-background-main);
+  backdrop-filter: blur(10px);
+  /* Glass effect */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}

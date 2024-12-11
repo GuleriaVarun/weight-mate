@@ -1,0 +1,88 @@
+<ion-content>
+    <ion-row>
+        <ion-col>
+            <div class="main-card calories-card">
+                <div class="card-title">{{ 'calories' | translate }}</div>
+                <div class="calories-info">
+                    <div>
+                        <p class="value streak-label"
+                            [class.red]="tabActionService.totalCalories > tabActionService.maintainWeight"
+                            [class.green]="tabActionService.totalCalories < tabActionService.maintainWeight">
+                            {{tabActionService.totalCalories}}</p>kcal
+                    </div>
+                </div>
+                <div>
+                    <p class="value" style="color: crimson;">{{tabActionService.getRemainingCalories()}} left</p>
+                </div>
+            </div>
+        </ion-col>
+        <ion-col>
+            <div class="main-card nutrition-card">
+                <div class="card-title">{{ 'streak' | translate }}</div>
+                <div class="calories-info">
+                    <div>
+                        <p class="value streak-label">{{streak}}</p>
+                        <p class="cal-label">{{ 'days' | translate }}</p>
+                    </div>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <div class="main-card">
+            <div class="card-title">{{ 'micronutrients' | translate }}</div>
+            <div class="calories-info">
+                <div class="card-container" *ngIf="fatLabel">
+                    <app-nutrition-card label="Fat" consumed="{{tabActionService.totalFat}}g" remaining="30g"
+                        chartId="fatChart" [colors]="{ from: '#ff9ead', to: '#ab4854' }"></app-nutrition-card>
+                    <app-nutrition-card label="Protein" consumed="{{tabActionService.totalProtein}}g" remaining="20g"
+                        chartId="proteinChart" [colors]="{ from: '#caacd6', to: '#8a5aae' }"></app-nutrition-card>
+                </div>
+                <div class="card-container">
+                    <app-nutrition-card label="Carbs" consumed="{{tabActionService.totalCarbs}}g" remaining="80g"
+                        chartId="carbsChart" [colors]="{ from: '#769dca', to: '#4d75b7' }"></app-nutrition-card>
+                    <app-nutrition-card label="Water" [consumed]="waterConsumed + 'L'" remaining="1L"
+                        chartId="waterChart" [waterConsumed]="waterConsumed"
+                        [colors]="{ from: '#e0b7a4', to: '#a16145' }"></app-nutrition-card>
+                </div>
+            </div>
+        </div>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <div class="main-card overall-card">
+                <div class="card-title">{{ 'insight' | translate }}</div>
+                <div class="calories-info">
+                    <div style="height: 8em; width: 20em;">
+                        <canvas id="insight" class="chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <div class="main-card overall-card">
+            <ion-icon class="card-icon" name="bulb-outline"></ion-icon>
+            <div class="card-title">{{ 'quickTips' | translate }}</div>
+            <div class="overall-info mate">
+                {{ideaOfTheDay}}
+            </div>
+        </div>
+    </ion-row>
+
+    <ion-row style="margin-bottom: 1.5em;">
+        <ion-col>
+            <div class="main-card overall-card">
+                <div class="card-title">{{ 'progress' | translate }}</div>
+                <div class="calories-info">
+                    <div style="height: 8em; width: 20em;">
+                        <canvas id="progress" class="chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>

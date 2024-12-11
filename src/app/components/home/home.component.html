@@ -1,0 +1,21 @@
+<div class="ion-page" id="main-content">
+    <ion-header [translucent]="true">
+        <ion-toolbar>
+            <ion-title>
+                <img src="assets/img/weight-mate-logo.png" alt="logo" class="logo-header" />
+            </ion-title>
+            <ion-buttons slot="end">
+                <ion-button> <app-calendar></app-calendar> </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding home">
+        <div class="ion-padding">
+            <app-root-content
+                *ngIf="tabActionService.showMainViewScreen && !tabActionService.showSelectFoodScreen"></app-root-content>
+            <app-log-food
+                *ngIf="tabActionService.showSelectFoodScreen && !tabActionService.showMainViewScreen"></app-log-food>
+        </div>
+    </ion-content>
+    <app-footer></app-footer>
+</div>

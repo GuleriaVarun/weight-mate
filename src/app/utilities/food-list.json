@@ -1,0 +1,2532 @@
+[
+  {
+    "id": 1,
+    "name": "Dal Tadka",
+    "serving": "1 cup",
+    "calories": 198,
+    "protein": 10,
+    "fat": 9,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 2,
+    "name": "Paneer Butter Masala",
+    "serving": "1 cup",
+    "calories": 350,
+    "protein": 10,
+    "fat": 28,
+    "carbohydrates": 16,
+    "count": 0
+  },
+  {
+    "id": 3,
+    "name": "Chole (Chickpea Curry)",
+    "serving": "1 cup",
+    "calories": 250,
+    "protein": 12,
+    "fat": 6,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 4,
+    "name": "Rajma (Kidney Bean Curry)",
+    "serving": "1 cup",
+    "calories": 220,
+    "protein": 11,
+    "fat": 6,
+    "carbohydrates": 33,
+    "count": 0
+  },
+  {
+    "id": 5,
+    "name": "Palak Paneer",
+    "serving": "1 cup",
+    "calories": 250,
+    "protein": 10,
+    "fat": 20,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 6,
+    "name": "Bhindi Masala (Okra Curry)",
+    "serving": "1 cup",
+    "calories": 135,
+    "protein": 4,
+    "fat": 9,
+    "carbohydrates": 11,
+    "count": 0
+  },
+  {
+    "id": 7,
+    "name": "Aloo Gobi (Potato & Cauliflower)",
+    "serving": "1 cup",
+    "calories": 190,
+    "protein": 4,
+    "fat": 10,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 8,
+    "name": "Biryani (Chicken)",
+    "serving": "1 cup",
+    "calories": 320,
+    "protein": 14,
+    "fat": 12,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 9,
+    "name": "Vegetable Pulao",
+    "serving": "1 cup",
+    "calories": 200,
+    "protein": 5,
+    "fat": 5,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 10,
+    "name": "Masala Dosa",
+    "serving": "1 dosa with filling",
+    "calories": 300,
+    "protein": 7,
+    "fat": 10,
+    "carbohydrates": 46,
+    "count": 0
+  },
+  {
+    "id": 11,
+    "name": "Idli",
+    "serving": "1 piece",
+    "calories": 60,
+    "protein": 2,
+    "fat": 1,
+    "carbohydrates": 13,
+    "count": 0
+  },
+  {
+    "id": 12,
+    "name": "Sambar",
+    "serving": "1 cup",
+    "calories": 130,
+    "protein": 5,
+    "fat": 4,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 13,
+    "name": "Medu Vada",
+    "serving": "1 piece",
+    "calories": 70,
+    "protein": 2,
+    "fat": 4,
+    "carbohydrates": 7,
+    "count": 0
+  },
+  {
+    "id": 14,
+    "name": "Poha",
+    "serving": "1 cup",
+    "calories": 180,
+    "protein": 4,
+    "fat": 4,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 15,
+    "name": "Upma",
+    "serving": "1 cup",
+    "calories": 190,
+    "protein": 4,
+    "fat": 7,
+    "carbohydrates": 27,
+    "count": 0
+  },
+  {
+    "id": 16,
+    "name": "Pav Bhaji",
+    "serving": "1 serving with buns",
+    "calories": 400,
+    "protein": 7,
+    "fat": 20,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 17,
+    "name": "Aloo Paratha",
+    "serving": "1 piece",
+    "calories": 210,
+    "protein": 5,
+    "fat": 10,
+    "carbohydrates": 27,
+    "count": 0
+  },
+  {
+    "id": 18,
+    "name": "Chana Masala",
+    "serving": "1 cup",
+    "calories": 220,
+    "protein": 12,
+    "fat": 6,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 19,
+    "name": "Dhokla",
+    "serving": "1 piece",
+    "calories": 60,
+    "protein": 3,
+    "fat": 1,
+    "carbohydrates": 11,
+    "count": 0
+  },
+  {
+    "id": 20,
+    "name": "Kadhi Pakora",
+    "serving": "1 cup",
+    "calories": 200,
+    "protein": 5,
+    "fat": 10,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 21,
+    "name": "Baingan Bharta",
+    "serving": "1 cup",
+    "calories": 140,
+    "protein": 3,
+    "fat": 8,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 22,
+    "name": "Puri",
+    "serving": "1 piece",
+    "calories": 70,
+    "protein": 1,
+    "fat": 5,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 23,
+    "name": "Roti",
+    "serving": "1 piece",
+    "calories": 70,
+    "protein": 2,
+    "fat": 0.5,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 24,
+    "name": "Naan",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 4,
+    "fat": 3,
+    "carbohydrates": 26,
+    "count": 0
+  },
+  {
+    "id": 25,
+    "name": "Samosa",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 3,
+    "fat": 7,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 26,
+    "name": "Gulab Jamun",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 2,
+    "fat": 6,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 27,
+    "name": "Rasgulla",
+    "serving": "1 piece",
+    "calories": 125,
+    "protein": 3,
+    "fat": 1,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 28,
+    "name": "Jalebi",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 0.5,
+    "fat": 8,
+    "carbohydrates": 19,
+    "count": 0
+  },
+  {
+    "id": 29,
+    "name": "Ladoo (Besan)",
+    "serving": "1 piece",
+    "calories": 160,
+    "protein": 3,
+    "fat": 8,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 30,
+    "name": "Kaju Katli",
+    "serving": "1 piece",
+    "calories": 60,
+    "protein": 1,
+    "fat": 3,
+    "carbohydrates": 7,
+    "count": 0
+  },
+  {
+    "id": 31,
+    "name": "Barfi",
+    "serving": "1 piece",
+    "calories": 125,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 32,
+    "name": "Halwa (Suji)",
+    "serving": "1 cup",
+    "calories": 350,
+    "protein": 5,
+    "fat": 12,
+    "carbohydrates": 55,
+    "count": 0
+  },
+  {
+    "id": 33,
+    "name": "Ras Malai",
+    "serving": "1 piece",
+    "calories": 180,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 23,
+    "count": 0
+  },
+  {
+    "id": 34,
+    "name": "Peda",
+    "serving": "1 piece",
+    "calories": 120,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 35,
+    "name": "Murukku",
+    "serving": "1 piece",
+    "calories": 60,
+    "protein": 1,
+    "fat": 3,
+    "carbohydrates": 8,
+    "count": 0
+  },
+  {
+    "id": 36,
+    "name": "Papad",
+    "serving": "1 piece",
+    "calories": 25,
+    "protein": 1,
+    "fat": 0.5,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 37,
+    "name": "Pakora",
+    "serving": "1 piece",
+    "calories": 75,
+    "protein": 2,
+    "fat": 4,
+    "carbohydrates": 7,
+    "count": 0
+  },
+  {
+    "id": 38,
+    "name": "Bhatura",
+    "serving": "1 piece",
+    "calories": 180,
+    "protein": 4,
+    "fat": 10,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 39,
+    "name": "Khichdi",
+    "serving": "1 cup",
+    "calories": 150,
+    "protein": 5,
+    "fat": 3,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 40,
+    "name": "Dal Makhani",
+    "serving": "1 cup",
+    "calories": 300,
+    "protein": 10,
+    "fat": 15,
+    "carbohydrates": 33,
+    "count": 0
+  },
+  {
+    "id": 41,
+    "name": "Butter Chicken",
+    "serving": "1 cup",
+    "calories": 438,
+    "protein": 25,
+    "fat": 29,
+    "carbohydrates": 13,
+    "count": 0
+  },
+  {
+    "id": 42,
+    "name": "Chicken Tikka",
+    "serving": "1 piece",
+    "calories": 70,
+    "protein": 6,
+    "fat": 4,
+    "carbohydrates": 2,
+    "count": 0
+  },
+  {
+    "id": 43,
+    "name": "Fish Curry",
+    "serving": "1 cup",
+    "calories": 200,
+    "protein": 22,
+    "fat": 10,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 44,
+    "name": "Prawn Masala",
+    "serving": "1 cup",
+    "calories": 180,
+    "protein": 20,
+    "fat": 8,
+    "carbohydrates": 7,
+    "count": 0
+  },
+  {
+    "id": 45,
+    "name": "Aloo Tikki",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 2,
+    "fat": 8,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 46,
+    "name": "Vegetable Samosa",
+    "serving": "1 piece",
+    "calories": 140,
+    "protein": 3,
+    "fat": 7,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 47,
+    "name": "Mutton Curry",
+    "serving": "1 cup",
+    "calories": 290,
+    "protein": 20,
+    "fat": 18,
+    "carbohydrates": 7,
+    "count": 0
+  },
+  {
+    "id": 48,
+    "name": "Bhindi Fry",
+    "serving": "1 cup",
+    "calories": 110,
+    "protein": 2,
+    "fat": 8,
+    "carbohydrates": 9,
+    "count": 0
+  },
+  {
+    "id": 49,
+    "name": "Baati",
+    "serving": "1 piece",
+    "calories": 200,
+    "protein": 4,
+    "fat": 6,
+    "carbohydrates": 32,
+    "count": 0
+  },
+  {
+    "id": 50,
+    "name": "Mysore Pak",
+    "serving": "1 piece",
+    "calories": 180,
+    "protein": 3,
+    "fat": 9,
+    "carbohydrates": 23,
+    "count": 0
+  },
+  {
+    "id": 51,
+    "name": "Puttu",
+    "serving": "1 piece",
+    "calories": 100,
+    "protein": 2,
+    "fat": 1,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 52,
+    "name": "Chicken Kebab",
+    "serving": "1 piece",
+    "calories": 80,
+    "protein": 6,
+    "fat": 5,
+    "carbohydrates": 3,
+    "count": 0
+  },
+  {
+    "id": 53,
+    "name": "Pav",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 5,
+    "fat": 3,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 54,
+    "name": "Sheera (Suji Halwa)",
+    "serving": "1 cup",
+    "calories": 280,
+    "protein": 5,
+    "fat": 12,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 55,
+    "name": "Shrikhand",
+    "serving": "1 cup",
+    "calories": 320,
+    "protein": 8,
+    "fat": 15,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 56,
+    "name": "Sabudana Khichdi",
+    "serving": "1 cup",
+    "calories": 250,
+    "protein": 2,
+    "fat": 10,
+    "carbohydrates": 37,
+    "count": 0
+  },
+  {
+    "id": 57,
+    "name": "Methi Thepla",
+    "serving": "1 piece",
+    "calories": 120,
+    "protein": 3,
+    "fat": 6,
+    "carbohydrates": 14,
+    "count": 0
+  },
+  {
+    "id": 58,
+    "name": "Banana Chips",
+    "serving": "10 pieces",
+    "calories": 150,
+    "protein": 1,
+    "fat": 10,
+    "carbohydrates": 13,
+    "count": 0
+  },
+  {
+    "id": 59,
+    "name": "Veg Hakka Noodles",
+    "serving": "1 cup",
+    "calories": 250,
+    "protein": 5,
+    "fat": 10,
+    "carbohydrates": 32,
+    "count": 0
+  },
+  {
+    "id": 60,
+    "name": "Rava Dosa",
+    "serving": "1 piece",
+    "calories": 180,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 61,
+    "name": "Kanda Poha",
+    "serving": "1 cup",
+    "calories": 180,
+    "protein": 4,
+    "fat": 7,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 63,
+    "name": "Paneer Bhurji",
+    "serving": "1 cup",
+    "calories": 250,
+    "protein": 14,
+    "fat": 15,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 64,
+    "name": "Sabudana Vada",
+    "serving": "1 piece",
+    "calories": 100,
+    "protein": 2,
+    "fat": 5,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 65,
+    "name": "Misal Pav",
+    "serving": "1 plate",
+    "calories": 400,
+    "protein": 10,
+    "fat": 18,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 66,
+    "name": "Puran Poli",
+    "serving": "1 piece",
+    "calories": 300,
+    "protein": 6,
+    "fat": 10,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 67,
+    "name": "Dal Baati",
+    "serving": "1 piece",
+    "calories": 250,
+    "protein": 6,
+    "fat": 12,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 69,
+    "name": "Aloo Gobi",
+    "serving": "1 cup",
+    "calories": 120,
+    "protein": 3,
+    "fat": 7,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 70,
+    "name": "Khaman Dhokla",
+    "serving": "1 piece",
+    "calories": 80,
+    "protein": 4,
+    "fat": 1,
+    "carbohydrates": 13,
+    "count": 0
+  },
+  {
+    "id": 71,
+    "name": "Methi Malai Murg",
+    "serving": "1 cup",
+    "calories": 350,
+    "protein": 22,
+    "fat": 22,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 72,
+    "name": "Chole Bhature",
+    "serving": "1 plate",
+    "calories": 450,
+    "protein": 10,
+    "fat": 20,
+    "carbohydrates": 55,
+    "count": 0
+  },
+  {
+    "id": 74,
+    "name": "Paneer Tikka",
+    "serving": "1 piece",
+    "calories": 90,
+    "protein": 6,
+    "fat": 7,
+    "carbohydrates": 2,
+    "count": 0
+  },
+  {
+    "id": 77,
+    "name": "Masala Khichdi",
+    "serving": "1 cup",
+    "calories": 220,
+    "protein": 6,
+    "fat": 6,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 78,
+    "name": "Dahi Bhalla",
+    "serving": "1 piece",
+    "calories": 150,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 80,
+    "name": "Veg Biryani",
+    "serving": "1 cup",
+    "calories": 210,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 32,
+    "count": 0
+  },
+  {
+    "id": 82,
+    "name": "Mutton Biryani",
+    "serving": "1 cup",
+    "calories": 300,
+    "protein": 15,
+    "fat": 15,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 83,
+    "name": "Rajma Chawal",
+    "serving": "1 plate",
+    "calories": 300,
+    "protein": 10,
+    "fat": 6,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 84,
+    "name": "Kesar Kulfi",
+    "serving": "1 piece",
+    "calories": 200,
+    "protein": 5,
+    "fat": 12,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 85,
+    "name": "Gajar Halwa",
+    "serving": "1 cup",
+    "calories": 300,
+    "protein": 5,
+    "fat": 15,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 86,
+    "name": "Sev Puri",
+    "serving": "1 plate",
+    "calories": 250,
+    "protein": 4,
+    "fat": 12,
+    "carbohydrates": 32,
+    "count": 0
+  },
+  {
+    "id": 87,
+    "name": "Vegetable Cutlet",
+    "serving": "1 piece",
+    "calories": 100,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 91,
+    "name": "Moong Dal Halwa",
+    "serving": "1 cup",
+    "calories": 400,
+    "protein": 8,
+    "fat": 20,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 92,
+    "name": "Chai (Tea)",
+    "serving": "1 cup",
+    "calories": 105,
+    "protein": 2,
+    "fat": 4,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 93,
+    "name": "Rusk",
+    "serving": "2 pieces",
+    "calories": 120,
+    "protein": 3,
+    "fat": 2,
+    "carbohydrates": 23,
+    "count": 0
+  },
+  {
+    "id": 94,
+    "name": "Masala Chai",
+    "serving": "1 cup",
+    "calories": 120,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 16,
+    "count": 0
+  },
+  {
+    "id": 95,
+    "name": "Parle-G Biscuits",
+    "serving": "5 pieces",
+    "calories": 110,
+    "protein": 1,
+    "fat": 3,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 96,
+    "name": "Marie Biscuits",
+    "serving": "4 pieces",
+    "calories": 90,
+    "protein": 2,
+    "fat": 2,
+    "carbohydrates": 16,
+    "count": 0
+  },
+  {
+    "id": 97,
+    "name": "Puffed Rice (Murmura)",
+    "serving": "1 cup",
+    "calories": 60,
+    "protein": 1,
+    "fat": 0.5,
+    "carbohydrates": 13,
+    "count": 0
+  },
+  {
+    "id": 98,
+    "name": "Sev",
+    "serving": "1 small bowl",
+    "calories": 150,
+    "protein": 4,
+    "fat": 10,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 99,
+    "name": "Bread Pakora",
+    "serving": "1 piece",
+    "calories": 240,
+    "protein": 6,
+    "fat": 12,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 100,
+    "name": "Sooji Toast",
+    "serving": "1 slice",
+    "calories": 130,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 101,
+    "name": "Oats (Plain)",
+    "serving": "1 bowl (100g)",
+    "calories": 389,
+    "protein": 16,
+    "fat": 7,
+    "carbohydrates": 66,
+    "count": 0
+  },
+  {
+    "id": 102,
+    "name": "Fried Idli",
+    "serving": "5 pieces",
+    "calories": 150,
+    "protein": 4,
+    "fat": 5,
+    "carbohydrates": 21,
+    "count": 0
+  },
+  {
+    "id": 103,
+    "name": "Mathri",
+    "serving": "1 piece",
+    "calories": 60,
+    "protein": 1,
+    "fat": 4,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 104,
+    "name": "Aloo Bhujiya",
+    "serving": "1 small bowl",
+    "calories": 180,
+    "protein": 4,
+    "fat": 12,
+    "carbohydrates": 14,
+    "count": 0
+  },
+  {
+    "id": 106,
+    "name": "Namak Pare",
+    "serving": "1 small bowl",
+    "calories": 140,
+    "protein": 3,
+    "fat": 6,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 107,
+    "name": "Kachori",
+    "serving": "1 piece",
+    "calories": 200,
+    "protein": 4,
+    "fat": 10,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 108,
+    "name": "Bhel Puri",
+    "serving": "1 small bowl",
+    "calories": 120,
+    "protein": 3,
+    "fat": 2,
+    "carbohydrates": 23,
+    "count": 0
+  },
+  {
+    "id": 109,
+    "name": "Chikki",
+    "serving": "1 piece",
+    "calories": 110,
+    "protein": 3,
+    "fat": 4,
+    "carbohydrates": 14,
+    "count": 0
+  },
+  {
+    "id": 110,
+    "name": "Coffee",
+    "serving": "1 cup",
+    "calories": 2,
+    "protein": 0,
+    "fat": 0,
+    "carbohydrates": 0,
+    "count": 0
+  },
+  {
+    "id": 111,
+    "name": "Plain Dosa",
+    "serving": "1 dosa",
+    "calories": 133,
+    "protein": 3,
+    "fat": 3.7,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 112,
+    "name": "Rice",
+    "serving": "1 cup",
+    "calories": 206,
+    "protein": 4.3,
+    "fat": 0.4,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 113,
+    "name": "Choco Lava Cake",
+    "serving": "1 piece (100g)",
+    "calories": 340,
+    "protein": 5,
+    "fat": 17,
+    "carbohydrates": 44,
+    "count": 0
+  },
+  {
+    "id": 114,
+    "name": "Chocolate Slice",
+    "serving": "1 slice (80g)",
+    "calories": 290,
+    "protein": 4,
+    "fat": 14,
+    "carbohydrates": 37,
+    "count": 0
+  },
+  {
+    "id": 115,
+    "name": "Chocolate Pastry",
+    "serving": "1 piece (90g)",
+    "calories": 360,
+    "protein": 5,
+    "fat": 20,
+    "carbohydrates": 42,
+    "count": 0
+  },
+  {
+    "id": 116,
+    "name": "Dalia (Porridge)",
+    "serving": "1 bowl (150g)",
+    "calories": 100,
+    "protein": 3,
+    "fat": 1,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 117,
+    "name": "Masoor Dal",
+    "serving": "1 bowl (150g)",
+    "calories": 120,
+    "protein": 9,
+    "fat": 1,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 118,
+    "name": "Chapati",
+    "serving": "1 piece (50g)",
+    "calories": 70,
+    "protein": 2,
+    "fat": 1,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 121,
+    "name": "Rajma",
+    "serving": "1 bowl (150g)",
+    "calories": 180,
+    "protein": 8,
+    "fat": 4,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 123,
+    "name": "Plain Rice",
+    "serving": "1 bowl (150g)",
+    "calories": 200,
+    "protein": 4,
+    "fat": 0,
+    "carbohydrates": 44,
+    "count": 0
+  },
+  {
+    "id": 124,
+    "name": "Jeera Rice",
+    "serving": "1 bowl (150g)",
+    "calories": 220,
+    "protein": 4,
+    "fat": 5,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 126,
+    "name": "Dosa",
+    "serving": "1 piece (100g)",
+    "calories": 160,
+    "protein": 3,
+    "fat": 3,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 133,
+    "name": "Chicken Curry",
+    "serving": "1 bowl (150g)",
+    "calories": 250,
+    "protein": 20,
+    "fat": 15,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 135,
+    "name": "Kheer",
+    "serving": "1 bowl (150g)",
+    "calories": 200,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 139,
+    "name": "Puri with Aloo",
+    "serving": "1 plate (200g)",
+    "calories": 400,
+    "protein": 5,
+    "fat": 15,
+    "carbohydrates": 60,
+    "count": 0
+  },
+  {
+    "id": 140,
+    "name": "Raita",
+    "serving": "1 bowl (100g)",
+    "calories": 60,
+    "protein": 3,
+    "fat": 2,
+    "carbohydrates": 8,
+    "count": 0
+  },
+  {
+    "id": 141,
+    "name": "Vegetable Curry",
+    "serving": "1 bowl (150g)",
+    "calories": 150,
+    "protein": 3,
+    "fat": 6,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 143,
+    "name": "Bhindi Masala",
+    "serving": "1 bowl (150g)",
+    "calories": 120,
+    "protein": 3,
+    "fat": 8,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 146,
+    "name": "Sprouted Moong Salad",
+    "serving": "1 bowl (100g)",
+    "calories": 70,
+    "protein": 5,
+    "fat": 1,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 147,
+    "name": "Besan Chilla",
+    "serving": "1 piece (80g)",
+    "calories": 120,
+    "protein": 6,
+    "fat": 3,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 149,
+    "name": "Ragi Malt",
+    "serving": "1 glass (200ml)",
+    "calories": 90,
+    "protein": 2,
+    "fat": 1,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 150,
+    "name": "Thepla",
+    "serving": "1 piece (60g)",
+    "calories": 110,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 151,
+    "name": "Dhansak",
+    "serving": "1 bowl (200g)",
+    "calories": 250,
+    "protein": 10,
+    "fat": 12,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 152,
+    "name": "Malai Kofta",
+    "serving": "1 bowl (150g)",
+    "calories": 350,
+    "protein": 8,
+    "fat": 25,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 155,
+    "name": "Hakka Noodles",
+    "serving": "1 plate (200g)",
+    "calories": 300,
+    "protein": 6,
+    "fat": 8,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 156,
+    "name": "Ragi Roti",
+    "serving": "1 piece (60g)",
+    "calories": 110,
+    "protein": 2,
+    "fat": 2,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 157,
+    "name": "Sweet Pongal",
+    "serving": "1 bowl (150g)",
+    "calories": 280,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 160,
+    "name": "Appam",
+    "serving": "1 piece (100g)",
+    "calories": 150,
+    "protein": 3,
+    "fat": 2,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 162,
+    "name": "Chicken 65",
+    "serving": "1 plate (150g)",
+    "calories": 300,
+    "protein": 25,
+    "fat": 18,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 163,
+    "name": "Beetroot Halwa",
+    "serving": "1 bowl (150g)",
+    "calories": 250,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 164,
+    "name": "Litti Chokha",
+    "serving": "1 piece (100g)",
+    "calories": 200,
+    "protein": 5,
+    "fat": 6,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 165,
+    "name": "Gujarati Kadhi",
+    "serving": "1 bowl (150g)",
+    "calories": 130,
+    "protein": 4,
+    "fat": 6,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 166,
+    "name": "Pani Puri",
+    "serving": "6 pieces (100g)",
+    "calories": 180,
+    "protein": 2,
+    "fat": 5,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 168,
+    "name": "Kulfi",
+    "serving": "1 stick (100g)",
+    "calories": 190,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 169,
+    "name": "Tandoori Roti",
+    "serving": "1 piece (80g)",
+    "calories": 150,
+    "protein": 4,
+    "fat": 1,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 171,
+    "name": "Sooji Halwa",
+    "serving": "1 bowl (150g)",
+    "calories": 250,
+    "protein": 3,
+    "fat": 12,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 173,
+    "name": "Pesarattu",
+    "serving": "1 piece (100g)",
+    "calories": 180,
+    "protein": 7,
+    "fat": 5,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 174,
+    "name": "Chilla (Moong Dal)",
+    "serving": "1 piece (80g)",
+    "calories": 120,
+    "protein": 6,
+    "fat": 4,
+    "carbohydrates": 16,
+    "count": 0
+  },
+  {
+    "id": 175,
+    "name": "Karela (Bitter Gourd) Fry",
+    "serving": "1 bowl (150g)",
+    "calories": 100,
+    "protein": 3,
+    "fat": 6,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 176,
+    "name": "Mutton Seekh Kebab",
+    "serving": "2 pieces (100g)",
+    "calories": 250,
+    "protein": 18,
+    "fat": 18,
+    "carbohydrates": 3,
+    "count": 0
+  },
+  {
+    "id": 177,
+    "name": "Baati (Rajasthani)",
+    "serving": "1 piece (100g)",
+    "calories": 280,
+    "protein": 7,
+    "fat": 12,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 178,
+    "name": "Shahi Tukda",
+    "serving": "1 piece (100g)",
+    "calories": 300,
+    "protein": 5,
+    "fat": 15,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 179,
+    "name": "Tandoori Chicken",
+    "serving": "1 piece (150g)",
+    "calories": 220,
+    "protein": 25,
+    "fat": 12,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 180,
+    "name": "Soya Chap",
+    "serving": "1 piece (150g)",
+    "calories": 180,
+    "protein": 16,
+    "fat": 7,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 184,
+    "name": "Chhena Poda",
+    "serving": "1 piece (100g)",
+    "calories": 270,
+    "protein": 8,
+    "fat": 15,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 185,
+    "name": "Vada Pav",
+    "serving": "1 piece (100g)",
+    "calories": 220,
+    "protein": 5,
+    "fat": 10,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 187,
+    "name": "Malai Murg",
+    "serving": "1 piece (150g)",
+    "calories": 280,
+    "protein": 22,
+    "fat": 18,
+    "carbohydrates": 8,
+    "count": 0
+  },
+  {
+    "id": 188,
+    "name": "Chana Chaat",
+    "serving": "1 bowl (150g)",
+    "calories": 180,
+    "protein": 6,
+    "fat": 5,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 189,
+    "name": "Chana Chole",
+    "serving": "1 bowl (150g)",
+    "calories": 200,
+    "protein": 10,
+    "fat": 6,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 191,
+    "name": "Moong Dal Khichdi",
+    "serving": "1 bowl (150g)",
+    "calories": 200,
+    "protein": 8,
+    "fat": 5,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 193,
+    "name": "Tandoori Fish",
+    "serving": "1 piece (150g)",
+    "calories": 250,
+    "protein": 20,
+    "fat": 10,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 194,
+    "name": "Pav Bhaji (Street Style)",
+    "serving": "1 plate (200g)",
+    "calories": 350,
+    "protein": 7,
+    "fat": 18,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 195,
+    "name": "Gatte ki Sabzi",
+    "serving": "1 bowl (150g)",
+    "calories": 220,
+    "protein": 8,
+    "fat": 12,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 196,
+    "name": "Vegetable Biryani",
+    "serving": "1 plate (200g)",
+    "calories": 250,
+    "protein": 6,
+    "fat": 8,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 197,
+    "name": "Methi Paratha",
+    "serving": "1 piece (100g)",
+    "calories": 180,
+    "protein": 4,
+    "fat": 7,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 201,
+    "name": "Mutton Rogan Josh",
+    "serving": "1 bowl (150g)",
+    "calories": 350,
+    "protein": 25,
+    "fat": 25,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 202,
+    "name": "Mango Lassi",
+    "serving": "1 glass (200ml)",
+    "calories": 180,
+    "protein": 5,
+    "fat": 4,
+    "carbohydrates": 32,
+    "count": 0
+  },
+  {
+    "id": 203,
+    "name": "Kadhi",
+    "serving": "1 bowl (150g)",
+    "calories": 150,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 204,
+    "name": "Lassi (Plain)",
+    "serving": "1 glass (200ml)",
+    "calories": 120,
+    "protein": 6,
+    "fat": 4,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 206,
+    "name": "Gobi Manchurian",
+    "serving": "1 plate (150g)",
+    "calories": 180,
+    "protein": 4,
+    "fat": 12,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 208,
+    "name": "Dosa (Plain)",
+    "serving": "1 piece (100g)",
+    "calories": 140,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 209,
+    "name": "Onion Bhaji",
+    "serving": "1 plate (100g)",
+    "calories": 180,
+    "protein": 3,
+    "fat": 10,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 210,
+    "name": "Hyderabadi Biryani",
+    "serving": "1 plate (200g)",
+    "calories": 300,
+    "protein": 18,
+    "fat": 12,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 211,
+    "name": "Aloo Methi",
+    "serving": "1 bowl (150g)",
+    "calories": 180,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 212,
+    "name": "Vermicelli Upma",
+    "serving": "1 bowl (150g)",
+    "calories": 200,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 213,
+    "name": "Moong Dal Pancakes",
+    "serving": "1 piece (80g)",
+    "calories": 150,
+    "protein": 6,
+    "fat": 5,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 214,
+    "name": "Kofta Curry",
+    "serving": "1 bowl (150g)",
+    "calories": 300,
+    "protein": 10,
+    "fat": 20,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 215,
+    "name": "Fried Rice (Veg)",
+    "serving": "1 plate (200g)",
+    "calories": 250,
+    "protein": 5,
+    "fat": 10,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 218,
+    "name": "Rawa Upma",
+    "serving": "1 bowl (150g)",
+    "calories": 180,
+    "protein": 4,
+    "fat": 6,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 219,
+    "name": "Chicken Biryani",
+    "serving": "1 plate (200g)",
+    "calories": 320,
+    "protein": 20,
+    "fat": 15,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 228,
+    "name": "Dosa (Masala)",
+    "serving": "1 piece (120g)",
+    "calories": 200,
+    "protein": 5,
+    "fat": 7,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 230,
+    "name": "Mushroom Do Pyaza",
+    "serving": "1 bowl (150g)",
+    "calories": 180,
+    "protein": 6,
+    "fat": 10,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 232,
+    "name": "Pulao (Vegetable)",
+    "serving": "1 plate (200g)",
+    "calories": 230,
+    "protein": 6,
+    "fat": 8,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 234,
+    "name": "Full English Breakfast",
+    "serving": "1 plate (400g)",
+    "calories": 600,
+    "protein": 25,
+    "fat": 40,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 235,
+    "name": "Egg and Bacon Sandwich",
+    "serving": "1 sandwich (200g)",
+    "calories": 350,
+    "protein": 18,
+    "fat": 20,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 236,
+    "name": "Avocado Toast",
+    "serving": "1 slice (150g)",
+    "calories": 250,
+    "protein": 6,
+    "fat": 14,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 237,
+    "name": "Eggs Benedict",
+    "serving": "1 serving (200g)",
+    "calories": 450,
+    "protein": 20,
+    "fat": 30,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 238,
+    "name": "Cheeseburger",
+    "serving": "1 burger (200g)",
+    "calories": 500,
+    "protein": 25,
+    "fat": 30,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 239,
+    "name": "Fries (Fast Food)",
+    "serving": "1 portion (150g)",
+    "calories": 400,
+    "protein": 4,
+    "fat": 20,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 240,
+    "name": "Pizza Margherita",
+    "serving": "1 slice (120g)",
+    "calories": 250,
+    "protein": 8,
+    "fat": 10,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 241,
+    "name": "Pepperoni Pizza",
+    "serving": "1 slice (120g)",
+    "calories": 300,
+    "protein": 12,
+    "fat": 15,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 242,
+    "name": "Veggie Burger",
+    "serving": "1 burger (200g)",
+    "calories": 400,
+    "protein": 15,
+    "fat": 20,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 243,
+    "name": "Chicken Nuggets",
+    "serving": "6 pieces (150g)",
+    "calories": 300,
+    "protein": 20,
+    "fat": 15,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 244,
+    "name": "Spaghetti Bolognese",
+    "serving": "1 plate (250g)",
+    "calories": 500,
+    "protein": 25,
+    "fat": 20,
+    "carbohydrates": 55,
+    "count": 0
+  },
+  {
+    "id": 245,
+    "name": "Lasagna",
+    "serving": "1 slice (200g)",
+    "calories": 400,
+    "protein": 20,
+    "fat": 25,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 246,
+    "name": "Caesar Salad",
+    "serving": "1 bowl (150g)",
+    "calories": 300,
+    "protein": 15,
+    "fat": 20,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 247,
+    "name": "Club Sandwich",
+    "serving": "1 sandwich (250g)",
+    "calories": 500,
+    "protein": 30,
+    "fat": 25,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 248,
+    "name": "Chicken Wrap",
+    "serving": "1 wrap (200g)",
+    "calories": 400,
+    "protein": 25,
+    "fat": 15,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 249,
+    "name": "Fried Chicken (2 pieces)",
+    "serving": "2 pieces (200g)",
+    "calories": 400,
+    "protein": 25,
+    "fat": 25,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 250,
+    "name": "Chicken Shawarma",
+    "serving": "1 serving (200g)",
+    "calories": 450,
+    "protein": 25,
+    "fat": 25,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 251,
+    "name": "Fish and Chips",
+    "serving": "1 plate (350g)",
+    "calories": 600,
+    "protein": 30,
+    "fat": 35,
+    "carbohydrates": 50,
+    "count": 0
+  },
+  {
+    "id": 252,
+    "name": "Pasta Primavera",
+    "serving": "1 plate (250g)",
+    "calories": 400,
+    "protein": 15,
+    "fat": 15,
+    "carbohydrates": 55,
+    "count": 0
+  },
+  {
+    "id": 253,
+    "name": "Chicken Quesadilla",
+    "serving": "1 serving (200g)",
+    "calories": 500,
+    "protein": 30,
+    "fat": 25,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 254,
+    "name": "Tacos (Chicken)",
+    "serving": "2 pieces (150g)",
+    "calories": 350,
+    "protein": 20,
+    "fat": 18,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 255,
+    "name": "Crispy Chicken Salad",
+    "serving": "1 bowl (250g)",
+    "calories": 350,
+    "protein": 25,
+    "fat": 18,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 256,
+    "name": "Cheese Fries",
+    "serving": "1 portion (200g)",
+    "calories": 500,
+    "protein": 10,
+    "fat": 25,
+    "carbohydrates": 60,
+    "count": 0
+  },
+  {
+    "id": 257,
+    "name": "Margherita Pizza (Large)",
+    "serving": "1 slice (150g)",
+    "calories": 350,
+    "protein": 12,
+    "fat": 15,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 258,
+    "name": "BBQ Chicken Pizza",
+    "serving": "1 slice (150g)",
+    "calories": 380,
+    "protein": 15,
+    "fat": 18,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 259,
+    "name": "Hawaiian Pizza",
+    "serving": "1 slice (150g)",
+    "calories": 400,
+    "protein": 15,
+    "fat": 18,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 260,
+    "name": "Vegetable Momo",
+    "serving": "6 pieces (150g)",
+    "calories": 250,
+    "protein": 7,
+    "fat": 8,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 261,
+    "name": "Chicken Momo",
+    "serving": "6 pieces (150g)",
+    "calories": 300,
+    "protein": 15,
+    "fat": 10,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 262,
+    "name": "Vegetable Spring Roll",
+    "serving": "2 rolls (100g)",
+    "calories": 200,
+    "protein": 4,
+    "fat": 10,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 263,
+    "name": "Chicken Spring Roll",
+    "serving": "2 rolls (100g)",
+    "calories": 220,
+    "protein": 10,
+    "fat": 12,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 264,
+    "name": "Vegetable Fried Rice",
+    "serving": "1 plate (200g)",
+    "calories": 250,
+    "protein": 6,
+    "fat": 10,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 265,
+    "name": "Chicken Fried Rice",
+    "serving": "1 plate (200g)",
+    "calories": 300,
+    "protein": 15,
+    "fat": 12,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 266,
+    "name": "Vegetable Hakka Noodles",
+    "serving": "1 plate (200g)",
+    "calories": 280,
+    "protein": 7,
+    "fat": 10,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 267,
+    "name": "Chicken Hakka Noodles",
+    "serving": "1 plate (200g)",
+    "calories": 320,
+    "protein": 18,
+    "fat": 12,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 268,
+    "name": "Sweet and Sour Chicken",
+    "serving": "1 bowl (150g)",
+    "calories": 350,
+    "protein": 18,
+    "fat": 15,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 269,
+    "name": "Chinese Dumplings (Steamed)",
+    "serving": "6 pieces (150g)",
+    "calories": 200,
+    "protein": 10,
+    "fat": 5,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 270,
+    "name": "Manchurian (Vegetable)",
+    "serving": "1 bowl (150g)",
+    "calories": 250,
+    "protein": 6,
+    "fat": 15,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 271,
+    "name": "Manchurian (Chicken)",
+    "serving": "1 bowl (150g)",
+    "calories": 300,
+    "protein": 18,
+    "fat": 18,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 272,
+    "name": "Chilli Chicken",
+    "serving": "1 bowl (150g)",
+    "calories": 350,
+    "protein": 20,
+    "fat": 20,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 273,
+    "name": "Vegetable Szechuan Noodles",
+    "serving": "1 plate (200g)",
+    "calories": 280,
+    "protein": 7,
+    "fat": 12,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 274,
+    "name": "Chicken Szechuan Noodles",
+    "serving": "1 plate (200g)",
+    "calories": 320,
+    "protein": 18,
+    "fat": 15,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 275,
+    "name": "Kung Pao Chicken",
+    "serving": "1 bowl (150g)",
+    "calories": 300,
+    "protein": 20,
+    "fat": 15,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 276,
+    "name": "Mapo Tofu",
+    "serving": "1 bowl (150g)",
+    "calories": 200,
+    "protein": 10,
+    "fat": 12,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 277,
+    "name": "Hot and Sour Soup (Vegetable)",
+    "serving": "1 bowl (200g)",
+    "calories": 120,
+    "protein": 5,
+    "fat": 4,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 278,
+    "name": "Hot and Sour Soup (Chicken)",
+    "serving": "1 bowl (200g)",
+    "calories": 150,
+    "protein": 10,
+    "fat": 8,
+    "carbohydrates": 18,
+    "count": 0
+  },
+  {
+    "id": 279,
+    "name": "Spring Onion Pancakes",
+    "serving": "1 piece (100g)",
+    "calories": 180,
+    "protein": 4,
+    "fat": 8,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 280,
+    "name": "Chinese Fried Chicken Wings",
+    "serving": "5 pieces (200g)",
+    "calories": 400,
+    "protein": 25,
+    "fat": 20,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 281,
+    "name": "Saag (Mustard Greens)",
+    "serving": "1 bowl (200g)",
+    "calories": 180,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 282,
+    "name": "Makki Roti (Corn Flatbread)",
+    "serving": "1 roti (100g)",
+    "calories": 150,
+    "protein": 4,
+    "fat": 5,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 285,
+    "name": "Gobi Paratha",
+    "serving": "1 paratha (150g)",
+    "calories": 280,
+    "protein": 6,
+    "fat": 10,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 286,
+    "name": "Plain Paratha",
+    "serving": "1 paratha (100g)",
+    "calories": 250,
+    "protein": 6,
+    "fat": 10,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 291,
+    "name": "Palak Paneer (Spinach with Cottage Cheese)",
+    "serving": "1 bowl (200g)",
+    "calories": 300,
+    "protein": 18,
+    "fat": 20,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 292,
+    "name": "Baingan Bharta (Roasted Eggplant)",
+    "serving": "1 bowl (200g)",
+    "calories": 180,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 25,
+    "count": 0
+  },
+  {
+    "id": 294,
+    "name": "Gajar Methi Sabzi",
+    "serving": "1 bowl (200g)",
+    "calories": 180,
+    "protein": 6,
+    "fat": 8,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 296,
+    "name": "Khichdi (Rice and Lentils)",
+    "serving": "1 bowl (200g)",
+    "calories": 250,
+    "protein": 10,
+    "fat": 6,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 301,
+    "name": "Pesarattu (Green Gram Pancake)",
+    "serving": "1 piece (150g)",
+    "calories": 250,
+    "protein": 12,
+    "fat": 8,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 303,
+    "name": "Chela (Gram Flour Pancake)",
+    "serving": "1 piece (100g)",
+    "calories": 200,
+    "protein": 8,
+    "fat": 10,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 304,
+    "name": "Whey Protein Powder (Unflavored)",
+    "serving": "1 scoop (30g)",
+    "calories": 120,
+    "protein": 24,
+    "fat": 1,
+    "carbohydrates": 3,
+    "count": 0
+  },
+  {
+    "id": 305,
+    "name": "Sabudana Khichdi (Sago Pudding)",
+    "serving": "1 bowl (200g)",
+    "calories": 250,
+    "protein": 5,
+    "fat": 12,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 307,
+    "name": "Sabudana Pudding",
+    "serving": "1 bowl (150g)",
+    "calories": 180,
+    "protein": 3,
+    "fat": 6,
+    "carbohydrates": 36,
+    "count": 0
+  },
+  {
+    "id": 308,
+    "name": "Protein Shake (Whey with Milk)",
+    "serving": "1 glass (250ml)",
+    "calories": 220,
+    "protein": 30,
+    "fat": 5,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 309,
+    "name": "Chia Pudding",
+    "serving": "1 bowl (200g)",
+    "calories": 150,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 20,
+    "count": 0
+  },
+  {
+    "id": 310,
+    "name": "Soy Protein Powder (Unflavored)",
+    "serving": "1 scoop (30g)",
+    "calories": 120,
+    "protein": 23,
+    "fat": 1,
+    "carbohydrates": 5,
+    "count": 0
+  },
+  {
+    "id": 311,
+    "name": "Tapioca Pearls (for Pudding)",
+    "serving": "1 bowl (100g)",
+    "calories": 180,
+    "protein": 1,
+    "fat": 0,
+    "carbohydrates": 45,
+    "count": 0
+  },
+  {
+    "id": 312,
+    "name": "Mango Protein Shake",
+    "serving": "1 glass (250ml)",
+    "calories": 250,
+    "protein": 20,
+    "fat": 6,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 313,
+    "name": "Orange Juice",
+    "serving": "1 cup (250ml)",
+    "calories": 110,
+    "protein": 2,
+    "fat": 0,
+    "carbohydrates": 26,
+    "count": 0
+  },
+  {
+    "id": 314,
+    "name": "Apple Juice",
+    "serving": "1 cup (250ml)",
+    "calories": 120,
+    "protein": 0,
+    "fat": 0,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 315,
+    "name": "Pineapple Juice",
+    "serving": "1 cup (250ml)",
+    "calories": 130,
+    "protein": 1,
+    "fat": 0,
+    "carbohydrates": 33,
+    "count": 0
+  },
+  {
+    "id": 316,
+    "name": "Carrot Juice",
+    "serving": "1 cup (250ml)",
+    "calories": 95,
+    "protein": 2,
+    "fat": 0,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 317,
+    "name": "Pomegranate Juice",
+    "serving": "1 cup (250ml)",
+    "calories": 150,
+    "protein": 1,
+    "fat": 0,
+    "carbohydrates": 36,
+    "count": 0
+  },
+  {
+    "id": 318,
+    "name": "Mixed Fruit Juice",
+    "serving": "1 cup (250ml)",
+    "calories": 120,
+    "protein": 1,
+    "fat": 0,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 319,
+    "name": "Bread",
+    "serving": "1 slice (28g)",
+    "calories": 75,
+    "protein": 3,
+    "fat": 1,
+    "carbohydrates": 14,
+    "count": 0
+  },
+  {
+    "id": 320,
+    "name": "Omelette",
+    "serving": "1 medium (2 eggs, 120g)",
+    "calories": 150,
+    "protein": 11,
+    "fat": 10,
+    "carbohydrates": 1,
+    "count": 0
+  },
+  {
+    "id": 321,
+    "name": "Tomato Sauce",
+    "serving": "1 tablespoon (15g)",
+    "calories": 15,
+    "protein": 0,
+    "fat": 0,
+    "carbohydrates": 4,
+    "count": 0
+  },
+  {
+    "id": 322,
+    "name": "Rara Chicken",
+    "serving": "1 bowl (200g)",
+    "calories": 290,
+    "protein": 25,
+    "fat": 18,
+    "carbohydrates": 8,
+    "count": 0
+  },
+  {
+    "id": 323,
+    "name": "Blender's Pride",
+    "serving": "1 peg (30ml)",
+    "calories": 65,
+    "protein": 0,
+    "fat": 0,
+    "carbohydrates": 0,
+    "count": 0
+  },
+  {
+    "id": 324,
+    "name": "Beer",
+    "serving": "1 bottle (330ml)",
+    "calories": 150,
+    "protein": 2,
+    "fat": 0,
+    "carbohydrates": 13,
+    "count": 0
+  },
+  {
+    "id": 325,
+    "name": "Wine",
+    "serving": "1 glass (150ml)",
+    "calories": 125,
+    "protein": 0,
+    "fat": 0,
+    "carbohydrates": 4,
+    "count": 0
+  },
+  {
+    "id": 326,
+    "name": "Fruit Custard",
+    "serving": "1 bowl (200g)",
+    "calories": 150,
+    "protein": 3,
+    "fat": 5,
+    "carbohydrates": 24,
+    "count": 0
+  },
+  {
+    "id": 327,
+    "name": "Soyabean Dal",
+    "serving": "1 bowl (200g)",
+    "calories": 250,
+    "protein": 20,
+    "fat": 8,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 328,
+    "name": "Seviyan",
+    "serving": "1 bowl (200g)",
+    "calories": 220,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 35,
+    "count": 0
+  }
+]

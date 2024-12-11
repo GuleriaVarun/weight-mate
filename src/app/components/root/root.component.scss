@@ -1,0 +1,234 @@
+    /* Body styling for center alignment */
+    :host {
+        ion-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 84vh;
+        }
+
+        .red {
+            color: #f78383;
+        }
+
+        .green {
+            color: green;
+        }
+
+        ::ng-deep ion-content {
+            --background: transparent;
+
+            #background-content {
+                background: transparent !important;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .other-main-card {
+            margin-top: 0.5em !important;
+        }
+
+
+
+        .calories-info {
+            display: inline-flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .calories-info div {
+            text-align: center;
+        }
+
+        .calories-info .value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Standard Card Styles */
+        .card-container {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-right: 0.5em;
+            justify-content: center;
+        }
+
+        .card {
+            flex: 1 1 45%;
+            // margin: 0.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            min-width: 150px;
+            max-width: 280px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 8px;
+        }
+
+        .streak-label {
+            font-size: 3.2em !important;
+
+        }
+
+        .calories-card {
+            width: auto !important;
+            margin: 0.5em;
+            height: 11em;
+        }
+
+        .nutrition-card {
+            width: auto !important;
+            margin: 0.5em;
+            height: 11em;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top: 0.5em;
+        }
+
+        .card-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Darker Gradient Backgrounds */
+        .protein-card {
+            background: linear-gradient(135deg, #ff9ead, #ab4854);
+        }
+
+        .carbs-card {
+            background: linear-gradient(135deg, #caacd6, #8a5aae);
+        }
+
+        .water-card {
+            background: linear-gradient(135deg, #769dca, #4d75b7);
+        }
+
+        .fats-card {
+            background: linear-gradient(135deg, #e0b7a4, #a16145);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+            .card-container {
+                flex-direction: column;
+            }
+
+            .card {
+                min-width: fit-content;
+                height: fit-content;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .card-container {
+                flex-direction: column;
+            }
+
+            .card {
+                min-width: fit-content;
+                height: fit-content;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .card-container {
+                flex-direction: column;
+            }
+
+            .card {
+                min-width: fit-content;
+                height: fit-content;
+            }
+        }
+
+        ion-row {
+            margin: 0.1em;
+        }
+
+        .cal-label {}
+
+        .other-container {
+            padding-top: 0.5em;
+        }
+
+        /* Specific Styles for Each Card */
+        .streak-card {
+            background: linear-gradient(135deg, #77d999, #61b94e);
+        }
+
+        .weight-card {
+            background: linear-gradient(135deg, #4be0de, #489f33);
+        }
+
+        .padding-class {
+            margin-top: 0.5em !important;
+        }
+
+        .overall-card {}
+
+        /* Styling the modal title */
+        .modal-title {
+            letter-spacing: 1px;
+        }
+
+        ion-content {}
+
+        .overall-info {
+            margin-top: 1em;
+            font-size: 15px;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    :host {
+        .chart {
+            position: absolute;
+            top: 3em;
+            left: 0;
+            width: 80vw !important;
+            height: 16.5vh !important;
+        }
+
+        ::ng-deep .toast-wrapper.toast-bottom {
+            margin-bottom: 5em;
+        }
+    }

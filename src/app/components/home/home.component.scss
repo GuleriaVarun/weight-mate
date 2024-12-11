@@ -1,0 +1,29 @@
+:host {
+    ion-content {
+        --background: transparent;
+    }
+
+    ion-header ion-toolbar:first-of-type {
+        border-bottom-left-radius: 3em;
+        border-bottom-right-radius: 3em;
+    }
+
+    ion-title {
+        font-size: 1.3rem;
+        letter-spacing: -.025em;
+        line-height: 1;
+        left: 0;
+        width: auto;
+        left: -3em;
+    }
+
+    ion-toolbar {
+        --color: white;
+        --background: transparent;
+        --border-radius: 3em;
+    }
+
+    .logo-header {
+        width: 2.3em;
+    }
+}
