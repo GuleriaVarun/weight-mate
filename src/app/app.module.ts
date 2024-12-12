@@ -20,6 +20,7 @@ import { LanguageService } from './services/language.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { MessageBannerComponent } from './components/message-banner/message-banner.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CalendarComponent,
     RootComponent,
     NutritionCardComponent,
+    MessageBannerComponent,
   ],
   imports: [
     BrowserModule,

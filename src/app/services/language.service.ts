@@ -19,7 +19,7 @@ export class LanguageService {
 
   changeLanguage(language: Language) {
     this.translate.use(language.code);
-    console.log('Language changed to: ', language.name);
+    this.tabActionService.presentToast("top", `Language changed to ${language.name}`);
     this.setUserLanguage(language.code);
   }
 

@@ -1,0 +1,17 @@
+:host {
+  ion-card {
+    position: absolute;
+    z-index: 100;
+    background: #171717f7;
+    text-align: center;
+    background-image: url(/assets/img/confetti.gif);
+    height: 8em;
+    background-size: cover; /* Adjust based on your needs */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    background-position: center; 
+  }
+
+  .label {
+    font-size: 18px;
+  }
+}
