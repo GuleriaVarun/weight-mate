@@ -31,8 +31,6 @@ export class HomeComponent implements OnInit {
   constructor(public readonly tabActionService: TabActionService) {}
 
   ngOnInit(): void {
-    console.debug('this.loggedInUser : ', this.tabActionService.userInfo);
-
     this.loggedInUser = JSON.parse(localStorage.getItem('userInfo') as any) || [];
     if (this.loggedInUser) {
       this.tabActionService.calculateTotalNutrition(

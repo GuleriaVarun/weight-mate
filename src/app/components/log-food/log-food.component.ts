@@ -39,12 +39,11 @@ export class LogFoodComponent implements OnInit {
     selectedFood.mealType = this.mealType;
     selectedFood.count = selectedFood.count + 1;
 
-    console.log('**** Logged in user food : ', this.loggedInUser.foodLogged);
-
     if (this.loggedInUser.foodLogged.length === 0) {
       this.loggedInUser.foodLogged.push({
         date: this.tabActionService.getDay(Date.now()),
         foodList: [selectedFood],
+        water: 0
       });
     } else {
       const getFoodForCurrentDate = this.loggedInUser.foodLogged.filter(
@@ -61,7 +60,6 @@ export class LogFoodComponent implements OnInit {
           (food: any) => food.id === selectedFood.id
         );
 
-        console.log('**** Food exists : ', foodExists);
         if (!foodExists) {
           getFoodForCurrentDate[0].foodList.push(selectedFood);
         }

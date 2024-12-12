@@ -221,7 +221,6 @@ export class AppComponent implements OnInit {
       tdee
     );
 
-    console.log(`Daily calories to maintain weight: ${tdee.toFixed(2)} kcal`);
     this.maintainWeight = `${Math.trunc(tdee)} kcal`;
     this.tabActionService.maintainWeight = Math.trunc(tdee);
     this.loseWeightFastCalsRequired = `${Math.trunc(
@@ -237,17 +236,14 @@ export class AppComponent implements OnInit {
   }
 
   handleGoalChange(ev: any) {
-    console.log('Goal Change: ', ev.detail.value);
     this.selectedGoal = ev.detail.value;
   }
 
   handleGenderChange(ev: any) {
-    console.log('Gender Change: ', ev.detail.value);
     this.selectedGender = ev.detail.value.value;
   }
 
   handleLifeStyleChange(ev: any) {
-    console.log('Lifestyle Change: ', ev.detail.value);
     this.selectedLifeStyle = ev.detail.value;
   }
 

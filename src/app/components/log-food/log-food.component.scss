@@ -13,31 +13,10 @@
         font-size: 24px;
     }
 
-    // ion-searchbar {
-    //     --color: #fff;
-    // }
-
-    ion-content {
-        --background: transparent;
-        --color: #fff;
-    }
-
-    ion-content {
-        display: flex;
-        padding: 0.3em;
-    }
-
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        // color: #333;
-    }
-
     .food-list {
         background: #ffffff;
-        margin: 1em;
+        height: 45vh;
+        overflow: auto;
     }
 
     .food-item {

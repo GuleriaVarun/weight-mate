@@ -138,8 +138,7 @@ export class FooterComponent implements OnInit {
         templateParams,
         '1zb2eTWggf-iaI7eJ'
       )
-      .then((response) => {
-        console.log('Feedback sent successfully', response);
+      .then(() => {
         this.tabActionService.presentToast('top', 'Feedback sent successfully!');
         this.modal.dismiss(this.name, 'confirm');
         this.isFeedbackModalOpen = false;
@@ -176,7 +175,6 @@ export class FooterComponent implements OnInit {
       return food.date === this.tabActionService.currentDate;
     });
 
-    console.log('***** getFoodForCurrentDate', getFoodForCurrentDate, '....... this.tabActionService.currentDate : ', this.tabActionService.currentDate);
     if (getFoodForCurrentDate) {
       const index = getFoodForCurrentDate.foodList.findIndex((f: any) => f.id === food.id);
       getFoodForCurrentDate.foodList.splice(index, 1);

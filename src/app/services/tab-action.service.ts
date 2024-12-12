@@ -25,7 +25,19 @@ export class TabActionService {
   dateChanged: Subject<string> = new Subject<string>();
   foodAdded: Subject<string> = new Subject<string>();
 
+  showBannerMessage: boolean = false;
+  bannerMessage: string = '';
+
   constructor(private toastController: ToastController) {}
+
+  showBannerPopup(message: string) {
+    this.showBannerMessage = true;
+    this.bannerMessage = message;
+    
+    setTimeout(() => {
+      this.showBannerMessage = false;
+    }, 5000);
+  }
 
   toggleSelectFoodScreen() {
     this.showSelectFoodScreen = true;
