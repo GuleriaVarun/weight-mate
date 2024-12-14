@@ -166,7 +166,13 @@ ion-item:hover {
 }
 
 .segment-button-checked {
-  color: #333;
+  color: white;
+  text-transform: capitalize;
+}
+
+ion-segment-button {
+  color: #fff;
+  text-transform: capitalize;
 }
 
 .logged-food {
@@ -188,7 +194,7 @@ ion-item:hover {
 
 ion-label {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 16px !important;
   color: white;
 }
 
