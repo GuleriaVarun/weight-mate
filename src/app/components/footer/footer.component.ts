@@ -37,6 +37,14 @@ export class FooterComponent implements OnInit {
     speed: 400,
   };
 
+  @ViewChild("discoverSlides", { static: false }) discoverSlides!: IonSlides;
+  selectedDiscoverSegment = "0";
+
+  discoverSlideOpts = {
+    initialSlide: 0,
+    speed: 400,
+  };
+
   languageList: Language[] = [
     {
       name: "English",
@@ -212,5 +220,16 @@ export class FooterComponent implements OnInit {
   async onSlideDidChange() {
     const index = await this.slides.getActiveIndex();
     this.selectedSegment = index.toString();
+  }
+
+  async onDiscoverSegmentChange(event: any) {
+    const index = parseInt(event.detail.value, 10);
+    await this.discoverSlides.slideTo(index);
+    this.mealToggle(index);
+  }
+
+  async onDiscoverSlideDidChange() {
+    const index = await this.discoverSlides.getActiveIndex();
+    this.selectedDiscoverSegment = index.toString();
   }
 }
