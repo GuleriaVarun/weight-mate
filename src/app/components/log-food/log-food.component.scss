@@ -14,9 +14,13 @@
     }
 
     .food-list {
-        background: #ffffff;
-        height: 60vh;
+        height: 70vh;
         overflow: auto;
+    }
+
+    .food-list-accordian {
+        background: transparent !important;
+        padding-bottom: 0.1em;
     }
 
     .food-item {
@@ -62,7 +66,7 @@
     }
 
     .nutrients {
-        font-size: 0.9em;
+        font-size: 12px;
         color: #666;
         margin-top: 5px;
     }

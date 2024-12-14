@@ -1,29 +1,34 @@
 <div class="card">
   <div class="card-header">
-    <ion-searchbar
-      [debounce]="1000"
-      (ionInput)="handleInput($event)"
-    ></ion-searchbar>
+    <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
   </div>
 
   <div class="food-list" *ngIf="showResults">
-    <table style="font-size: 13px;">
-      <tr class="food-item" *ngFor="let result of results">
-        <td class="food-name food-subtitle-cell">
-          <span class="title">{{ result.name }}</span>
-          <span class="nutrients">
-            Calories: {{ result.calories }}, Fats: {{ result.fat }}g, Carbs:
-            {{ result.carbohydrates }}g, Protein: {{ result.protein }}g, Serving:
-            {{ result.serving }} 
-          </span>
-        </td>
-        <td class="button-wrapper">
-          <button class="add-button" (click)="addFood(result)">
-            {{ "add" | translate }}
-          </button>
-          <span class="count">{{ result.count }}</span>
-        </td>
-      </tr>
-    </table>
+    <ion-accordion-group class="food-list-accordian-grp" *ngFor="let result of results">
+      <ion-accordion value="first" class="food-list-accordian">
+        <ion-item slot="header" color="dark">
+          <ion-label>
+            {{ result.name }}
+          </ion-label>
+        </ion-item>
+        <div slot="content">
+          <table>
+            <tr>
+              <td class="nutrients" style="width: 70%;">Calories: {{ result.calories }}, Fats: {{ result.fat }}g, Carbs:
+                {{ result.carbohydrates }}g, Protein: {{ result.protein }}g, Serving:
+                {{ result.serving }}</td>
+              <td style="width: 20%;">
+                <button class="add-button" (click)="addFood(result)">
+                  {{ "add" | translate }}
+                </button>
+              </td>
+              <td style="width: 10%;">
+                <span class="count">{{ result.count }}</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
   </div>
 </div>
