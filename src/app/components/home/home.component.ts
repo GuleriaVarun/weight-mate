@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       this.tabActionService.calculateTotalNutrition(
         this.loggedInUser?.foodLogged
       );
-      this.tabActionService.reloadHomePageForCurrentDate();
+      // this.tabActionService.reloadHomePageForCurrentDate();
     }
   }
 }

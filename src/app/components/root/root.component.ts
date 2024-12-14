@@ -51,6 +51,7 @@ export class RootComponent implements OnInit {
       this.progressChart.destroy();
       this.loadChartData();
       this.getStreak();
+      this.tabActionService.reloadHomePageForCurrentDate();
     });
   }
 

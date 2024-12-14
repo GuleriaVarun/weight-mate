@@ -19,7 +19,7 @@
           <span *ngIf="label === 'Protein'">{{ tabActionService?.userInfo?.macros?.protein?.grams | number}}g</span>
         </div>
         <div class="back-consumed" *ngIf="label === 'Water'">
-          <span *ngIf="label === 'Water'">8L</span>
+          <span *ngIf="label === 'Water'">4L</span>
           <div style="display: flex; margin: 0.5em;">
             <ion-button size="small" color="success" (click)="adjustWater($event, true)">
               <ion-icon slot="icon-only" name="add-outline"></ion-icon>

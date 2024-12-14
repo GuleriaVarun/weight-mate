@@ -154,6 +154,7 @@ ion-item:hover {
 
 .update-food-table {
   width: 100%;
+  font-size: 13px;
 }
 
 .update-food-table th {
@@ -161,6 +162,10 @@ ion-item:hover {
   padding-bottom: 0.5em;
   background-color: #20bdce;
   color: white;
+}
+
+.segment-button-checked {
+  color: #333;
 }
 
 .logged-food {
@@ -182,7 +187,7 @@ ion-item:hover {
 
 ion-label {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 13px;
   color: white;
 }
 
@@ -253,4 +258,6 @@ ion-item.selected {
   text-align: center;
 }
 
-:host {}
+:host {
+
+}

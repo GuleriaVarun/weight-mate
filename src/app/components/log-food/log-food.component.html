@@ -7,21 +7,23 @@
   </div>
 
   <div class="food-list" *ngIf="showResults">
-    <div class="food-item" *ngFor="let result of results">
-      <div class="food-details">
-        <div class="food-name">{{ result.name }}</div>
-        <div class="nutrients">
-          Calories: {{ result.calories }}, Fats: {{ result.fat }}g, Carbs:
-          {{ result.carbohydrates }}g, Protein: {{ result.protein }}g, Serving:
-          {{ result.serving }}
-        </div>
-      </div>
-      <div class="button-wrapper">
-        <button class="add-button" (click)="addFood(result)">
-          {{ "add" | translate }}
-        </button>
-        <span class="count">{{ result.count }}</span>
-      </div>
-    </div>
+    <table style="font-size: 13px;">
+      <tr class="food-item" *ngFor="let result of results">
+        <td class="food-name food-subtitle-cell">
+          <span class="title">{{ result.name }}</span>
+          <span class="nutrients">
+            Calories: {{ result.calories }}, Fats: {{ result.fat }}g, Carbs:
+            {{ result.carbohydrates }}g, Protein: {{ result.protein }}g, Serving:
+            {{ result.serving }} 
+          </span>
+        </td>
+        <td class="button-wrapper">
+          <button class="add-button" (click)="addFood(result)">
+            {{ "add" | translate }}
+          </button>
+          <span class="count">{{ result.count }}</span>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
