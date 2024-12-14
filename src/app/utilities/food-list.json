@@ -2528,5 +2528,85 @@
     "fat": 8,
     "carbohydrates": 35,
     "count": 0
-  }
+  },
+  {
+    "id": 329,
+    "name": "Amul Butter",
+    "serving": "1 tbsp (14g)",
+    "calories": 102,
+    "protein": 0.1,
+    "fat": 11.5,
+    "carbohydrates": 0,
+    "count": 0
+  },
+  {
+    "id": 330,
+    "name": "Garlic",
+    "serving": "1 clove (3g)",
+    "calories": 4,
+    "protein": 0.2,
+    "fat": 0,
+    "carbohydrates": 1,
+    "count": 0
+  },
+  {
+    "id": 331,
+    "name": "Oregano",
+    "serving": "1 tsp (1g)",
+    "calories": 3,
+    "protein": 0.1,
+    "fat": 0.1,
+    "carbohydrates": 0.7,
+    "count": 0
+  },
+  {
+    "id": 332,
+    "name": "Indian Achaar (Average)",
+    "serving": "1 tbsp (15g)",
+    "calories": 45,
+    "protein": 0.3,
+    "fat": 3.5,
+    "carbohydrates": 3,
+    "count": 0
+  },
+  {
+    "id": 333,
+    "name": "Mooli Parantha",
+    "serving": "1 piece (100g)",
+    "calories": 200,
+    "protein": 5,
+    "fat": 8,
+    "carbohydrates": 28,
+    "count": 0
+  },
+  {
+    "id": 334,
+    "name": "Roasted Chicken",
+    "serving": "100g",
+    "calories": 165,
+    "protein": 31,
+    "fat": 4,
+    "carbohydrates": 0,
+    "count": 0
+  },
+  {
+    "id": 335,
+    "name": "Air-Fried Chicken",
+    "serving": "100g",
+    "calories": 160,
+    "protein": 28,
+    "fat": 5,
+    "carbohydrates": 2,
+    "count": 0
+  },
+  {
+    "id": 336,
+    "name": "Garlic Naan",
+    "serving": "1 piece (80g)",
+    "calories": 260,
+    "protein": 6,
+    "fat": 8,
+    "carbohydrates": 40,
+    "count": 0
+  }  
 ]

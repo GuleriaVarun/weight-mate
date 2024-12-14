@@ -111,7 +111,7 @@ export class NutritionCardComponent implements AfterViewInit {
     this.remaining = (3 - this.waterConsumed).toFixed(1) + "L";
     this.consumed = this.waterConsumed.toFixed(1) + "L";
 
-    if (this.consumed === "8.0L") {
+    if (this.consumed === "4.0L") {
       this.tabActionService.showBannerPopup(
         "Great job! You have completed your water intake for today—keep it up and stay hydrated!"
       );
