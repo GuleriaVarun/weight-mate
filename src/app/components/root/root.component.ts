@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TabActionService } from 'src/app/services/tab-action.service';
 import ideasList from '../../utilities/healthy-ideas.json';
 import { Chart } from 'chart.js/auto';
@@ -9,7 +9,8 @@ import {
   BannerAdPosition,
   BannerAdSize,
 } from '@capacitor-community/admob';
-import { ToastController } from '@ionic/angular';
+import { IonNav } from '@ionic/angular';
+import { WeightTrackerComponent } from '../weight-tracker/weight-tracker.component';
 
 const options: BannerAdOptions = {
   adId: 'ca-app-pub-6458339069545467/6448045816',
@@ -24,6 +25,7 @@ const options: BannerAdOptions = {
   styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit {
+  @ViewChild('nav') private nav!: IonNav;
   progress = 50;
   isModalOpen: boolean = false;
   isAccountModalOpen: boolean = false;
@@ -36,6 +38,7 @@ export class RootComponent implements OnInit {
   carbsLabel!: string;
   proteinLabel!: string;
   waterLabel!: string;
+  
   constructor(
     public readonly tabActionService: TabActionService,
     private translateService: TranslateService,
@@ -234,7 +237,7 @@ export class RootComponent implements OnInit {
                 label: `Calories Intake`,
                 data: data2,
                 borderColor: '#fff',
-                backgroundColor: ['#B4DAD2', '#7DA1C4', '#A3B4A2', '#F3E6C9'],
+                backgroundColor: ['#89CFF0', '#7DF9FF', '#A3B4A2', '#DC143C'],
                 borderWidth: 2,
               },
             ],
@@ -300,5 +303,9 @@ export class RootComponent implements OnInit {
     const formattedDate = date.toLocaleDateString('en-US', options);
 
     return formattedDate;
+  }
+
+  onRecordWeightWillPresent() {
+    this.nav.setRoot(WeightTrackerComponent);
   }
 }

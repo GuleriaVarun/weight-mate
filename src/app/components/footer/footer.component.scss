@@ -237,6 +237,19 @@ ion-item.selected {
   --color: white;
 }
 
+.meal-icons {
+  width: 2em; /* Set equal width and height */
+  height: 2em;
+  background-color: #3498db; /* Add a background color */
+  border-radius: 50%; /* Make it round */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  color: white; /* Optional: Text color */
+  font-size: 2em; /* Optional: Font size */
+  margin: 1em;
+}
+
 .meal-type {
   margin: auto;
   text-align: center;

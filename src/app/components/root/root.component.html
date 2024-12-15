@@ -1,4 +1,5 @@
 <ion-content>
+  <!-- Calories Panel -->
   <ion-row>
     <ion-col>
       <div class="main-card calories-card">
@@ -9,22 +10,18 @@
         </div>
         <div class="calories-info count-card">
           <div>
-            <p
-              class="value streak-label"
-              [class.red]="
+            <p class="value streak-label" [class.red]="
                 tabActionService.totalCalories > tabActionService.maintainWeight
-              "
-              [class.green]="
+              " [class.green]="
                 tabActionService.totalCalories < tabActionService.maintainWeight
-              "
-            >
+              ">
               {{ tabActionService.totalCalories }}
             </p>
             kcal
           </div>
         </div>
         <div>
-          <p class="value" style="color: crimson">
+          <p class="value" style="color: rgb(221, 65, 96)">
             {{ tabActionService.getRemainingCalories() }} left
           </p>
         </div>
@@ -34,19 +31,46 @@
       <div class="main-card nutrition-card">
         <div class="card-title">
           <span>
-            {{ "streak" | translate }}
+            Weight
           </span>
         </div>
         <div class="calories-info count-card">
           <div>
-            <p class="value streak-label">{{ streak }}</p>
-            <p class="cal-label">{{ "days" | translate }}</p>
+            <p class="value streak-label" [class.red]="
+                tabActionService.totalCalories > tabActionService.maintainWeight
+              " [class.green]="
+                tabActionService.totalCalories < tabActionService.maintainWeight
+              ">
+              {{ tabActionService.userInfo.weight }}
+            </p>
+            kg
           </div>
+        </div>
+        <div>
+          <ion-button class="disableClass" size="small" style="font-size: 9px;" fill="clear" id="openWeightModal"> Click to record weight</ion-button>
+
+          <!-- Record Weight Modal -->
+          <ion-modal  class="weight-modal" #modal trigger="openWeightModal" (willPresent)="onRecordWeightWillPresent()">
+            <ng-template>
+              <ion-header class="custom-toolbar">
+                <ion-toolbar class="custom-toolbar">
+                  <ion-title>Weight Tracker</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button (click)="modal.dismiss()"> Close </ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-nav #nav></ion-nav>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
         </div>
       </div>
     </ion-col>
   </ion-row>
 
+  <!-- Macros Panel -->
   <ion-row>
     <div class="main-card">
       <div class="card-title">
@@ -56,42 +80,22 @@
       </div>
       <div class="calories-info">
         <div class="card-container" *ngIf="fatLabel">
-          <app-nutrition-card
-            label="Fat"
-            consumed="{{ tabActionService.totalFat }}g"
-            remaining="30g"
-            chartId="fatChart"
-            [colors]="{ from: '#ff9ead', to: '#ab4854' }"
-          ></app-nutrition-card>
-          <app-nutrition-card
-            label="Protein"
-            consumed="{{ tabActionService.totalProtein }}g"
-            remaining="20g"
-            chartId="proteinChart"
-            [colors]="{ from: '#caacd6', to: '#8a5aae' }"
-          ></app-nutrition-card>
+          <app-nutrition-card label="Fat" consumed="{{ tabActionService.totalFat }}g" remaining="30g" chartId="fatChart"
+            [colors]="{ from: '#ff9ead', to: '#ab4854' }"></app-nutrition-card>
+          <app-nutrition-card label="Protein" consumed="{{ tabActionService.totalProtein }}g" remaining="20g"
+            chartId="proteinChart" [colors]="{ from: '#caacd6', to: '#8a5aae' }"></app-nutrition-card>
         </div>
         <div class="card-container">
-          <app-nutrition-card
-            label="Carbs"
-            consumed="{{ tabActionService.totalCarbs }}g"
-            remaining="80g"
-            chartId="carbsChart"
-            [colors]="{ from: '#769dca', to: '#4d75b7' }"
-          ></app-nutrition-card>
-          <app-nutrition-card
-            label="Water"
-            [consumed]="waterConsumed + 'L'"
-            remaining="1L"
-            chartId="waterChart"
-            [waterConsumed]="waterConsumed"
-            [colors]="{ from: '#e0b7a4', to: '#a16145' }"
-          ></app-nutrition-card>
+          <app-nutrition-card label="Carbs" consumed="{{ tabActionService.totalCarbs }}g" remaining="80g"
+            chartId="carbsChart" [colors]="{ from: '#769dca', to: '#4d75b7' }"></app-nutrition-card>
+          <app-nutrition-card label="Water" [consumed]="waterConsumed + 'L'" remaining="1L" chartId="waterChart"
+            [waterConsumed]="waterConsumed" [colors]="{ from: '#e0b7a4', to: '#a16145' }"></app-nutrition-card>
         </div>
       </div>
     </div>
   </ion-row>
 
+  <!-- Insight Panel -->
   <ion-row>
     <ion-col>
       <div class="main-card overall-card">
@@ -109,18 +113,36 @@
     </ion-col>
   </ion-row>
 
+  <!-- Strek and Quick Tips Panel -->
   <ion-row>
-    <div class="main-card overall-card">
-      <div class="card-title">
-        <span>
-          {{ "quickTips" | translate }}
-        </span>
+    <ion-col>
+      <div class="main-card nutrition-card">
+        <div class="card-title">
+          <span>
+            {{ "streak" | translate }}
+          </span>
+        </div>
+        <div class="calories-info count-card">
+          <div>
+            <p class="value streak-label">{{ streak }}</p>
+            <p class="cal-label">{{ "days" | translate }}</p>
+          </div>
+        </div>
       </div>
-      <ion-icon class="card-icon" name="bulb-outline"></ion-icon>
-      <div class="overall-info mate">
-        {{ ideaOfTheDay }}
+    </ion-col>
+    <ion-col>
+      <div class="main-card nutrition-card">
+        <div class="card-title">
+          <span>
+            {{ "quickTips" | translate }}
+          </span>
+        </div>
+        <ion-icon class="card-icon" name="bulb-outline"></ion-icon>
+        <div class="overall-info mate count-card">
+          {{ ideaOfTheDay }}
+        </div>
       </div>
-    </div>
+    </ion-col>
   </ion-row>
 
   <ion-row style="margin-bottom: 1.5em">

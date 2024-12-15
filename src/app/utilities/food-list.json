@@ -2608,5 +2608,75 @@
     "fat": 8,
     "carbohydrates": 40,
     "count": 0
-  }  
+  },
+  {
+    "id": 337,
+    "name": "Malai Chaap",
+    "serving": "1 piece (120g)",
+    "calories": 250,
+    "protein": 12,
+    "fat": 15,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 338,
+    "name": "Afghani Chaap",
+    "serving": "1 piece (120g)",
+    "calories": 270,
+    "protein": 14,
+    "fat": 16,
+    "carbohydrates": 12,
+    "count": 0
+  },
+  {
+    "id": 339,
+    "name": "Tandoori Chaap",
+    "serving": "1 piece (100g)",
+    "calories": 220,
+    "protein": 13,
+    "fat": 10,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 340,
+    "name": "Chicken Roll",
+    "serving": "1 roll (150g)",
+    "calories": 320,
+    "protein": 20,
+    "fat": 12,
+    "carbohydrates": 35,
+    "count": 0
+  },
+  {
+    "id": 341,
+    "name": "Paneer Roll",
+    "serving": "1 roll (150g)",
+    "calories": 350,
+    "protein": 15,
+    "fat": 18,
+    "carbohydrates": 30,
+    "count": 0
+  },
+  {
+    "id": 342,
+    "name": "Chaap Roll",
+    "serving": "1 roll (150g)",
+    "calories": 340,
+    "protein": 14,
+    "fat": 17,
+    "carbohydrates": 32,
+    "count": 0
+  },
+  {
+    "id": 343,
+    "name": "Roomali Roti",
+    "serving": "1 piece (50g)",
+    "calories": 150,
+    "protein": 4,
+    "fat": 3,
+    "carbohydrates": 28,
+    "count": 0
+  }
 ]

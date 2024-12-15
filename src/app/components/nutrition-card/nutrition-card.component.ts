@@ -32,9 +32,9 @@ export class NutritionCardComponent implements AfterViewInit {
   updateWaterCard() {
     const index = this.getFoodIndexForCurrentDate();
     if (index == -1) {
-      this.consumed = "0L";
+      this.waterConsumed = 0;
     } else {
-      this.consumed = this.loggedInUser.foodLogged[index].water;
+      this.waterConsumed = this.loggedInUser.foodLogged[index].water;
     }
   }
 

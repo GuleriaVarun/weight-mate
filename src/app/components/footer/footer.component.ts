@@ -26,6 +26,7 @@ export class FooterComponent implements OnInit {
   isGoalModalOpen: boolean = false;
   isAccountModalOpen: boolean = false;
   isFeedbackModalOpen: boolean = false;
+  isFoodLogModalOpen: boolean = false;
   selectedMealType: string | undefined = undefined;
   updateLoggedFood: any[] = [];
 
@@ -79,6 +80,10 @@ export class FooterComponent implements OnInit {
     this.isAccountModalOpen = true;
   }
 
+  openFoodLogModal() {
+    this.isFoodLogModalOpen = true;
+  }
+
   openGoalModal() {
     this.isGoalModalOpen = true;
   }
@@ -92,6 +97,7 @@ export class FooterComponent implements OnInit {
     this.isGoalModalOpen = false;
     this.isAccountModalOpen = false;
     this.isFeedbackModalOpen = false;
+    this.isFoodLogModalOpen = false;
   }
 
   confirm() {
