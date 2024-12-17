@@ -59,9 +59,16 @@ export class LogFoodComponent implements OnInit {
         const foodExists = getFoodForCurrentDate[0].foodList.find(
           (food: any) => food.id === selectedFood.id
         );
-
+        
         if (!foodExists) {
           getFoodForCurrentDate[0].foodList.push(selectedFood);
+        } else {
+          foodExists.count = foodExists.count + 1;
+          const foodIndex = getFoodForCurrentDate[0].foodList.findIndex(
+            (food: any) => food.id === selectedFood.id
+          );
+
+          getFoodForCurrentDate[0].foodList[foodIndex] = foodExists;
         }
 
       } else {

@@ -4,31 +4,17 @@
   </div>
 
   <div class="food-list" *ngIf="showResults">
-    <ion-accordion-group class="food-list-accordian-grp" *ngFor="let result of results">
-      <ion-accordion value="first" class="food-list-accordian">
-        <ion-item slot="header" color="dark">
-          <ion-label>
-            {{ result.name }}
-          </ion-label>
-        </ion-item>
-        <div slot="content">
-          <table>
-            <tr>
-              <td class="nutrients" style="width: 70%;">Calories: {{ result.calories }}, Fats: {{ result.fat }}g, Carbs:
-                {{ result.carbohydrates }}g, Protein: {{ result.protein }}g, Serving:
-                {{ result.serving }}</td>
-              <td style="width: 20%;">
-                <button class="add-button" (click)="addFood(result)">
-                  {{ "add" | translate }}
-                </button>
-              </td>
-              <td style="width: 10%;">
-                <span class="count">{{ result.count }}</span>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </ion-accordion>
-    </ion-accordion-group>
+    <ion-list style="padding-bottom: 0;">
+      <ion-item *ngFor="let food of results">
+        <ion-label style="margin: 0; white-space: inherit;">
+          <h3 style="margin: 0;">{{food.name}} <span *ngIf="food.count > 0">({{food.count}})</span></h3>
+          <p>Calories: {{ food.calories }}, Fats: {{ food.fat }}g, Carbs:
+            {{ food.carbohydrates }}g, Protein: {{ food.protein }}g, Serving:
+            {{ food.serving }}</p>
+        </ion-label>
+        <ion-icon (click)="addFood(food)" color="tertiary" slot="end" style="color: black;"
+          name="add-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
   </div>
 </div>

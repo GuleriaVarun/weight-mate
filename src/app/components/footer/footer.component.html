@@ -57,11 +57,11 @@
                 </div>
                 <span>Add Meal</span>
               </div>
-              <div id="open-food-modal" (click)="openFoodLogModal()">
+              <div class="disableClass" id="open-food-modal" (click)="openFoodLogModal()">
                 <div class="meal-icons">
-                  <span><ion-icon name="pencil-outline"></ion-icon></span>
+                  <span><ion-icon name="footsteps-outline"></ion-icon></span>
                 </div>
-                <span>Update Meal</span>
+                <span>Log Steps</span>
               </div>
               <div class="disableClass">
                 <div class="meal-icons">
@@ -83,11 +83,18 @@
           </div>
         </ion-row>
       </ion-grid>
+      <ion-row>
+        <ion-col>
+          <span style="color: white; padding: 0.5em;">"Exciting updates are on the way! 🚀 Stay tuned as we unlock new features and re-enable disabled
+            options. Watch this space!"</span>
+        </ion-col>
+      </ion-row>
     </ion-content>
   </ng-template>
 </ion-modal>
 
-<ion-modal [isOpen]="isFoodLogModalOpen" trigger="open-food-modal" (willDismiss)="onWillDismiss($event)" handleBehavior="cycle">
+<ion-modal [isOpen]="isFoodLogModalOpen" trigger="open-food-modal" (willDismiss)="onWillFoodDismiss()"
+  handleBehavior="cycle">
   <ng-template>
     <ion-header>
       <ion-toolbar class="custom-toolbar">
@@ -100,7 +107,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding profile-content" style="color: #fff; --color: #fff">
-      <ion-segment (ionChange)="onSegmentChange($event)">
+      <ion-segment [(ngModel)]="selectedMealToggle" (ionChange)="onSegmentChange($event)">
         <ion-segment-button value="0">Add Meal</ion-segment-button>
         <ion-segment-button value="1">Delete Meal</ion-segment-button>
       </ion-segment>
@@ -149,22 +156,105 @@
 
         </ion-slide>
         <ion-slide>
-          <table class="update-food-table">
-            <tr class="mate">
-              <th>Food</th>
-              <th>Meal Type</th>
-              <th>Qty</th>
-              <th>Action</th>
-            </tr>
-            <tr *ngFor="let food of updateLoggedFood" style="text-align: center">
-              <td>{{ food.name }}</td>
-              <td>{{ food.mealType }}</td>
-              <td>{{ food.count }}</td>
-              <td>
-                <ion-button color="danger" style="height: 2em" (click)="deleteFood(food, $event)">Delete</ion-button>
-              </td>
-            </tr>
-          </table>
+          <div *ngIf="showFoodCard" style="width: 90%; justify-content: center;">
+            <div *ngIf="updateLoggedFood.length > 0">
+
+              <!-- Breakfast Card -->
+              <ion-card class="foodCard">
+                <ion-card-header class="custom-toolbar food-card-header">
+                  <ion-card-title class="food-card-title">Breakfast</ion-card-title>
+                </ion-card-header>
+                <ion-card-content style="padding-bottom: 0;" *ngIf="getBreakFastList().length > 0">
+                  <ion-list style="padding-bottom: 0;">
+                    <ion-item *ngFor="let food of getBreakFastList()">
+                      <ion-label style="margin: 0;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                      </ion-label>
+                      <ion-icon (click)="deleteFood(food, $event)" style="color: black;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                    </ion-item>
+                  </ion-list>
+                </ion-card-content>
+                <ion-card-content *ngIf="getBreakFastList().length === 0">
+                  No food added for breakfast
+                </ion-card-content>
+                <ion-button fill="clear">Total : {{getBreakFastTotalCalories()}} Calories</ion-button>
+              </ion-card>
+
+              <!-- Lunch Card -->
+              <ion-card class="foodCard">
+                <ion-card-header class="custom-toolbar food-card-header">
+                  <ion-card-title class="food-card-title">Lunch</ion-card-title>
+                </ion-card-header>
+                <ion-card-content style="padding-bottom: 0;" *ngIf="getLunchList().length > 0">
+                  <ion-list style="padding-bottom: 0;">
+                    <ion-item *ngFor="let food of getLunchList()">
+                      <ion-label style="margin: 0;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                      </ion-label>
+                      <ion-icon (click)="deleteFood(food, $event)" style="color: black;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                    </ion-item>
+                  </ion-list>
+                </ion-card-content>
+                <ion-card-content *ngIf="getLunchList().length === 0">
+                  No food added for lunch
+                </ion-card-content>
+                <ion-button fill="clear">Total : {{getLunchTotalCalories()}} Calories</ion-button>
+
+              </ion-card>
+
+              <!-- Snacks Card -->
+              <ion-card class="foodCard">
+                <ion-card-header class="custom-toolbar food-card-header">
+                  <ion-card-title class="food-card-title">Snacks</ion-card-title>
+                </ion-card-header>
+                <ion-card-content style="padding-bottom: 0;" *ngIf="getSnacksList().length > 0">
+                  <ion-list style="padding-bottom: 0;">
+                    <ion-item *ngFor="let food of getSnacksList()">
+                      <ion-label style="margin: 0;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                      </ion-label>
+                      <ion-icon (click)="deleteFood(food, $event)" style="color: black;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                    </ion-item>
+                  </ion-list>
+                </ion-card-content>
+                <ion-card-content *ngIf="getSnacksList().length === 0">
+                  No food added for snacks
+                </ion-card-content>
+                <ion-button fill="clear">Total : {{getSnacksTotalCalories()}} Calories</ion-button>
+
+              </ion-card>
+
+              <!-- Dinner Card -->
+              <ion-card class="foodCard">
+                <ion-card-header class="custom-toolbar food-card-header">
+                  <ion-card-title class="food-card-title">Dinner</ion-card-title>
+                </ion-card-header>
+                <ion-card-content style="padding-bottom: 0;" *ngIf="getDinnerList().length > 0">
+                  <ion-list style="padding-bottom: 0;">
+                    <ion-item *ngFor="let food of getDinnerList()">
+                      <ion-label style="margin: 0;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                      </ion-label>
+                      <ion-icon (click)="deleteFood(food, $event)" style="color: black;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                    </ion-item>
+                  </ion-list>
+                </ion-card-content>
+                <ion-card-content *ngIf="getDinnerList().length === 0">
+                  No food added for dinner
+                </ion-card-content>
+                <ion-button fill="clear">Total : {{getDinnerTotalCalories()}} Calories</ion-button>
+
+              </ion-card>
+            </div>
+          </div>
         </ion-slide>
       </ion-slides>
 

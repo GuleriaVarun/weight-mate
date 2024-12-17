@@ -6,6 +6,7 @@ import { TabActionService } from "src/app/services/tab-action.service";
 import { ThemeService } from "src/app/services/theme.service";
 import { LanguageService } from "src/app/services/language.service";
 import { Language } from "src/app/interfaces/language.interface";
+import { AdsService } from "src/app/services/ads.service";
 
 @Component({
   selector: "app-footer",
@@ -61,10 +62,13 @@ export class FooterComponent implements OnInit {
     },
   ];
 
+  showFoodCard: boolean = false;
+
   constructor(
     public readonly tabActionService: TabActionService,
     public languageService: LanguageService,
-    public themeService: ThemeService
+    public themeService: ThemeService,
+    private adsService: AdsService
   ) {}
 
   ngOnInit(): void {
@@ -111,6 +115,11 @@ export class FooterComponent implements OnInit {
     if (ev.detail.role === "done") {
       this.message = `Hello, ${ev.detail.data}!`;
     }
+  }
+
+  onWillFoodDismiss() {
+    this.selectedMealType = undefined;
+    this.adsService.showInterstitialAd();
   }
 
   selectMealType(mealType: string) {
@@ -182,7 +191,9 @@ export class FooterComponent implements OnInit {
       });
   }
 
+  selectedMealToggle: any = 0;
   mealToggle(selectedValue: any) {
+    this.selectedMealToggle = selectedValue;
     if (selectedValue === 1) {
       const getFoodForCurrentDate =
         this.tabActionService.userInfo.foodLogged?.find((food) => {
@@ -192,7 +203,45 @@ export class FooterComponent implements OnInit {
       if (getFoodForCurrentDate) {
         this.updateLoggedFood = getFoodForCurrentDate.foodList;
       }
+      this.showFoodCard = true;
+
+      console.log(this.updateLoggedFood);
+    } else {
+      this.showFoodCard = false;
     }
+  }
+
+  getBreakFastList() {
+    return this.updateLoggedFood.filter((food) => food.mealType === 'breakfast');
+  }
+
+  getBreakFastTotalCalories() {
+    console.log('*** ', this.getBreakFastList());
+    return this.getBreakFastList().reduce((acc, i) => i.calories + acc, 0);
+  }
+
+  getLunchList() {
+    return this.updateLoggedFood.filter((food) => food.mealType === 'lunch');
+  }
+
+  getLunchTotalCalories() {
+    return this.getLunchList().reduce((acc, i) => i.calories + acc, 0);
+  }
+
+  getSnacksList() {
+    return this.updateLoggedFood.filter((food) => food.mealType === 'snacks');
+  }
+  
+  getSnacksTotalCalories() {
+    return this.getSnacksList().reduce((acc, i) => i.calories + acc, 0);
+  }
+
+  getDinnerList() {
+    return this.updateLoggedFood.filter((food) => food.mealType === 'dinner');
+  }
+  
+  getDinnerTotalCalories() {
+    return this.getDinnerList().reduce((acc, i) => i.calories + acc, 0);
   }
 
   deleteFood(food: any, ev: any) {
@@ -214,6 +263,7 @@ export class FooterComponent implements OnInit {
 
     this.tabActionService.updateLocalStorage(this.tabActionService.userInfo);
     this.tabActionService.reloadHomePageForCurrentDate();
+    this.tabActionService.foodAddEvent();
     ev.stopPropagation();
   }
 

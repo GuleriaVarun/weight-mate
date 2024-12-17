@@ -2678,5 +2678,105 @@
     "fat": 3,
     "carbohydrates": 28,
     "count": 0
+  },
+  {
+    "id": 344,
+    "name": "Banana Shake",
+    "serving": "1 glass (250ml)",
+    "calories": 200,
+    "protein": 5,
+    "fat": 3,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 345,
+    "name": "Kaddu Sabzi",
+    "serving": "1 bowl (150g)",
+    "calories": 90,
+    "protein": 2,
+    "fat": 5,
+    "carbohydrates": 10,
+    "count": 0
+  },
+  {
+    "id": 346,
+    "name": "Potato Chips",
+    "serving": "1 small packet (30g)",
+    "calories": 160,
+    "protein": 2,
+    "fat": 10,
+    "carbohydrates": 15,
+    "count": 0
+  },
+  {
+    "id": 347,
+    "name": "Ice Cream",
+    "serving": "1 scoop (100g)",
+    "calories": 207,
+    "protein": 3,
+    "fat": 11,
+    "carbohydrates": 24,
+    "count": 0
+  },
+  {
+    "id": 348,
+    "name": "Popcorn",
+    "serving": "1 cup (30g)",
+    "calories": 120,
+    "protein": 3,
+    "fat": 1,
+    "carbohydrates": 22,
+    "count": 0
+  },
+  {
+    "id": 349,
+    "name": "French Fries",
+    "serving": "1 medium (117g)",
+    "calories": 365,
+    "protein": 3,
+    "fat": 17,
+    "carbohydrates": 48,
+    "count": 0
+  },
+  {
+    "id": 350,
+    "name": "Fried Chicken Burger",
+    "serving": "1 burger (150g)",
+    "calories": 450,
+    "protein": 20,
+    "fat": 25,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 351,
+    "name": "Cake Slice Chocolate",
+    "serving": "1 slice (80g)",
+    "calories": 300,
+    "protein": 4,
+    "fat": 15,
+    "carbohydrates": 40,
+    "count": 0
+  },
+  {
+    "id": 352,
+    "name": "Cake Slice Vanilla",
+    "serving": "1 slice (80g)",
+    "calories": 280,
+    "protein": 4,
+    "fat": 12,
+    "carbohydrates": 38,
+    "count": 0
+  },
+  {
+    "id": 353,
+    "name": "Cake Slice Butterscotch",
+    "serving": "1 slice (80g)",
+    "calories": 290,
+    "protein": 4,
+    "fat": 14,
+    "carbohydrates": 39,
+    "count": 0
   }
 ]

@@ -3,21 +3,10 @@ import { TabActionService } from 'src/app/services/tab-action.service';
 import ideasList from '../../utilities/healthy-ideas.json';
 import { Chart } from 'chart.js/auto';
 import { TranslateService } from '@ngx-translate/core';
-import {
-  AdMob,
-  BannerAdOptions,
-  BannerAdPosition,
-  BannerAdSize,
-} from '@capacitor-community/admob';
 import { IonNav } from '@ionic/angular';
 import { WeightTrackerComponent } from '../weight-tracker/weight-tracker.component';
-
-const options: BannerAdOptions = {
-  adId: 'ca-app-pub-6458339069545467/6448045816',
-  adSize: BannerAdSize.BANNER,
-  position: BannerAdPosition.BOTTOM_CENTER,
-  margin: 80,
-};
+import { AdMob } from '@capacitor-community/admob';
+import { AdsService } from 'src/app/services/ads.service';
 
 @Component({
   selector: 'app-root-content',
@@ -42,6 +31,7 @@ export class RootComponent implements OnInit {
   constructor(
     public readonly tabActionService: TabActionService,
     private translateService: TranslateService,
+    private adsService: AdsService
   ) {
     this.tabActionService.dateChanged.subscribe(() => {
       this.insightChart.destroy();
@@ -76,11 +66,11 @@ export class RootComponent implements OnInit {
   }
 
   private initAdMob() {
-    AdMob.showBanner(options);
+    this.adsService.showAdBanner();
   }
 
   private hideAdMob() {
-    AdMob.hideBanner();
+    this.adsService.hideAdBanner();
   }
 
   ngAfterViewInit() {
