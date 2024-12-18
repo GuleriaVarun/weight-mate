@@ -28,6 +28,7 @@ export class FooterComponent implements OnInit {
   isAccountModalOpen: boolean = false;
   isFeedbackModalOpen: boolean = false;
   isFoodLogModalOpen: boolean = false;
+  isWeightTrackerModalOpen: boolean = false;
   selectedMealType: string | undefined = undefined;
   updateLoggedFood: any[] = [];
 
@@ -96,12 +97,19 @@ export class FooterComponent implements OnInit {
     this.isFeedbackModalOpen = true;
   }
 
+  openWeightTrackerModal() {
+    this.isWeightTrackerModalOpen = true;
+    this.adsService.showAdBanner();
+  }
+
   cancel() {
     this.modal.dismiss(null, "cancel");
     this.isGoalModalOpen = false;
     this.isAccountModalOpen = false;
     this.isFeedbackModalOpen = false;
     this.isFoodLogModalOpen = false;
+    this.isWeightTrackerModalOpen = false;
+    this.adsService.hideAdBanner();
   }
 
   confirm() {

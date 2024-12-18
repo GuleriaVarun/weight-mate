@@ -74,8 +74,8 @@
         </ion-row>
         <ion-row>
           <div style="display: flex; text-align: center; color: #fff;">
-            <div class="disableClass">
-              <div class="meal-icons">
+            <div>
+              <div class="meal-icons" (click)="openWeightTrackerModal()">
                 <span><ion-icon name="barbell-outline"></ion-icon></span>
               </div>
               <span>Log Weight</span>
@@ -364,6 +364,7 @@
   </ng-template>
 </ion-modal>
 
+<!-- Feedback Modal -->
 <ion-modal [isOpen]="isFeedbackModalOpen" trigger="open-feedback-modal" (willDismiss)="onWillDismiss($event)"
   [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
   <ng-template>
@@ -400,6 +401,27 @@
   </ng-template>
 </ion-modal>
 
+<!-- Weight Tracker Modal -->
+<ion-modal [isOpen]="isWeightTrackerModalOpen" trigger="open-weight-modal" (willDismiss)="onWillDismiss($event)"
+  [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar class="custom-toolbar">
+        <ion-buttons slot="start">
+          <ion-button class="cancel-button" (click)="cancel()">
+            <ion-icon class="cancel-button" (click)="cancel()" slot="icon-only" name="close-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title class="modal-title">Weight Tracker</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding profile-content">
+      <app-weight-tracker></app-weight-tracker>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<!-- Account Modal -->
 <ion-modal class="account-modal" [isOpen]="isAccountModalOpen" trigger="open-account-modal"
   (willDismiss)="onWillDismiss($event)" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75, 1]"
   handleBehavior="cycle">

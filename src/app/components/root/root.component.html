@@ -1,11 +1,11 @@
 <ion-content>
   <!-- Warning Panel -->
   <ion-row class="red" style="text-align: center;"
-  *ngIf="tabActionService.totalCalories > tabActionService.maintainWeight">
-  <ion-col>Exceeded calorie limit by {{tabActionService.totalCalories - tabActionService.maintainWeight}}kcal. Eat
-    wisely!</ion-col>
+    *ngIf="tabActionService.totalCalories > tabActionService.maintainWeight">
+    <ion-col>Exceeded calorie limit by {{tabActionService.totalCalories - tabActionService.maintainWeight}}kcal. Eat
+      wisely!</ion-col>
   </ion-row>
-  
+
   <!-- Calories Panel -->
   <ion-row>
     <ion-col>
@@ -51,24 +51,8 @@
         </div>
         <div>
           <ion-button class="disableClass" size="small" style="font-size: 9px;" fill="clear" id="openWeightModal"> Click
+            +
             to record weight</ion-button>
-
-          <!-- Record Weight Modal -->
-          <ion-modal class="weight-modal" #modal trigger="openWeightModal" (willPresent)="onRecordWeightWillPresent()">
-            <ng-template>
-              <ion-header class="custom-toolbar">
-                <ion-toolbar class="custom-toolbar">
-                  <ion-title>Weight Tracker</ion-title>
-                  <ion-buttons slot="end">
-                    <ion-button (click)="modal.dismiss()"> Close </ion-button>
-                  </ion-buttons>
-                </ion-toolbar>
-              </ion-header>
-              <ion-content>
-                <ion-nav #nav></ion-nav>
-              </ion-content>
-            </ng-template>
-          </ion-modal>
         </div>
       </div>
     </ion-col>

@@ -51,7 +51,7 @@ export class RootComponent implements OnInit {
 
   getWaterIntake() {
     const foodToday = this.tabActionService.getFoodLoggedForToday();
-    this.waterConsumed = foodToday.water ? foodToday.water : 0;
+    this.waterConsumed = foodToday?.water ? foodToday?.water : 0;
   }
 
   ngOnInit(): void {

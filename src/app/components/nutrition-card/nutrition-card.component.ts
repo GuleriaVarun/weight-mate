@@ -31,7 +31,7 @@ export class NutritionCardComponent implements AfterViewInit {
 
   updateWaterCard() {
     const foodToday = this.tabActionService.getFoodLoggedForToday();
-    this.waterConsumed = foodToday.water ? foodToday.water : 0;
+    this.waterConsumed = foodToday?.water ? foodToday?.water : 0;
   }
 
   ngAfterViewInit() {

@@ -11,9 +11,9 @@ export interface PersonalPreference {
   recommendedCaloriesLose?: string;
 }
 
-interface WeightRecord {
+export interface WeightRecord {
   date: string;
-  weight: string;
+  weight: number;
 }
 
 export interface UserInfo {
