@@ -36,7 +36,7 @@ export class TabActionService {
     
     setTimeout(() => {
       this.showBannerMessage = false;
-    }, 5000);
+    }, 7000);
   }
 
   toggleSelectFoodScreen() {
@@ -113,6 +113,10 @@ export class TabActionService {
     localStorage.setItem('userInfo', JSON.stringify(user));
   }
 
+  getLocalStorageData() {
+    return localStorage.getItem('userInfo');
+  }
+
   async presentToast(position: 'top' | 'bottom' | 'middle', message: string) {
     const toast = await this.toastController.create({
       message,
@@ -121,5 +125,14 @@ export class TabActionService {
     });
 
     await toast.present();
+  }
+
+  getFoodLoggedForToday() {
+    const userData = JSON.parse(this.getLocalStorageData() as any);
+    if (userData) {
+      const foodData = userData.foodLogged.find((res: any) => res.date === this.currentDate);
+
+      return foodData;
+    }
   }
 }
