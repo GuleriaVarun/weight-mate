@@ -193,7 +193,6 @@ export class FooterComponent implements OnInit {
 
   selectedMealToggle: any = 0;
   mealToggle(selectedValue: any) {
-    this.selectedMealToggle = selectedValue;
     if (selectedValue === 1) {
       const getFoodForCurrentDate =
         this.tabActionService.userInfo.foodLogged?.find((food) => {
@@ -203,25 +202,28 @@ export class FooterComponent implements OnInit {
       if (getFoodForCurrentDate) {
         this.updateLoggedFood = getFoodForCurrentDate.foodList;
       }
-      this.showFoodCard = true;
 
-      console.log(this.updateLoggedFood);
+      this.showFoodCard = true;
+      this.adsService.showAdBanner();
     } else {
       this.showFoodCard = false;
+      this.adsService.hideAdBanner();
     }
+    this.selectedMealToggle = selectedValue;
   }
 
   getBreakFastList() {
-    return this.updateLoggedFood.filter((food) => food.mealType === 'breakfast');
+    return this.updateLoggedFood.filter(
+      (food) => food.mealType === "breakfast"
+    );
   }
 
   getBreakFastTotalCalories() {
-    console.log('*** ', this.getBreakFastList());
     return this.getBreakFastList().reduce((acc, i) => i.calories + acc, 0);
   }
 
   getLunchList() {
-    return this.updateLoggedFood.filter((food) => food.mealType === 'lunch');
+    return this.updateLoggedFood.filter((food) => food.mealType === "lunch");
   }
 
   getLunchTotalCalories() {
@@ -229,17 +231,17 @@ export class FooterComponent implements OnInit {
   }
 
   getSnacksList() {
-    return this.updateLoggedFood.filter((food) => food.mealType === 'snacks');
+    return this.updateLoggedFood.filter((food) => food.mealType === "snacks");
   }
-  
+
   getSnacksTotalCalories() {
     return this.getSnacksList().reduce((acc, i) => i.calories + acc, 0);
   }
 
   getDinnerList() {
-    return this.updateLoggedFood.filter((food) => food.mealType === 'dinner');
+    return this.updateLoggedFood.filter((food) => food.mealType === "dinner");
   }
-  
+
   getDinnerTotalCalories() {
     return this.getDinnerList().reduce((acc, i) => i.calories + acc, 0);
   }

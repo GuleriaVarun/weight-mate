@@ -18,3 +18,40 @@
     </ion-list>
   </div>
 </div>
+
+<ion-modal [isOpen]="isAddServingModalOpen" trigger="open-feedback-modal"
+  [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar class="custom-toolbar">
+        <ion-buttons slot="start">
+          <ion-button class="cancel-button" (click)="cancel()">
+            <ion-icon class="cancel-button" (click)="cancel()" slot="icon-only" name="close-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title class="modal-title">Add Serving</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding profile-content">
+      <ion-grid style="color: white;">
+        <ion-row>
+          <ion-col>
+            <ion-select (ionChange)="handleServingSizeChange($event)">
+              <ion-select-option *ngFor="let servingSize of servingSizes" [value]="servingSize">{{servingSize}}</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col >
+            <ion-select (ionChange)="handleServingSizeBelowChange($event)">
+              <ion-select-option *ngFor="let serving of servingSizeBelow1" [value]="serving">{{serving}}</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col>
+              {{currentSelectedFood.serving}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button expand="block" color="success">{{ "add" |
+        translate }}</ion-button>
+    </ion-content>
+  </ng-template>
+</ion-modal>

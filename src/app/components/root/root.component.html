@@ -1,4 +1,11 @@
 <ion-content>
+  <!-- Warning Panel -->
+  <ion-row class="red" style="text-align: center;"
+  *ngIf="tabActionService.totalCalories > tabActionService.maintainWeight">
+  <ion-col>Exceeded calorie limit by {{tabActionService.totalCalories - tabActionService.maintainWeight}}kcal. Eat
+    wisely!</ion-col>
+  </ion-row>
+  
   <!-- Calories Panel -->
   <ion-row>
     <ion-col>
@@ -36,21 +43,18 @@
         </div>
         <div class="calories-info count-card">
           <div>
-            <p class="value streak-label" [class.red]="
-                tabActionService.totalCalories > tabActionService.maintainWeight
-              " [class.green]="
-                tabActionService.totalCalories < tabActionService.maintainWeight
-              ">
+            <p class="value streak-label green">
               {{ tabActionService.userInfo.weight }}
             </p>
             kg
           </div>
         </div>
         <div>
-          <ion-button class="disableClass" size="small" style="font-size: 9px;" fill="clear" id="openWeightModal"> Click to record weight</ion-button>
+          <ion-button class="disableClass" size="small" style="font-size: 9px;" fill="clear" id="openWeightModal"> Click
+            to record weight</ion-button>
 
           <!-- Record Weight Modal -->
-          <ion-modal  class="weight-modal" #modal trigger="openWeightModal" (willPresent)="onRecordWeightWillPresent()">
+          <ion-modal class="weight-modal" #modal trigger="openWeightModal" (willPresent)="onRecordWeightWillPresent()">
             <ng-template>
               <ion-header class="custom-toolbar">
                 <ion-toolbar class="custom-toolbar">

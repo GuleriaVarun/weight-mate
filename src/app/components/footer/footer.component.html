@@ -84,8 +84,8 @@
         </ion-row>
       </ion-grid>
       <ion-row>
-        <ion-col>
-          <span style="color: white; padding: 0.5em;">"Exciting updates are on the way! 🚀 Stay tuned as we unlock new features and re-enable disabled
+        <ion-col style="text-align: center;">
+          <span style="color: white; padding: 0.5em; font-size: 12px;">"Exciting updates are on the way! 🚀 Stay tuned as we unlock new features and re-enable disabled
             options. Watch this space!"</span>
         </ion-col>
       </ion-row>
@@ -157,8 +157,7 @@
         </ion-slide>
         <ion-slide>
           <div *ngIf="showFoodCard" style="width: 90%; justify-content: center;">
-            <div *ngIf="updateLoggedFood.length > 0">
-
+            <div>
               <!-- Breakfast Card -->
               <ion-card class="foodCard">
                 <ion-card-header class="custom-toolbar food-card-header">

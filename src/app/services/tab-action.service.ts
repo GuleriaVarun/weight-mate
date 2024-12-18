@@ -74,7 +74,6 @@ export class TabActionService {
     this.totalProtein = totalNutrition.protein;
     this.totalFat = totalNutrition.fat;
 
-    console.log('Total Nutirition : ', totalNutrition);
     return totalNutrition;
   }
 
