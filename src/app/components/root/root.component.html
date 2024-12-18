@@ -92,7 +92,7 @@
         <div class="card-container">
           <app-nutrition-card label="Carbs" consumed="{{ tabActionService.totalCarbs }}g" remaining="80g"
             chartId="carbsChart" [colors]="{ from: '#769dca', to: '#4d75b7' }"></app-nutrition-card>
-          <app-nutrition-card label="Water" [consumed]="waterConsumed + 'L'" remaining="1L" chartId="waterChart"
+          <app-nutrition-card label="Water" [consumed]="waterConsumed.toString()" remaining="1L" chartId="waterChart"
             [waterConsumed]="waterConsumed" [colors]="{ from: '#e0b7a4', to: '#a16145' }"></app-nutrition-card>
         </div>
       </div>

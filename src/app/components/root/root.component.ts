@@ -36,6 +36,7 @@ export class RootComponent implements OnInit {
     this.tabActionService.dateChanged.subscribe(() => {
       this.insightChart.destroy();
       this.loadMealWiseData();
+      this.getWaterIntake();
     });
 
     this.tabActionService.foodAdded.subscribe(() => {
@@ -48,6 +49,11 @@ export class RootComponent implements OnInit {
     });
   }
 
+  getWaterIntake() {
+    const foodToday = this.tabActionService.getFoodLoggedForToday();
+    this.waterConsumed = foodToday.water ? foodToday.water : 0;
+  }
+
   ngOnInit(): void {
     this.fatLabel = this.translateService.instant('fats');
     this.carbsLabel = this.translateService.instant('carbs');
@@ -55,6 +61,7 @@ export class RootComponent implements OnInit {
     this.waterLabel = this.translateService.instant('water');
     this.getIdeaForTheDay();
     this.getStreak();
+    this.getWaterIntake();
 
     if (this.tabActionService.userInfo.foodLogged?.length === 0) {
       setTimeout(() => {
