@@ -1,22 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TabActionService } from 'src/app/services/tab-action.service';
 import ideasList from '../../utilities/healthy-ideas.json';
 import { Chart } from 'chart.js/auto';
 import { TranslateService } from '@ngx-translate/core';
-import {
-  AdMob,
-  BannerAdOptions,
-  BannerAdPosition,
-  BannerAdSize,
-} from '@capacitor-community/admob';
-import { ToastController } from '@ionic/angular';
-
-const options: BannerAdOptions = {
-  adId: 'ca-app-pub-6458339069545467/6448045816',
-  adSize: BannerAdSize.BANNER,
-  position: BannerAdPosition.BOTTOM_CENTER,
-  margin: 80,
-};
+import { IonNav } from '@ionic/angular';
+import { WeightTrackerComponent } from '../weight-tracker/weight-tracker.component';
+import { AdMob } from '@capacitor-community/admob';
+import { AdsService } from 'src/app/services/ads.service';
 
 @Component({
   selector: 'app-root-content',
@@ -24,6 +14,7 @@ const options: BannerAdOptions = {
   styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit {
+  @ViewChild('nav') private nav!: IonNav;
   progress = 50;
   isModalOpen: boolean = false;
   isAccountModalOpen: boolean = false;
@@ -36,13 +27,16 @@ export class RootComponent implements OnInit {
   carbsLabel!: string;
   proteinLabel!: string;
   waterLabel!: string;
+  
   constructor(
     public readonly tabActionService: TabActionService,
     private translateService: TranslateService,
+    private adsService: AdsService
   ) {
     this.tabActionService.dateChanged.subscribe(() => {
       this.insightChart.destroy();
       this.loadMealWiseData();
+      this.getWaterIntake();
     });
 
     this.tabActionService.foodAdded.subscribe(() => {
@@ -55,6 +49,11 @@ export class RootComponent implements OnInit {
     });
   }
 
+  getWaterIntake() {
+    const foodToday = this.tabActionService.getFoodLoggedForToday();
+    this.waterConsumed = foodToday?.water ? foodToday?.water : 0;
+  }
+
   ngOnInit(): void {
     this.fatLabel = this.translateService.instant('fats');
     this.carbsLabel = this.translateService.instant('carbs');
@@ -62,6 +61,7 @@ export class RootComponent implements OnInit {
     this.waterLabel = this.translateService.instant('water');
     this.getIdeaForTheDay();
     this.getStreak();
+    this.getWaterIntake();
 
     if (this.tabActionService.userInfo.foodLogged?.length === 0) {
       setTimeout(() => {
@@ -72,26 +72,9 @@ export class RootComponent implements OnInit {
     AdMob.initialize();
   }
 
-  private initAdMob() {
-    AdMob.showBanner(options);
-  }
-
-  private hideAdMob() {
-    AdMob.hideBanner();
-  }
-
   ngAfterViewInit() {
     this.loadChartData();
     this.loadMealWiseData();
-
-    setTimeout(() => {
-      setInterval(() => {
-        this.initAdMob();
-        setTimeout(() => {
-          this.hideAdMob();
-        }, 10000);
-      }, 60000);
-    }, 25000);
   }
 
   private loadChartData() {
@@ -234,7 +217,7 @@ export class RootComponent implements OnInit {
                 label: `Calories Intake`,
                 data: data2,
                 borderColor: '#fff',
-                backgroundColor: ['#B4DAD2', '#7DA1C4', '#A3B4A2', '#F3E6C9'],
+                backgroundColor: ['#89CFF0', '#7DF9FF', '#A3B4A2', '#DC143C'],
                 borderWidth: 2,
               },
             ],
@@ -291,7 +274,50 @@ export class RootComponent implements OnInit {
   }
 
   getStreak() {
-    this.streak = this.tabActionService.userInfo.foodLogged?.length || 0;
+    const loggedFood = this.tabActionService.userInfo.foodLogged as any[];
+
+    this.streak = this.calculateStreak(loggedFood);
+  }
+
+  calculateStreak(foodEntries: any[]): number {
+    const today = new Date().toISOString().split("T")[0];
+    
+    // Sort entries by date
+    const sortedEntries = foodEntries.sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
+  
+    let streak = 0;
+  
+    for (let i = sortedEntries.length - 1; i >= 0; i--) {
+      const currentDate = sortedEntries[i].date;
+      const previousDate =
+        i > 0 ? sortedEntries[i - 1].date : null;
+  
+      // Check if today is missing in the list
+      if (currentDate === today) {
+        streak++;
+      } else if (i === sortedEntries.length - 1 && currentDate !== today) {
+        // If the most recent date is not today, reset the streak
+        streak = 0;
+        break;
+      }
+  
+      // Check for consecutive dates
+      if (previousDate) {
+        const diff =
+          (new Date(currentDate).getTime() - new Date(previousDate).getTime()) /
+          (1000 * 60 * 60 * 24); // Difference in days
+        if (diff === 1) {
+          streak++;
+        } else if (diff > 1) {
+          // If there's a gap, reset the streak
+          break;
+        }
+      }
+    }
+  
+    return streak;
   }
 
   formatDate(dateString: string) {
@@ -300,5 +326,9 @@ export class RootComponent implements OnInit {
     const formattedDate = date.toLocaleDateString('en-US', options);
 
     return formattedDate;
+  }
+
+  onRecordWeightWillPresent() {
+    this.nav.setRoot(WeightTrackerComponent);
   }
 }

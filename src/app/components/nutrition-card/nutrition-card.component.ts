@@ -13,7 +13,7 @@ export class NutritionCardComponent implements AfterViewInit {
   @Input() remaining!: string;
   @Input() chartId!: string; // Unique ID for each chart
   @Input() colors!: { from: string; to: string }; // Gradient colors
-  @Input() waterConsumed: number = 2; // Default 2L of water consumed
+  @Input() waterConsumed: any = 0; // Default 2L of water consumed
   flipped: boolean = true;
   loggedInUser: any;
 
@@ -30,17 +30,12 @@ export class NutritionCardComponent implements AfterViewInit {
   }
 
   updateWaterCard() {
-    const index = this.getFoodIndexForCurrentDate();
-    if (index == -1) {
-      this.consumed = "0L";
-    } else {
-      this.consumed = this.loggedInUser.foodLogged[index].water;
-    }
+    const foodToday = this.tabActionService.getFoodLoggedForToday();
+    this.waterConsumed = foodToday?.water ? foodToday?.water : 0;
   }
 
   ngAfterViewInit() {
     this.initializeChart();
-    this.waterConsumed = this.tabActionService.userInfo.macros?.water || 0;
   }
 
   getGradient(): string {
@@ -90,18 +85,23 @@ export class NutritionCardComponent implements AfterViewInit {
 
   // Update the water intake
   adjustWater(ev: Event, increase: boolean) {
+    let splitWaterVal = typeof(this.waterConsumed) === "string" && this.waterConsumed.indexOf('L') !== -1 ? Number(this.waterConsumed.split('L')[0]) : this.waterConsumed;
+    console.log('water : ', this.waterConsumed, '.....', splitWaterVal);
     if (increase) {
-      this.waterConsumed += 0.5; // Add 500ml
+      splitWaterVal += 0.5; // Add 500ml
       this.tabActionService.presentToast("top", "Logged 500ml water !");
     } else {
-      if (this.waterConsumed >= 0.5) {
-        this.waterConsumed -= 0.5; // Minus 500ml
+      if (splitWaterVal >= 0.5) {
+        splitWaterVal -= 0.5; // Minus 500ml
         this.tabActionService.presentToast(
           "top",
           "Reduced water intake by 500ml!"
         );
       }
     }
+    this.waterConsumed = splitWaterVal;
+    console.log('water 2: ', this.waterConsumed, '.....', splitWaterVal);
+
     this.updateWaterDisplay();
     ev.stopPropagation();
   }

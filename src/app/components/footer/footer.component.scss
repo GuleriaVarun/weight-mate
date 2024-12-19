@@ -237,6 +237,34 @@ ion-item.selected {
   --color: white;
 }
 
+.foodCard {
+  margin: 0.5em;
+  width: 100%;
+  border-radius: 1em;
+}
+
+.food-card-header {
+  padding: 0.2em;
+  background: #16443c;
+}
+
+.food-card-title {
+  color: #fff;
+}
+
+.meal-icons {
+  width: 2em; /* Set equal width and height */
+  height: 2em;
+  background-color: #3498db; /* Add a background color */
+  border-radius: 50%; /* Make it round */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  color: white; /* Optional: Text color */
+  font-size: 2em; /* Optional: Font size */
+  margin: 1em;
+}
+
 .meal-type {
   margin: auto;
   text-align: center;

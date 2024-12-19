@@ -3,7 +3,7 @@
     "streak": "Streak",
     "micronutrients": "Micronutrients",
     "quickTips": "Quick Health Tip",
-    "progress": "Progress",
+    "progress": "Calories Intake History",
     "details": "Click for details",
     "recommended": "Recommended",
     "days": "Days",
@@ -43,5 +43,6 @@
     "fats": "Fats",
     "carbs": "Carbs",
     "proteins": "Proteins",
-    "water": "Water"
+    "water": "Water",
+    "weight": "Weight"
 }

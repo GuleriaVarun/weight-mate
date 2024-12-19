@@ -2,16 +2,46 @@
   ion-card {
     position: absolute;
     z-index: 100;
-    background: #171717f7;
+    background: #fdfbfb;
     text-align: center;
     background-image: url(/assets/img/confetti.gif);
-    height: 8em;
+    height: 25vh;
+    top: 20vh;
+    border-radius: 2em;
     background-size: cover; /* Adjust based on your needs */
     background-repeat: no-repeat; /* Prevents tiling of the image */
     background-position: center; 
   }
 
   .label {
-    font-size: 18px;
+    color: black;
+  }
+
+  .ion-header {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    align-content: center;
+  }
+
+  .iconClass {
+    font-size: 5em;
+    color: rgba(255, 0, 0, 0.732);
+    animation: heartbeat 1.2s infinite;
+  }
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.2);
+    }
+    60% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }

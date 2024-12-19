@@ -163,6 +163,10 @@ export class AppComponent implements OnInit {
         recommendedCaloriesLose: this.loseWeightFastCalsRequired,
       },
       foodLogged: [],
+      recordedWeight: [{
+        date: this.tabActionService.getDay(new Date() as any),
+        weight: this.weight
+      }]
     };
 
     this.tabActionService.setUserInfo(userInfo);

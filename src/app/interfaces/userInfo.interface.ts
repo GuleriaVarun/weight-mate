@@ -11,6 +11,16 @@ export interface PersonalPreference {
   recommendedCaloriesLose?: string;
 }
 
+export interface WeightRecord {
+  date: string;
+  weight: number;
+}
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
+
 export interface UserInfo {
   id?: string;
   personalPreference?: PersonalPreference;
@@ -24,4 +34,6 @@ export interface UserInfo {
   foodLogged?: any[];
   macros?: MicroNutrients;
   selectedLanguage?: string;
+  recordedWeight?: WeightRecord[];
+  profilePicture?: string;
 }
