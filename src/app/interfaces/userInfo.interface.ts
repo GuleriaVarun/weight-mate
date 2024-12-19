@@ -16,6 +16,11 @@ export interface WeightRecord {
   weight: number;
 }
 
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
+
 export interface UserInfo {
   id?: string;
   personalPreference?: PersonalPreference;
@@ -30,4 +35,5 @@ export interface UserInfo {
   macros?: MicroNutrients;
   selectedLanguage?: string;
   recordedWeight?: WeightRecord[];
+  profilePicture?: string;
 }

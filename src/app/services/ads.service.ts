@@ -5,7 +5,7 @@ const options: BannerAdOptions = {
   adId: 'ca-app-pub-6458339069545467/6448045816',
   adSize: BannerAdSize.BANNER,
   position: BannerAdPosition.BOTTOM_CENTER,
-  margin: 80,
+  margin: 80
 };
 
 const interstitialOptions: AdOptions = {

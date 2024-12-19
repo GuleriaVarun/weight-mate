@@ -43,5 +43,6 @@
     "fats": "Fats",
     "carbs": "Carbs",
     "proteins": "Proteins",
-    "water": "Water"
+    "water": "Water",
+    "weight": "Weight"
 }

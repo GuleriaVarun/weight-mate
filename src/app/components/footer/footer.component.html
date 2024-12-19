@@ -85,7 +85,8 @@
       </ion-grid>
       <ion-row>
         <ion-col style="text-align: center;">
-          <span style="color: white; padding: 0.5em; font-size: 12px;">"Exciting updates are on the way! 🚀 Stay tuned as we unlock new features and re-enable disabled
+          <span style="color: white; padding: 0.5em; font-size: 12px;">"Exciting updates are on the way! 🚀 Stay tuned
+            as we unlock new features and re-enable disabled
             options. Watch this space!"</span>
         </ion-col>
       </ion-row>
@@ -473,6 +474,10 @@
                 <ion-input value="{{ tabActionService.userInfo.heightInc }}" disabled></ion-input>
               </ion-item>
             </ion-list>
+            <div class="ion-padding" slot="content">
+              <ion-button (click)="presentActionSheet()" expand="block" color="success">Upload Profile
+                Picture</ion-button>
+               </div>
           </div>
         </ion-accordion>
         <ion-accordion value="second">

@@ -72,26 +72,9 @@ export class RootComponent implements OnInit {
     AdMob.initialize();
   }
 
-  private initAdMob() {
-    this.adsService.showAdBanner();
-  }
-
-  private hideAdMob() {
-    this.adsService.hideAdBanner();
-  }
-
   ngAfterViewInit() {
     this.loadChartData();
     this.loadMealWiseData();
-
-    setTimeout(() => {
-      setInterval(() => {
-        this.initAdMob();
-        setTimeout(() => {
-          this.hideAdMob();
-        }, 10000);
-      }, 60000);
-    }, 25000);
   }
 
   private loadChartData() {
@@ -291,7 +274,50 @@ export class RootComponent implements OnInit {
   }
 
   getStreak() {
-    this.streak = this.tabActionService.userInfo.foodLogged?.length || 0;
+    const loggedFood = this.tabActionService.userInfo.foodLogged as any[];
+
+    this.streak = this.calculateStreak(loggedFood);
+  }
+
+  calculateStreak(foodEntries: any[]): number {
+    const today = new Date().toISOString().split("T")[0];
+    
+    // Sort entries by date
+    const sortedEntries = foodEntries.sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
+  
+    let streak = 0;
+  
+    for (let i = sortedEntries.length - 1; i >= 0; i--) {
+      const currentDate = sortedEntries[i].date;
+      const previousDate =
+        i > 0 ? sortedEntries[i - 1].date : null;
+  
+      // Check if today is missing in the list
+      if (currentDate === today) {
+        streak++;
+      } else if (i === sortedEntries.length - 1 && currentDate !== today) {
+        // If the most recent date is not today, reset the streak
+        streak = 0;
+        break;
+      }
+  
+      // Check for consecutive dates
+      if (previousDate) {
+        const diff =
+          (new Date(currentDate).getTime() - new Date(previousDate).getTime()) /
+          (1000 * 60 * 60 * 24); // Difference in days
+        if (diff === 1) {
+          streak++;
+        } else if (diff > 1) {
+          // If there's a gap, reset the streak
+          break;
+        }
+      }
+    }
+  
+    return streak;
   }
 
   formatDate(dateString: string) {

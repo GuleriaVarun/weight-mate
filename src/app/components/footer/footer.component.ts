@@ -1,12 +1,13 @@
 import emailjs from "emailjs-com";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { OverlayEventDetail } from "@ionic/core";
-import { IonModal, IonSlides } from "@ionic/angular";
+import { ActionSheetController, IonModal, IonSlides } from "@ionic/angular";
 import { TabActionService } from "src/app/services/tab-action.service";
 import { ThemeService } from "src/app/services/theme.service";
 import { LanguageService } from "src/app/services/language.service";
 import { Language } from "src/app/interfaces/language.interface";
 import { AdsService } from "src/app/services/ads.service";
+import { PhotoService } from "src/app/services/photo.service";
 
 @Component({
   selector: "app-footer",
@@ -69,8 +70,54 @@ export class FooterComponent implements OnInit {
     public readonly tabActionService: TabActionService,
     public languageService: LanguageService,
     public themeService: ThemeService,
-    private adsService: AdsService
+    private photoService: PhotoService,
+    private adsService: AdsService,
+    private actionSheetCtrl: ActionSheetController
   ) {}
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: "Choose Action",
+      buttons: [
+        {
+          text: "Open Camera",
+          handler: () => {
+            this.photoService.clickPhoto().then(() => {
+              this.updateProfilePicture();
+            });
+          },
+        },
+        {
+          text: "Open Gallery",
+          handler: () => {
+            this.photoService.uploadFromGallery().then(() => {
+              this.updateProfilePicture();
+            });
+          },
+        },
+        {
+          text: "Cancel",
+          role: "cancel",
+          data: {
+            action: "cancel",
+          },
+        },
+      ],
+    });
+
+    await actionSheet.present();
+    await actionSheet.onDidDismiss();
+  }
+
+  private updateProfilePicture() {
+    const imageElement = document.getElementsByClassName("avatar-img");
+    if (imageElement && imageElement[0]) {
+      (imageElement as any).setAttribute(
+        "src",
+        this.tabActionService.userInfo.profilePicture
+      );
+    }
+  }
 
   ngOnInit(): void {
     this.removeHighLight();
@@ -82,15 +129,20 @@ export class FooterComponent implements OnInit {
   }
 
   openAccountModal() {
+    if (this.tabActionService.userInfo.profilePicture) {
+      this.updateProfilePicture();
+    }
     this.isAccountModalOpen = true;
   }
 
   openFoodLogModal() {
     this.isFoodLogModalOpen = true;
+    this.adsService.showAdBanner();
   }
 
   openGoalModal() {
     this.isGoalModalOpen = true;
+    this.adsService.showAdBanner();
   }
 
   openFeedbackModal() {
@@ -212,10 +264,8 @@ export class FooterComponent implements OnInit {
       }
 
       this.showFoodCard = true;
-      this.adsService.showAdBanner();
     } else {
       this.showFoodCard = false;
-      this.adsService.hideAdBanner();
     }
     this.selectedMealToggle = selectedValue;
   }
