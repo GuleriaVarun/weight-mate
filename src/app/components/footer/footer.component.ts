@@ -110,6 +110,7 @@ export class FooterComponent implements OnInit {
   }
 
   private updateProfilePicture() {
+    this.tabActionService.updateLocalStorage(this.tabActionService.userInfo);
     const imageElement = document.getElementsByClassName("avatar-img");
     if (imageElement && imageElement[0]) {
       (imageElement as any).setAttribute(
