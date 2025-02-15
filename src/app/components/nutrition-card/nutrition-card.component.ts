@@ -86,21 +86,19 @@ export class NutritionCardComponent implements AfterViewInit {
   // Update the water intake
   adjustWater(ev: Event, increase: boolean) {
     let splitWaterVal = typeof(this.waterConsumed) === "string" && this.waterConsumed.indexOf('L') !== -1 ? Number(this.waterConsumed.split('L')[0]) : this.waterConsumed;
-    console.log('water : ', this.waterConsumed, '.....', splitWaterVal);
     if (increase) {
       splitWaterVal += 0.5; // Add 500ml
-      this.tabActionService.presentToast("top", "Logged 500ml water !");
+      this.tabActionService.presentToast("bottom", "Logged 500ml water !");
     } else {
       if (splitWaterVal >= 0.5) {
         splitWaterVal -= 0.5; // Minus 500ml
         this.tabActionService.presentToast(
-          "top",
+          "bottom",
           "Reduced water intake by 500ml!"
         );
       }
     }
     this.waterConsumed = splitWaterVal;
-    console.log('water 2: ', this.waterConsumed, '.....', splitWaterVal);
 
     this.updateWaterDisplay();
     ev.stopPropagation();

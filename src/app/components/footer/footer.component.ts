@@ -8,6 +8,7 @@ import { LanguageService } from "src/app/services/language.service";
 import { Language } from "src/app/interfaces/language.interface";
 import { AdsService } from "src/app/services/ads.service";
 import { PhotoService } from "src/app/services/photo.service";
+import { FoodItem } from "src/app/interfaces/food.interface";
 
 @Component({
   selector: "app-footer",
@@ -113,7 +114,7 @@ export class FooterComponent implements OnInit {
     this.tabActionService.updateLocalStorage(this.tabActionService.userInfo);
     const imageElement = document.getElementsByClassName("avatar-img");
     if (imageElement && imageElement[0]) {
-      (imageElement as any).setAttribute(
+      (imageElement[0] as any).setAttribute(
         "src",
         this.tabActionService.userInfo.profilePicture
       );
@@ -138,6 +139,7 @@ export class FooterComponent implements OnInit {
 
   openFoodLogModal() {
     this.isFoodLogModalOpen = true;
+    this.selectedMealToggle = 0;
     this.adsService.showAdBanner();
   }
 
@@ -232,7 +234,7 @@ export class FooterComponent implements OnInit {
       )
       .then(() => {
         this.tabActionService.presentToast(
-          "top",
+          "bottom",
           "Feedback sent successfully!"
         );
         this.modal.dismiss(this.name, "confirm");
@@ -246,7 +248,7 @@ export class FooterComponent implements OnInit {
       })
       .catch((error) => {
         console.error("Error sending feedback", error);
-        this.tabActionService.presentToast("top", "Error sending feedback");
+        this.tabActionService.presentToast("bottom", "Error sending feedback");
         this.modal.dismiss(this.name, "confirm");
         button?.setAttribute("disabled", "false");
       });
@@ -278,7 +280,7 @@ export class FooterComponent implements OnInit {
   }
 
   getBreakFastTotalCalories() {
-    return this.getBreakFastList().reduce((acc, i) => i.calories + acc, 0);
+    return this.getBreakFastList().reduce((acc, i) => ( i.calories* i.count) + acc, 0);
   }
 
   getLunchList() {
@@ -286,7 +288,7 @@ export class FooterComponent implements OnInit {
   }
 
   getLunchTotalCalories() {
-    return this.getLunchList().reduce((acc, i) => i.calories + acc, 0);
+    return this.getLunchList().reduce((acc, i) => ( i.calories* i.count) + acc, 0);
   }
 
   getSnacksList() {
@@ -294,7 +296,7 @@ export class FooterComponent implements OnInit {
   }
 
   getSnacksTotalCalories() {
-    return this.getSnacksList().reduce((acc, i) => i.calories + acc, 0);
+    return this.getSnacksList().reduce((acc, i) => ( i.calories* i.count) + acc, 0);
   }
 
   getDinnerList() {
@@ -302,7 +304,7 @@ export class FooterComponent implements OnInit {
   }
 
   getDinnerTotalCalories() {
-    return this.getDinnerList().reduce((acc, i) => i.calories + acc, 0);
+    return this.getDinnerList().reduce((acc, i) => ( i.calories* i.count) + acc, 0);
   }
 
   deleteFood(food: any, ev: any) {
@@ -312,16 +314,28 @@ export class FooterComponent implements OnInit {
       });
 
     if (getFoodForCurrentDate) {
-      const index = getFoodForCurrentDate.foodList.findIndex(
+      const foodSelected = getFoodForCurrentDate.foodList.find(
         (f: any) => f.id === food.id
       );
-      getFoodForCurrentDate.foodList.splice(index, 1);
+
+      if (foodSelected && foodSelected.count > 1) {
+        foodSelected.count = foodSelected.count - 1;
+      } else if (foodSelected && food.count === 1) {
+        const index = getFoodForCurrentDate.foodList.findIndex(
+          (f: any) => f.id === food.id
+        );
+        getFoodForCurrentDate.foodList.splice(index, 1);
+
+        this.updateLoggedFood = this.updateLoggedFood.filter(
+          (f) => f.id !== food.id
+        );
+      }
     }
 
-    this.updateLoggedFood = this.updateLoggedFood.filter(
-      (f) => f.id !== food.id
+    this.tabActionService.presentToast(
+      "bottom",
+      `${(food as FoodItem).name} Delete!`
     );
-
     this.tabActionService.updateLocalStorage(this.tabActionService.userInfo);
     this.tabActionService.reloadHomePageForCurrentDate();
     this.tabActionService.foodAddEvent();

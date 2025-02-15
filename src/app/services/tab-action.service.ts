@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { ToastController } from '@ionic/angular';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class TabActionService {
   showSelectFoodScreen: boolean = false;
@@ -20,20 +20,20 @@ export class TabActionService {
 
   // User Details
   userInfo!: UserInfo;
-  currentDate: string = '';
+  currentDate: string = "";
 
   dateChanged: Subject<string> = new Subject<string>();
   foodAdded: Subject<string> = new Subject<string>();
 
   showBannerMessage: boolean = false;
-  bannerMessage: string = '';
+  bannerMessage: string = "";
 
   constructor(private toastController: ToastController) {}
 
   showBannerPopup(message: string) {
     this.showBannerMessage = true;
     this.bannerMessage = message;
-    
+
     setTimeout(() => {
       this.showBannerMessage = false;
     }, 7000);
@@ -42,6 +42,21 @@ export class TabActionService {
   toggleSelectFoodScreen() {
     this.showSelectFoodScreen = true;
     this.showMainViewScreen = false;
+  }
+
+  setFoodSuggestions(food: any) {
+    const foodList = food ? food : {
+      breakfast: [],
+      lunch: [],
+      dinner: [],
+      snacks: [],
+    };
+
+    localStorage.setItem("foodSuggestions", JSON.stringify(foodList));
+  }
+
+  getFoodSuggestions() {
+    return JSON.parse(localStorage.getItem("foodSuggestions") as string);
   }
 
   toggleMainViewScreen() {
@@ -86,7 +101,7 @@ export class TabActionService {
   }
 
   getDay(date: number) {
-    return new Intl.DateTimeFormat('en-CA').format(date);
+    return new Intl.DateTimeFormat("en-CA").format(date);
   }
 
   reloadHomePageForCurrentDate() {
@@ -96,7 +111,7 @@ export class TabActionService {
 
   getRemainingCalories() {
     if (this.totalCalories > this.maintainWeight) {
-      return '0';
+      return "0";
     }
     return Math.trunc(this.maintainWeight - this.totalCalories);
   }
@@ -110,14 +125,18 @@ export class TabActionService {
   }
 
   updateLocalStorage(user: any) {
-    localStorage.setItem('userInfo', JSON.stringify(user));
+    localStorage.setItem("userInfo", JSON.stringify(user));
+  }
+
+  updateFoodSuggestionLocalStorage(food: any) {
+    localStorage.setItem("foodSuggestions", JSON.stringify(food));
   }
 
   getLocalStorageData() {
-    return localStorage.getItem('userInfo');
+    return localStorage.getItem("userInfo");
   }
 
-  async presentToast(position: 'top' | 'bottom' | 'middle', message: string) {
+  async presentToast(position: "top" | "bottom" | "middle", message: string) {
     const toast = await this.toastController.create({
       message,
       duration: 5500,
@@ -130,7 +149,9 @@ export class TabActionService {
   getFoodLoggedForToday() {
     const userData = JSON.parse(this.getLocalStorageData() as any);
     if (userData) {
-      const foodData = userData.foodLogged.find((res: any) => res.date === this.currentDate);
+      const foodData = userData.foodLogged.find(
+        (res: any) => res.date === this.currentDate
+      );
 
       return foodData;
     }

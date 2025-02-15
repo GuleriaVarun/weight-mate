@@ -98,4 +98,67 @@
         color: #20bdce;
     }
 
+    .modern-list {
+        --ion-background-color: transparent;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      
+      .modern-item {
+        align-items: center;
+        padding: 0.2em;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+      }
+      
+      .modern-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .item-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .food-name {
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+      }
+      
+      .food-info {
+        font-size: 0.7rem;
+        color: #666;
+      }
+      
+      .item-actions {
+        display: flex;
+        align-items: center;
+      }
+      
+      .food-count {
+        font-weight: bold;
+        margin-right: 8px;
+        font-size: 1rem;
+      }
+      
+      .add-icon {
+        font-size: 1.4rem;
+        color: #4caf50;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      
+      .add-icon:hover {
+        color: #388e3c;
+      }
+      
+      ion-icon {
+        font-size: 1.5rem;
+        color: #888;
+        margin-right: 10px;
+      }
 }

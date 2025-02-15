@@ -33,7 +33,7 @@
 </div>
 
 <!-- Log Items modal -->
-<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)" [initialBreakpoint]="0.5"
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)" [initialBreakpoint]="0.75"
   [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
   <ng-template>
     <ion-header>
@@ -118,34 +118,30 @@
           <ion-grid>
             <ion-row class="meal-type">
               <ion-col>
-                <ion-icon style="color: white; font-size: large" class="profile-icon" id="breakfast"
-                  (click)="selectMealType('breakfast')" name="partly-sunny-outline"></ion-icon>
+                <img (click)="selectMealType('breakfast')" src="assets/img/breakfast.svg" />
               </ion-col>
               <ion-col>
-                <ion-icon style="color: white; font-size: large" class="profile-icon" id="lunch"
-                  (click)="selectMealType('lunch')" name="sunny-outline"></ion-icon>
+                <img (click)="selectMealType('lunch')" src="assets/img/lunch.svg" />
               </ion-col>
               <ion-col>
-                <ion-icon style="color: white; font-size: large" class="profile-icon" id="snacks"
-                  (click)="selectMealType('snacks')" name="pizza-outline"></ion-icon>
+                <img (click)="selectMealType('snacks')" src="assets/img/snacks.svg" />
               </ion-col>
               <ion-col>
-                <ion-icon style="color: white; font-size: large" class="profile-icon" id="dinner"
-                  (click)="selectMealType('dinner')" name="moon-outline"></ion-icon>
+                <img (click)="selectMealType('dinner')" src="assets/img/dinner.svg" />
               </ion-col>
             </ion-row>
             <ion-row class="meal-label">
               <ion-col (click)="selectMealType('breakfast')">
-                <ion-label>{{ "breakfast" | translate }}</ion-label>
+                <ion-label id="breakfast">{{ "breakfast" | translate }}</ion-label>
               </ion-col>
               <ion-col (click)="selectMealType('lunch')">
-                <ion-label>{{ "lunch" | translate }}</ion-label>
+                <ion-label id="lunch">{{ "lunch" | translate }}</ion-label>
               </ion-col>
               <ion-col (click)="selectMealType('snacks')">
-                <ion-label>{{ "snacks" | translate }}</ion-label>
+                <ion-label id="snacks">{{ "snacks" | translate }}</ion-label>
               </ion-col>
               <ion-col (click)="selectMealType('dinner')">
-                <ion-label>{{ "dinner" | translate }}</ion-label>
+                <ion-label id="dinner">{{ "dinner" | translate }}</ion-label>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -160,7 +156,7 @@
           <div *ngIf="showFoodCard" style="width: 90%; justify-content: center;">
             <div>
               <!-- Breakfast Card -->
-              <ion-card class="foodCard">
+              <ion-card class="foodCard"> 
                 <ion-card-header class="custom-toolbar food-card-header">
                   <ion-card-title class="food-card-title">Breakfast</ion-card-title>
                 </ion-card-header>
@@ -477,7 +473,7 @@
             <div class="ion-padding" slot="content">
               <ion-button (click)="presentActionSheet()" expand="block" color="success">Upload Profile
                 Picture</ion-button>
-               </div>
+            </div>
           </div>
         </ion-accordion>
         <ion-accordion value="second">

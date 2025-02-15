@@ -286,7 +286,7 @@ export class RootComponent implements OnInit {
     const sortedEntries = foodEntries.sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
     );
-  
+
     let streak = 0;
   
     for (let i = sortedEntries.length - 1; i >= 0; i--) {
@@ -302,13 +302,15 @@ export class RootComponent implements OnInit {
         streak = 0;
         break;
       }
-  
+
       // Check for consecutive dates
       if (previousDate) {
         const diff =
           (new Date(currentDate).getTime() - new Date(previousDate).getTime()) /
           (1000 * 60 * 60 * 24); // Difference in days
-        if (diff === 1) {
+        
+        console.log('**** Diff : ', diff);
+          if (diff === 1) {
           streak++;
         } else if (diff > 1) {
           // If there's a gap, reset the streak

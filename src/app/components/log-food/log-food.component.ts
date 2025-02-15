@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import foodList from '../../utilities/food-list.json';
-import { TabActionService } from 'src/app/services/tab-action.service';
-import { FoodItem } from 'src/app/interfaces/food.interface';
+import { Component, Input, OnInit } from "@angular/core";
+import foodList from "../../utilities/food-list.json";
+import { TabActionService } from "src/app/services/tab-action.service";
+import { FoodItem } from "src/app/interfaces/food.interface";
 
 @Component({
   selector: "app-log-food",
@@ -14,11 +14,45 @@ export class LogFoodComponent implements OnInit {
   showResults: boolean = false;
   loggedInUser: any;
   isAddServingModalOpen: boolean = false;
-  currentSelectedFood!: any;
-  servingSizeBelow1: any[] = ["1/8", "1/4", "1/3", "1/2", "2/3", "3/4"];
-  servingSizes: any[] = ["-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  currentSelectedFood: FoodItem | undefined;
+  servingSizeBelow1: any[] = ["-", "1/8", "1/4", "1/3", "1/2", "2/3", "3/4"];
+  servingSizes: any[] = [];
   servingSizeSelected: any = undefined;
   servingSizeBelow1Selected: any = undefined;
+  southIndianFoodList = [
+    "masala dosa",
+    "dosa",
+    "medu vada",
+    "vada",
+    "sambar",
+    "upma",
+    "idli",
+    "poha",
+  ];
+  indianSweets = [
+    "Gulab Jamun",
+    "Rasgulla",
+    "Jalebi",
+    "Ladoo",
+    "Kaju Katli",
+    "Barfi",
+    "Mysore Pak",
+    "Peda",
+    "Sandesh",
+    "Gajar Ka Halwa",
+    "Rasmalai",
+    "Soan Papdi",
+    "Balushahi",
+    "Shrikhand",
+    "Malpua",
+    "Modak",
+    "Basundi",
+    "Kalakand",
+    "Chum Chum",
+    "Kulfi",
+  ];
+  foodSuggestions: any[] = this.tabActionService.getFoodSuggestions() as any[];
+
   constructor(public readonly tabActionService: TabActionService) {}
 
   handleServingSizeChange(ev: any) {
@@ -47,17 +81,61 @@ export class LogFoodComponent implements OnInit {
     this.loggedInUser = userInfo;
   }
 
-  addFood(selectedFood: FoodItem) {
-    this.currentSelectedFood = selectedFood;
-    // this.isAddServingModalOpen = true;
+  selectServing(selectedFood: FoodItem) {
+    this.isAddServingModalOpen = false;
+    this.currentSelectedFood = JSON.parse(JSON.stringify(selectedFood));
+    this.isAddServingModalOpen = true;
+    this.servingSizes = [];
+
+    for (let i = 0; i <= 10; i++) {
+      this.servingSizes.push(i);
+    }
+
+    this.servingSizeSelected = this.servingSizes[0];
+    this.servingSizeBelow1Selected = this.servingSizeBelow1[0];
+  }
+
+  updateFoodAccordingToServing(food: FoodItem) {
+    if (this.servingSizeBelow1Selected === "-") {
+      this.servingSizeBelow1Selected = 0;
+    }
+
+    if (
+      this.servingSizeBelow1Selected === 0 &&
+      this.servingSizeSelected === 0
+    ) {
+      return;
+    }
+
+    const totalServing =
+      Number(eval(this.servingSizeBelow1Selected).toFixed(2)) +
+      this.servingSizeSelected;
+
+    food.calories = Math.floor(food.calories * totalServing);
+    food.carbohydrates = Math.floor(food.carbohydrates * totalServing);
+    food.fat = Math.floor(food.fat * totalServing);
+    food.protein = Math.floor(food.protein * totalServing);
+    food.count = this.servingSizeSelected > 0 ? this.servingSizeSelected : 1;
+
+    return food;
+  }
+
+  addFood() {
+    const originalFoodData = JSON.parse(
+      JSON.stringify(this.currentSelectedFood)
+    );
+    this.currentSelectedFood = this.updateFoodAccordingToServing(
+      this.currentSelectedFood as FoodItem
+    );
+
+    this.isAddServingModalOpen = false;
     const currentDate = this.tabActionService.currentDate;
-    selectedFood.mealType = this.mealType;
-    selectedFood.count = selectedFood.count + 1;
+    (this.currentSelectedFood as FoodItem).mealType = this.mealType;
 
     if (this.loggedInUser.foodLogged.length === 0) {
       this.loggedInUser.foodLogged.push({
         date: this.tabActionService.getDay(Date.now()),
-        foodList: [selectedFood],
+        foodList: [this.currentSelectedFood],
         water: 0,
       });
     } else {
@@ -73,15 +151,18 @@ export class LogFoodComponent implements OnInit {
         getFoodForCurrentDate[0]?.foodList
       ) {
         const foodExists = getFoodForCurrentDate[0].foodList.find(
-          (food: any) => food.id === selectedFood.id
+          (food: any) => food.id === (this.currentSelectedFood as FoodItem).id
         );
 
         if (!foodExists) {
-          getFoodForCurrentDate[0].foodList.push(selectedFood);
+          getFoodForCurrentDate[0].foodList.push(this.currentSelectedFood);
         } else {
-          foodExists.count = foodExists.count + 1;
+          foodExists.count =
+            this.servingSizeSelected > 0
+              ? foodExists.count + this.servingSizeSelected
+              : foodExists.count + 1;
           const foodIndex = getFoodForCurrentDate[0].foodList.findIndex(
-            (food: any) => food.id === selectedFood.id
+            (food: any) => food.id === (this.currentSelectedFood as FoodItem).id
           );
 
           getFoodForCurrentDate[0].foodList[foodIndex] = foodExists;
@@ -89,7 +170,7 @@ export class LogFoodComponent implements OnInit {
       } else {
         this.loggedInUser.foodLogged.push({
           date: currentDate,
-          foodList: [selectedFood],
+          foodList: [this.currentSelectedFood],
           water: 0,
         });
       }
@@ -99,6 +180,33 @@ export class LogFoodComponent implements OnInit {
     this.tabActionService.updateLocalStorage(this.loggedInUser);
     this.tabActionService.setUserInfo(this.loggedInUser);
     this.tabActionService.foodAddEvent();
+    this.setFoodSuggestions(originalFoodData);
+    this.tabActionService.presentToast(
+      "bottom",
+      `${(this.currentSelectedFood as FoodItem).name} Added!`
+    );
+  }
+
+  setFoodSuggestions(originalFoodData: any) {
+    const getFoodSuggestions = localStorage.getItem("foodSuggestions");
+    if (!getFoodSuggestions) {
+      this.tabActionService.setFoodSuggestions([]);
+    }
+
+    const existingSuggestions =
+      this.tabActionService.getFoodSuggestions() as any[];
+    const foodExist = existingSuggestions.find(
+      (food) => food.id === (this.currentSelectedFood as FoodItem).id
+    );
+    if (!foodExist) {
+      existingSuggestions.unshift(originalFoodData);
+      if (existingSuggestions.length > 12) {
+        existingSuggestions.splice(-5);
+      }
+
+      this.tabActionService.setFoodSuggestions(existingSuggestions);
+      this.foodSuggestions = existingSuggestions;
+    }
   }
 
   cancel() {

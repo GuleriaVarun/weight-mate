@@ -5,7 +5,7 @@ const options: BannerAdOptions = {
   adId: 'ca-app-pub-6458339069545467/6448045816',
   adSize: BannerAdSize.BANNER,
   position: BannerAdPosition.BOTTOM_CENTER,
-  margin: 80
+  margin: 60
 };
 
 const interstitialOptions: AdOptions = {
@@ -13,18 +13,19 @@ const interstitialOptions: AdOptions = {
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AdsService {
-
-  constructor() { }
+  constructor() {}
 
   showAdBanner() {
     AdMob.showBanner(options);
   }
 
   hideAdBanner() {
-    AdMob.hideBanner();
+    try {
+      AdMob.hideBanner();
+    } catch (err) {}
   }
 
   async showInterstitialAd() {
