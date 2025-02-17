@@ -10,7 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogFoodComponent } from './components/log-food/log-food.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { IonicModule } from '@ionic/angular';
-import { RootComponent } from './components/root/root.component';
+// import { RootComponent } from './components/root/root.component';
 import { TabActionService } from './services/tab-action.service';
 import { FormsModule } from '@angular/forms';
 import { CalculateBmrService } from './services/calculate-bmr.service';
@@ -49,7 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     LogFoodComponent,
     CalendarComponent,
-    RootComponent,
+    // RootComponent,
     NutritionCardComponent,
     MessageBannerComponent,
     WeightTrackerComponent,
