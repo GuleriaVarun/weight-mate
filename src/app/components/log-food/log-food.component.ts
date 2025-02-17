@@ -130,7 +130,9 @@ export class LogFoodComponent implements OnInit {
 
     this.isAddServingModalOpen = false;
     const currentDate = this.tabActionService.currentDate;
-    (this.currentSelectedFood as FoodItem).mealType = this.mealType;
+    (this.currentSelectedFood as FoodItem).mealType = !this.mealType
+      ? (sessionStorage.getItem("foodCategory") as string)
+      : "breakfast";
 
     if (this.loggedInUser.foodLogged.length === 0) {
       this.loggedInUser.foodLogged.push({

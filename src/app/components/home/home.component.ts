@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TabActionService } from 'src/app/services/tab-action.service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,7 @@ import { TabActionService } from 'src/app/services/tab-action.service';
 })
 export class HomeComponent implements OnInit {
   loggedInUser: any;
+  component = DashboardComponent;
 
   public alertButtons = ['OK'];
   public alertInputs = [

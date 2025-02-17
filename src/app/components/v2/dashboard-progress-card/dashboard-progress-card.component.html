@@ -1,0 +1,55 @@
+<ion-row>
+    <ion-col>
+        <ion-title>Track Progress</ion-title>
+    </ion-col>
+    <ion-col size="auto">
+        <ion-nav-link router-direction="forward" [component]="progressTrackComponent">
+            <a>See Details</a>
+        </ion-nav-link>
+    </ion-col>
+</ion-row>
+<ion-row>
+    <ion-col>
+        <ion-card class="weight-card">
+            <ion-card-header>
+                <ion-card-title style="text-align: center;">Weight</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-row>
+                    <ion-col style="text-align: center;">
+                        <h1 class="value">{{tabActionService.userInfo.weight}}kg</h1>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+    <ion-col>
+        <ion-card class="steps-card disableClass">
+            <ion-card-header>
+                <ion-card-title style="text-align: center;">Steps</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-row>
+                    <ion-col style="text-align: center;">
+                        <h1 class="value">0</h1>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+</ion-row>
+<ion-row>
+    <ion-col>
+        <ion-card class="calories-insight-card">
+            <ion-card-header>
+                <ion-card-title style="text-align: center;">Today's Calories Insight</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <canvas id="insight" class="chart"></canvas>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+</ion-row>

@@ -1,0 +1,22 @@
+<ion-grid class="dashboard-bg">
+    <ion-row></ion-row>
+    <app-dashboard-header></app-dashboard-header>
+
+    <ion-row class="red" style="text-align: center;"
+        *ngIf="tabActionService.totalCalories > tabActionService.maintainWeight">
+        <ion-col>Exceeded calorie limit by {{tabActionService.totalCalories - tabActionService.maintainWeight}}kcal. Eat
+            wisely!</ion-col>
+    </ion-row>
+
+    <app-dashboard-calories-card></app-dashboard-calories-card>
+
+    <app-dashboard-micronutrients-card></app-dashboard-micronutrients-card>
+
+    <app-dashboard-meals-card></app-dashboard-meals-card>
+
+    <app-dashboard-progress-card></app-dashboard-progress-card>
+
+    <app-dashboard-discover-card></app-dashboard-discover-card>
+</ion-grid>
+
+<app-dashboard-footer-menu></app-dashboard-footer-menu>

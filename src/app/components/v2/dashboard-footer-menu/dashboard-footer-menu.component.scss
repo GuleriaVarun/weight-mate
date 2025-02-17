@@ -1,0 +1,46 @@
+:host {
+}
+.profile-items {
+    --background: #a8a837 !important;
+    --color: #fff !important;
+}    
+
+ion-modal {
+    --border-radius: 16px !important;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(236, 237, 239, 0.656) !important;
+    opacity: 1 !important;
+    pointer-events: none;
+}
+
+ion-modal ion-toolbar {
+    --background: #ff9898;
+    --color: white !important;
+}
+
+ion-accordion {
+    margin: 0.5em auto;
+    border-radius: 2em;
+  }
+  
+  ion-accordion.accordion-expanding,
+  ion-accordion.accordion-expanded {
+    width: calc(100% - 32px);
+  
+    margin: 16px auto;
+  }
+  
+  ion-accordion.accordion-collapsing ion-item[slot='header'],
+  ion-accordion.accordion-collapsed ion-item[slot='header'] {
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-light-contrast);
+  }
+  
+  ion-accordion.accordion-expanding ion-item[slot='header'],
+  ion-accordion.accordion-expanded ion-item[slot='header'] {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+  }

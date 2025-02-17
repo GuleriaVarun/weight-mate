@@ -1,0 +1,46 @@
+ion-card {
+    border-radius: 1.5em;
+    font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+}
+
+:host {
+    .img-class {
+        border-radius: 2em;
+    }
+
+    .breakfast {
+        background: linear-gradient(171deg, #d0d546 0%, #d8dcdc 100%) !important;
+    }
+    
+    .lunch {
+        background: linear-gradient(171deg, #df85cb 0%, #d8dcdc 100%) !important;
+    }
+
+    .snacks {
+        background: linear-gradient(171deg, #46a5d5 0%, #d8dcdc 100%) !important;
+    }
+
+    .dinner {
+        background: linear-gradient(171deg, #46d5d5 0%, #d8dcdc 100%) !important;
+    }
+}
+
+ion-toolbar {
+    --background: linear-gradient(171deg, rgb(170 170 229) 100%, rgba(255, 255, 255, 1) 0%);
+    color: white;
+}
+
+.header-md::after {
+    background-image: none;
+}
+
+ion-list {
+    background: transparent;
+}
+
+.custom-item {
+    border-radius: 1em;
+    padding: 0;
+    --background: none;
+    color: white;
+  }

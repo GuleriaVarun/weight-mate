@@ -21,7 +21,22 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { MessageBannerComponent } from './components/message-banner/message-banner.component';
-import { WeightTrackerComponent } from './components/weight-tracker/weight-tracker.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProgressTrackerComponent } from './components/progress-tracker/progress-tracker.component';
+import { DiscoverComponent } from './components/discover/discover.component';
+import { DashboardHeaderComponent } from './components/v2/dashboard-header/dashboard-header.component';
+import { DashboardCaloriesCardComponent } from './components/v2/dashboard-calories-card/dashboard-calories-card.component';
+import { DashboardMicronutrientsCardComponent } from './components/v2/dashboard-micronutrients-card/dashboard-micronutrients-card.component';
+import { DashboardMealsCardComponent } from './components/v2/dashboard-meals-card/dashboard-meals-card.component';
+import { DashboardProgressCardComponent } from './components/v2/dashboard-progress-card/dashboard-progress-card.component';
+import { DashboardDiscoverCardComponent } from './components/v2/dashboard-discover-card/dashboard-discover-card.component';
+import { DashboardFooterMenuComponent } from './components/v2/dashboard-footer-menu/dashboard-footer-menu.component';
+import { DiscoverRecipiesComponent } from './components/v2/dashboard-discover-card/discover-recipies/discover-recipies.component';
+import { DiscoverWorkoutsComponent } from './components/v2/dashboard-discover-card/discover-workouts/discover-workouts.component';
+import { PlayRecepieComponent } from './components/v2/dashboard-discover-card/discover-recipies/play-recepie/play-recepie.component';
+import { SafePipe } from './services/safe.pipe';
+import { UpdateMealComponent } from './components/v2/dashboard-meals-card/update-meal/update-meal.component';
+import { WeightTrackerComponent } from './components/v2/dashboard-progress-card/weight-tracker/weight-tracker.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -38,6 +53,21 @@ export function HttpLoaderFactory(http: HttpClient) {
     NutritionCardComponent,
     MessageBannerComponent,
     WeightTrackerComponent,
+    DashboardComponent,
+    ProgressTrackerComponent,
+    DiscoverComponent,
+    DashboardHeaderComponent,
+    DashboardCaloriesCardComponent,
+    DashboardMicronutrientsCardComponent,
+    DashboardMealsCardComponent,
+    DashboardProgressCardComponent,
+    DashboardDiscoverCardComponent,
+    DashboardFooterMenuComponent,
+    DiscoverRecipiesComponent,
+    DiscoverWorkoutsComponent,
+    PlayRecepieComponent,
+    SafePipe,
+    UpdateMealComponent
   ],
   imports: [
     BrowserModule,

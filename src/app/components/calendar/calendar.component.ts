@@ -17,12 +17,12 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
     // Initialize display with today’s date
     this.updateDateDisplay();
-    // this.tabActionService.reloadHomePageForCurrentDate();  
+    this.tabActionService.reloadHomePageForCurrentDate();  
   }
 
   updateDateDisplay(): void {
     const options: Intl.DateTimeFormatOptions = {
-      weekday: 'long',
+      weekday: 'short',
       month: 'short',
       day: 'numeric',
     };

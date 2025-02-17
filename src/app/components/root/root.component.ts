@@ -4,9 +4,9 @@ import ideasList from '../../utilities/healthy-ideas.json';
 import { Chart } from 'chart.js/auto';
 import { TranslateService } from '@ngx-translate/core';
 import { IonNav } from '@ionic/angular';
-import { WeightTrackerComponent } from '../weight-tracker/weight-tracker.component';
 import { AdMob } from '@capacitor-community/admob';
 import { AdsService } from 'src/app/services/ads.service';
+import { WeightTrackerComponent } from '../v2/dashboard-progress-card/weight-tracker/weight-tracker.component';
 
 @Component({
   selector: 'app-root-content',

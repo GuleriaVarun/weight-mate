@@ -1,0 +1,96 @@
+<ion-row>
+    <ion-col>
+        <ion-title>Meals</ion-title>
+    </ion-col>
+    <ion-col size="auto">
+        <ion-nav-link router-direction="forward" [component]="updateMealComponent">
+            <a>See Details</a>
+        </ion-nav-link>
+    </ion-col>
+</ion-row>
+<ion-row>
+    <ion-col>
+        <ion-list lines="none" style="padding: 0">
+            <ion-item class="custom-item" style="padding: 0">
+                <ion-grid style="padding: 0">
+                    <ion-row class="ion-align-items-center">
+                        <!-- Left Circular Icon -->
+                        <ion-col size="2" style="padding: 0">
+                            <ion-icon name="restaurant-outline" class="circular-icon"></ion-icon>
+                        </ion-col>
+
+                        <!-- Center Text with Meta Info -->
+                        <ion-col size="8" style="padding-top: 1em;">
+                            <ion-label class="meal-label">Add Breakfast</ion-label>
+                            <p class="meta-text">Consumed: {{getBreakFastTotalCalories()}} KCAL</p>
+                        </ion-col>
+
+                        <ion-col size="2">
+                            <ion-nav-link router-direction="forward" [component]="logFoodComponent"
+                                (click)="selectFoodCategory('breakfast')">
+                                <ion-icon name="add-circle-outline" class="circular-icon"></ion-icon>
+                            </ion-nav-link>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item class="custom-item" style="padding: 0">
+                <ion-grid style="padding: 0">
+                    <ion-row class="ion-align-items-center">
+                        <ion-col size="2" style="padding: 0">
+                            <ion-icon name="fast-food-outline" class="circular-icon"></ion-icon>
+                        </ion-col>
+                        <ion-col size="8" style="padding-top: 1em;">
+                            <ion-label class="meal-label">Add Lunch</ion-label>
+                            <p class="meta-text">Consumed: {{getLunchTotalCalories()}} KCAL</p>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-nav-link router-direction="forward" [component]="logFoodComponent"
+                                (click)="selectFoodCategory('lunch')">
+                                <ion-icon name="add-circle-outline" class="circular-icon"></ion-icon>
+                            </ion-nav-link> </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item class="custom-item" style="padding: 0">
+                <ion-grid style="padding: 0">
+                    <ion-row class="ion-align-items-center">
+                        <ion-col size="2" style="padding: 0">
+                            <ion-icon name="cafe-outline" class="circular-icon"></ion-icon>
+                        </ion-col>
+                        <ion-col size="8" style="padding-top: 1em;">
+                            <ion-label class="meal-label">Add Snacks</ion-label>
+                            <p class="meta-text">Consumed: {{getSnacksTotalCalories()}} KCAL</p>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-nav-link router-direction="forward" [component]="logFoodComponent"
+                                (click)="selectFoodCategory('snacks')">
+                                <ion-icon name="add-circle-outline" class="circular-icon"></ion-icon>
+                            </ion-nav-link> </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item class="custom-item" style="padding: 0">
+                <ion-grid style="padding: 0">
+                    <ion-row class="ion-align-items-center">
+                        <ion-col size="2" style="padding: 0">
+                            <ion-icon name="pizza-outline" class="circular-icon"></ion-icon>
+                        </ion-col>
+                        <ion-col size="8" style="padding-top: 1em;">
+                            <ion-label class="meal-label">Add Dinner</ion-label>
+                            <p class="meta-text">Consumed: {{getDinnerTotalCalories()}} KCAL</p>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-nav-link router-direction="forward" [component]="logFoodComponent"
+                                (click)="selectFoodCategory('dinner')">
+                                <ion-icon name="add-circle-outline" class="circular-icon"></ion-icon>
+                            </ion-nav-link> </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-list>
+    </ion-col>
+</ion-row>

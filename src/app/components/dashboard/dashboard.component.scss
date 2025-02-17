@@ -1,0 +1,30 @@
+:host {
+    .dashboard-bg {
+        background: #e6ecf5;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    ion-card {
+        border-radius: 1.5em;
+        font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+    }
+
+    .textareaClass {
+        height: 20vh;
+        border: 1px solid;
+        border-radius: 0.5em;
+        padding: 0.5em;
+      }
+
+    .red {
+        color: #f85d5d;
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+
+    .profile-items {
+        --background: #a8a837;
+        --color: #fff;
+    }
+}

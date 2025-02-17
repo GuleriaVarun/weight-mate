@@ -1,0 +1,19 @@
+:host {
+    * {
+        font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+    }
+
+    ion-card {
+        border-radius: 1.5em;
+    }
+
+    ion-card-header {
+        padding-bottom: 0.6em;
+    }
+
+    .value {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+}

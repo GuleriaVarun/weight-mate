@@ -84,6 +84,11 @@ export class WeightTrackerComponent implements OnInit {
     }
   }
 
+  showAddWeight: boolean = false;
+  showWeight() {
+    this.showAddWeight = true;
+  }
+
   addWeight() {
     this.weightChart.destroy();
 
