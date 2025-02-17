@@ -1,32 +1,33 @@
-<ion-row>
-    <ion-col>
-        <div class="main-card overall-card">
-            <div class="card-title">
-                <span>
-                    Your recorded weight
-                </span>
-            </div>
-            <div class="calories-info">
-                <div style="height: 15em">
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-card class="calories-insight-card"
+                style="border-radius: 1em; background: linear-gradient(171deg, #f2f0f92e 16%, white 100%);">
+                <ion-card-header>
+                    <ion-card-title style="text-align: center;">Your recorded weight</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
                     <canvas id="weightTracker" class="chart"></canvas>
-                </div>
-            </div>
-        </div>
-    </ion-col>
-</ion-row>
-<ion-row style="color: white;" *ngIf="showAddWeight">
-    <div class="main-card overall-card">
-        <div class="card-title">
-            <span>
-                Record New Weight
-            </span>
-        </div>
-        <div class="calories-info">
-            <ion-input [(ngModel)]="newWeight"></ion-input>
-            <ion-button (click)="addWeight()">Record New Weight</ion-button>
-        </div>
-    </div>
-</ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+    <ion-row style="text-align: center;" *ngIf="showAddWeight">
+        <ion-col>
+            <ion-list>
+                <ion-item>
+                    <ion-input [(ngModel)]="newWeight"></ion-input>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+    <ion-row style="text-align: center;" *ngIf="showAddWeight">
+        <ion-col>
+            <ion-button expand="block" (click)="addWeight()">Record new weight</ion-button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
 
 <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>
