@@ -84,7 +84,7 @@ export class RootComponent implements OnInit {
     const data: any[] = labelsCal.map(
       (label) =>
         this.tabActionService.calculateTotalNutrition(
-          this.tabActionService.userInfo?.foodLogged || [],
+          this.tabActionService.userInfo.foodLogged || [],
           label
         ).calories
     );

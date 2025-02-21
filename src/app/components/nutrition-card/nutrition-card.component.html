@@ -13,10 +13,10 @@
     <div class="card-back">
       <div class="content">
         <h2 class="back-label">{{ 'recommended' | translate }}</h2>
-        <div class="back-consumed" *ngIf="tabActionService?.userInfo && tabActionService?.userInfo?.macros?.fats">
-          <span *ngIf="label === 'Fat'">{{ tabActionService?.userInfo?.macros?.fats?.grams | number }}g</span>
-          <span *ngIf="label === 'Carbs'">{{ tabActionService?.userInfo?.macros?.carbs?.grams | number}}g</span>
-          <span *ngIf="label === 'Protein'">{{ tabActionService?.userInfo?.macros?.protein?.grams | number}}g</span>
+        <div class="back-consumed" *ngIf="tabActionService.userInfo && tabActionService.userInfo.macros?.fats">
+          <span *ngIf="label === 'Fat'">{{ tabActionService.userInfo.macros?.fats?.grams | number }}g</span>
+          <span *ngIf="label === 'Carbs'">{{ tabActionService.userInfo.macros?.carbs?.grams | number}}g</span>
+          <span *ngIf="label === 'Protein'">{{ tabActionService.userInfo.macros?.protein?.grams | number}}g</span>
         </div>
         <div class="back-consumed" *ngIf="label === 'Water'">
           <span *ngIf="label === 'Water'">4L</span>
