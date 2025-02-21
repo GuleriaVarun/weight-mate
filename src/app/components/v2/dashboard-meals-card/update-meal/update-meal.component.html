@@ -1,0 +1,111 @@
+<ion-header>
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-back-button></ion-back-button>
+            </ion-buttons>
+            <ion-title style="font-weight: bold;">Update Meal</ion-title>
+        </ion-toolbar>
+    </ion-header>
+</ion-header>
+
+<ion-content class="ion-padding"
+    style="--background: linear-gradient(171deg, rgb(170 170 229) 0%, rgba(255, 255, 255, 1) 100%);">
+
+    <!-- Breakfast Card -->
+    <ion-card class="calories-card breakfast">
+        <ion-card-header>
+            <ion-card-title>Breakfast</ion-card-title>
+            <ion-card-subtitle *ngIf="getBreakFastList().length === 0">
+                No food added for breakfast </ion-card-subtitle>
+            <ion-card-subtitle *ngIf="getBreakFastList().length !== 0">Total : {{getBreakFastTotalCalories()}}
+                Calories</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content style="padding: 0;">
+            <ion-list>
+                <ion-item *ngFor="let food of getBreakFastList()" class="custom-item" style="padding: 0">
+                    <ion-label style="margin: 0; color: white;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                    </ion-label>
+                    <ion-icon (click)="deleteFood(food, $event)" style="color: white;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- Lunch Card -->
+    <ion-card class="calories-card lunch">
+        <ion-card-header>
+            <ion-card-title>Lunch</ion-card-title>
+            <ion-card-subtitle *ngIf="getLunchList().length === 0">
+                No food added for breakfast </ion-card-subtitle>
+            <ion-card-subtitle *ngIf="getLunchList().length !== 0">Total : {{getLunchTotalCalories()}}
+                Calories</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content style="padding: 0;">
+            <ion-list>
+                <ion-item *ngFor="let food of getLunchList()" class="custom-item" style="padding: 0">
+                    <ion-label style="margin: 0; color: white;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                    </ion-label>
+                    <ion-icon (click)="deleteFood(food, $event)" style="color: white;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- Snacks Card -->
+    <ion-card class="calories-card snacks">
+        <ion-card-header>
+            <ion-card-title>Snacks</ion-card-title>
+            <ion-card-subtitle *ngIf="getSnacksList().length === 0">
+                No food added for breakfast </ion-card-subtitle>
+            <ion-card-subtitle *ngIf="getSnacksList().length !== 0">Total : {{getSnacksTotalCalories()}}
+                Calories</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content style="padding: 0;">
+            <ion-list>
+                <ion-item *ngFor="let food of getSnacksList()" class="custom-item" style="padding: 0">
+                    <ion-label style="margin: 0; color: white;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                    </ion-label>
+                    <ion-icon (click)="deleteFood(food, $event)" style="color: white;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+
+    <!-- Dinner Card -->
+    <ion-card class="calories-card dinner">
+        <ion-card-header>
+            <ion-card-title>Dinner</ion-card-title>
+            <ion-card-subtitle *ngIf="getDinnerList().length === 0">
+                No food added for breakfast </ion-card-subtitle>
+            <ion-card-subtitle *ngIf="getDinnerList().length !== 0">Total : {{getDinnerTotalCalories()}}
+                Calories</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content style="padding: 0;">
+            <ion-list>
+                <ion-item *ngFor="let food of getDinnerList()" class="custom-item" style="padding: 0">
+                    <ion-label style="margin: 0; color: white;">
+                        <h3 style="margin: 0;">{{food.name}} ({{food.count}})</h3>
+                        <p>{{food.calories}} Calories</p>
+                    </ion-label>
+                    <ion-icon (click)="deleteFood(food, $event)" style="color: white;" aria-hidden="true"
+                        name="trash-outline" slot="end"></ion-icon>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

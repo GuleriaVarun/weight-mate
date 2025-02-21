@@ -1,9 +1,13 @@
 :host {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+    // body {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     height: 100vh;
+    // }
+
+    .swiper-container-date {
+        font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
     }
 
     .swiper-btn {

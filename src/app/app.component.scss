@@ -1,8 +1,12 @@
+*{
+    font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+}
+
 .welcomeDialog {
     margin: 3em;
 
     .mate {
-        color: #20bdce
+        color: #22ccdf
     }
 
     h2 {
@@ -17,8 +21,9 @@
 
     .welcome-message {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 300;
         margin-bottom: 20px;
+        color: #000;
     }
 
     p {
@@ -98,7 +103,7 @@
     padding: 12px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(142deg, #000000, #075333, #074253);
+    background: #473e3e;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
@@ -147,7 +152,7 @@
 .calorie-value {
     display: block;
     font-size: 1.5rem;
-    color: #4caf50;
+    color: #68ff6e;
     font-weight: bold;
 }
 

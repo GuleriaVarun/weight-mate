@@ -84,6 +84,11 @@ export class WeightTrackerComponent implements OnInit {
     }
   }
 
+  showAddWeight: boolean = false;
+  showWeight() {
+    this.showAddWeight = true;
+  }
+
   addWeight() {
     this.weightChart.destroy();
 
@@ -106,5 +111,6 @@ export class WeightTrackerComponent implements OnInit {
     this.tabService.updateLocalStorage(this.tabService.userInfo);
     this.loadWeightChart();
     this.newWeight = undefined;
+    this.tabService.presentToast('bottom', "New weight recorded successfully!");
   }
 }

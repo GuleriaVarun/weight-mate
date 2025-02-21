@@ -1,164 +1,67 @@
 :host {
-    .card {
-        border-radius: 15px;
-        color: #ffffff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+  .food-list {
+    height: 70vh;
+    overflow: auto;
+  }
 
-    .card-header {
-        text-align: center;
-    }
+  .header-md::after {
+    background-image: none;
+  }
 
-    .card-header h2 {
-        font-size: 24px;
-    }
+  ion-toolbar {
+    --background: linear-gradient(171deg, rgb(170 170 229) 100%, rgba(255, 255, 255, 1) 0%);
+    color: white;
+  }
 
-    .food-list {
-        height: 55vh;
-        overflow: auto;
-    }
+  .header-md::after {
+    background-image: none;
+  }
 
-    .food-list-accordian {
-        background: transparent !important;
-        padding-bottom: 0.1em;
-    }
+  .custom-item {
+    border-radius: 1em;
+    margin: 0.5em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-    .food-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 5px 10px;
-        border-bottom: 1px solid #e6e6e6;
-    }
+  .circular-icon {
+    font-size: 24px;
+    color: #007aff;
+    /* Ion blue */
+    padding: 8px;
+    border-radius: 50%;
+    /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+  }
 
-    .food-item:last-child {
-        border-bottom: none;
-    }
+  .meal-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
 
-    .food-subtitle-cell {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 60px; /* Adjust height as needed */
-      }
-  
+  .meta-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+  }
+}
 
-    .food-details {
-        display: flex;
-        flex-direction: column;
-    }
+ion-modal {
+  --border-radius: 16px !important;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
 
-    .food-name {
-        color: #222;
-        margin-right: 1em;
-    }
+ion-modal::part(backdrop) {
+  background: rgba(236, 237, 239, 0.656) !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-
-    tr:nth-child(odd) {
-        background-color: #fdfafa;
-    }
-
-    .title {
-        font-weight: bold;
-    }
-
-    .nutrients {
-        font-size: 12px;
-        color: #666;
-        margin-top: 5px;
-    }
-
-    .button-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .add-button {
-        background: linear-gradient(142deg, #000000, #075333, #074253);
-        color: white;
-        border: none;
-        padding: 6px 14px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 0.9em;
-        transition: background-color 0.3s;
-    }
-
-    .add-button:hover {
-        background-color: #0056b3;
-    }
-
-    .count {
-        font-size: 0.9em;
-        font-weight: bold;
-        color: #20bdce;
-    }
-
-    .modern-list {
-        --ion-background-color: transparent;
-        padding: 10px;
-        border-radius: 8px;
-      }
-      
-      .modern-item {
-        align-items: center;
-        padding: 0.2em;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        background-color: #ffffff;
-      }
-      
-      .modern-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      
-      .item-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .food-name {
-        font-weight: bold;
-        font-size: 0.9rem;
-        margin-bottom: 4px;
-      }
-      
-      .food-info {
-        font-size: 0.7rem;
-        color: #666;
-      }
-      
-      .item-actions {
-        display: flex;
-        align-items: center;
-      }
-      
-      .food-count {
-        font-weight: bold;
-        margin-right: 8px;
-        font-size: 1rem;
-      }
-      
-      .add-icon {
-        font-size: 1.4rem;
-        color: #4caf50;
-        cursor: pointer;
-        transition: color 0.2s;
-      }
-      
-      .add-icon:hover {
-        color: #388e3c;
-      }
-      
-      ion-icon {
-        font-size: 1.5rem;
-        color: #888;
-        margin-right: 10px;
-      }
+ion-modal ion-toolbar {
+  --background: rgb(171 171 227);
+  --color: white !important;
 }

@@ -47,16 +47,17 @@ ion-header {
 
 .profile-content {
   overflow: auto;
-  --background: var(--profile-content-bg);
+  // --background: var(--profile-content-bg);
 }
 
 html,
 body {
   height: 100%;
+  background: #e6ecf5;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
 }
 
 .mate {
@@ -77,7 +78,7 @@ ion-icon {
 }
 
 .gradient-background {
-  background: var(--background-default);
+  // background: var(--background-default);
   background-size: 180% 180%;
   animation: gradient-animation-splash 15s ease infinite;
 }
@@ -147,10 +148,55 @@ ion-modal {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: var(--footer-background-main);
+  // background: var(--footer-background-main);
   backdrop-filter: blur(10px);
   /* Glass effect */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carbs-card {
+  background: linear-gradient(171deg, rgba(188, 194, 33, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.fat-card {
+  background: linear-gradient(171deg, rgba(176, 174, 249, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.protein-card {
+  background: linear-gradient(171deg, rgb(249, 174, 223) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.weight-card {
+  background: linear-gradient(171deg, rgba(163, 248, 176, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.water-card {
+  background: linear-gradient(171deg, rgba(116, 232, 233, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.calories-card {
+  color: white;
+  background: linear-gradient(171deg, rgba(108, 213, 70, 1) 0%, rgba(61, 233, 225, 1) 100%);
+}
+
+.exercise-card {
+  background: linear-gradient(171deg, rgba(244, 163, 248, 1) 16%, rgba(255, 255, 255, 1) 100%);
+}
+
+.recipie-card {
+  background: linear-gradient(171deg, rgb(248, 220, 163) 16%, rgba(255, 255, 255, 1) 100%);
+}
+
+.calories-insight-card {
+  background: linear-gradient(171deg, rgb(163, 248, 215) 16%, rgba(255, 255, 255, 1) 100%);
+}
+
+.streak-card {
+  background: linear-gradient(171deg, rgb(163, 248, 248) 16%, rgba(255, 255, 255, 1) 100%);
+}
+
+.steps-card {
+  background: linear-gradient(171deg, rgb(163, 203, 248) 16%, rgba(255, 255, 255, 1) 100%);
 }

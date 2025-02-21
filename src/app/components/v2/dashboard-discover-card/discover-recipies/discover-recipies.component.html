@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title style="font-weight: bold;">Homemade Recepies</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-header>
+  
+  <ion-content class="ion-padding"
+    style="--background: linear-gradient(171deg, rgb(170 170 229) 0%, rgba(255, 255, 255, 1) 100%);">
+    <ion-grid>
+        <ion-row>
+          <img class="img-class" src="assets/img/ytVarun.jpg">
+        </ion-row>
+
+        <ion-row>
+          <ion-col *ngFor="let receipe of recipiesList">
+            <ion-card class="food-card" [style.background]="receipe.background" (click)="playVideoFun(receipe)">
+              <ion-card-header>
+                <ion-nav-link router-direction="forward" [component]="videoPlayComponent">
+                  <ion-card-title>{{receipe.name}}</ion-card-title>
+              </ion-nav-link>
+              </ion-card-header>
+
+              <ion-card-content>
+                <ion-nav-link router-direction="forward" [component]="videoPlayComponent">
+                  {{receipe.description}}
+                </ion-nav-link>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-content>

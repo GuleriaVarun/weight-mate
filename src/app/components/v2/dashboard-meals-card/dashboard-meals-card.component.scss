@@ -1,0 +1,45 @@
+:host {
+    .circular-icon {
+        font-size: 24px;
+        color: #007aff;
+        /* Ion blue */
+        padding: 8px;
+        border-radius: 50%;
+        /* Circular shape */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+    }
+
+    .meal-label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .meta-text {
+        font-size: 12px;
+        color: #666;
+        margin-top: 2px;
+    }
+
+    .custom-item {
+        border-radius: 5em;
+        /* Rounded corners */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0.5em;
+    }
+
+    ion-card {
+        border-radius: 1.5em;
+        font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+    }
+}
+
+
+ion-list {
+    background: transparent;
+    font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+}

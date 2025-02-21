@@ -1,0 +1,22 @@
+*{
+    font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+}
+
+ion-card {
+    border-radius: 1.5em;
+}
+
+:host {
+    .img-class {
+        border-radius: 2em;
+    }
+}
+
+ion-toolbar {
+    --background: linear-gradient(171deg, rgb(170 170 229) 100%, rgba(255, 255, 255, 1) 0%);
+    color: white;
+}
+
+.header-md::after {
+    background-image: none;
+}

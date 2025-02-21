@@ -1,0 +1,42 @@
+<ion-row>
+    <ion-col>
+        <ion-title>Discover</ion-title>
+    </ion-col>
+    <!-- <ion-col size="auto">
+        <ion-nav-link router-direction="forward" [component]="discoverComponent">
+            <a>See Details</a>
+        </ion-nav-link>
+    </ion-col> -->
+</ion-row>
+<ion-row>
+    <ion-col>
+        <ion-card class="exercise-card disableClass">
+            <ion-card-header>
+                <ion-nav-link router-direction="forward" [component]="workoutComponent">
+                    <ion-card-title>Exercises</ion-card-title>
+                </ion-nav-link>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-nav-link router-direction="forward" [component]="workoutComponent">
+                    Stay fit with curated exercises for strength, endurance, and flexibility.
+                </ion-nav-link>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+    <ion-col>
+        <ion-card class="recipie-card">
+            <ion-card-header>
+                <ion-nav-link router-direction="forward" [component]="recipieComponent">
+                    <ion-card-title>Recipies</ion-card-title>
+                </ion-nav-link>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-nav-link router-direction="forward" [component]="recipieComponent">
+                    Delicious & healthy homemade recipes for a balanced, nutritious lifestyle.
+                </ion-nav-link>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+</ion-row>
