@@ -37,6 +37,8 @@ import { PlayRecepieComponent } from './components/v2/dashboard-discover-card/di
 import { SafePipe } from './services/safe.pipe';
 import { UpdateMealComponent } from './components/v2/dashboard-meals-card/update-meal/update-meal.component';
 import { WeightTrackerComponent } from './components/v2/dashboard-progress-card/weight-tracker/weight-tracker.component';
+import { LoginComponent } from './components/v2/login/login.component';
+import { UserDetailsComponent } from './components/v2/user-details/user-details.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -67,7 +69,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DiscoverWorkoutsComponent,
     PlayRecepieComponent,
     SafePipe,
-    UpdateMealComponent
+    UpdateMealComponent,
+    LoginComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
-    }),
+    })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

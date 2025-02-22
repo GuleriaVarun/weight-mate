@@ -1,21 +1,22 @@
 <ion-row>
     <ion-col size="2">
         <ion-avatar>
-            <img *ngIf="tabActionService.userInfo.gender === 'female'" src="assets/img/img_avatar2.png"
+            <img *ngIf="tabActionService.userInfo.gender === 'female' && !loggedInUserData?.profilePicture" src="assets/img/img_avatar2.png"
                 alt="Profile Avatar" class="avatar-img" />
-            <img *ngIf="tabActionService.userInfo.gender === 'male'" src="assets/img/img_avatar3.png"
+            <img *ngIf="tabActionService.userInfo.gender === 'male' && !loggedInUserData?.profilePicture" src="assets/img/img_avatar3.png"
                 alt="Profile Avatar" class="avatar-img" />
+                <img *ngIf="loggedInUserData?.profilePicture" [src]="loggedInUserData.profilePicture" class="avatar-img" />
         </ion-avatar>
     </ion-col>
-    <ion-col size="4" class="ion-align-items-center" style="padding-top: 1em;">
+    <ion-col size="4" class="ion-align-items-center" style="padding-top: 0.4em;">
         <div>
             Welcome,
         </div>
         <div style="font-weight: bold; font-size: large;">
-            {{ tabActionService.userInfo.name }}
+            {{ loggedInUserData.name }}
         </div>
     </ion-col>
-    <ion-col size="4" style="padding-top: 1em;">
+    <ion-col size="4" style="padding-top: 0.4em;">
         <ion-button fill="clear"> <app-calendar></app-calendar></ion-button>
     </ion-col>
 </ion-row>

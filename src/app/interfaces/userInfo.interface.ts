@@ -37,3 +37,9 @@ export interface UserInfo {
   recordedWeight?: WeightRecord[];
   profilePicture?: string;
 }
+
+export interface LoggedInUser {
+  name: string,
+  emailId: string,
+  profilePicture: string
+}

@@ -1,0 +1,44 @@
+<ion-content *ngIf="!isUserLoggedIn">
+    <ion-grid class="new-user">
+        <ion-row style="width: 100%;">
+            <ion-col></ion-col>
+            <ion-col size="auto">
+                <ion-avatar>
+                    <img class="logo" src="assets/img/weight-mate-logo.png">
+                </ion-avatar>
+            </ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="welcomeDialog">
+                    <h2>Ready to achieve your goals,</h2>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <img src="assets/img/login-illustration.svg" class="illustration">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="welcomeDialog">
+                    <h2 class="welcome-text">Let's Get You Started</h2>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div id="g_id_onload"
+                    data-client_id="60993485374-lqif3b58m0sh6sf3e0leek2m62o6vvh3.apps.googleusercontent.com"
+                    data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                    data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin" data-type="standard" data-theme="filled_black"
+                data-shape="pill"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

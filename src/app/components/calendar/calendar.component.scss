@@ -1,41 +1,24 @@
 :host {
-    // body {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     height: 100vh;
-    // }
-
-    .swiper-container-date {
-        font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
+    .date-toggle-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
     }
 
-    .swiper-btn {
+    .arrow-btn {
+        background: none;
+        border: none;
         cursor: pointer;
-        font-size: 20px;
-        padding: 5px;
-        margin: 0 10px;
-        border-radius: 50%;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .swiper-btn:hover {
-        background-color: #e2e8f0;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
     }
 
     .date-display {
+        min-width: 120px;
         text-align: center;
-        flex-grow: 1;
-    }
-
-    .date-display h2 {
-        font-size: 15px;
-        font-weight: 500;
-        margin-bottom: 2px;
-    }
-
-    .date-display p {
-        font-size: 13px;
-        color: #9ca3af;
-    }
+        font-weight: bold;
+        margin-top: 0.2em;
+    } 
 }

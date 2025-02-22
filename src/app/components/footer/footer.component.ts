@@ -1,7 +1,7 @@
 import emailjs from "emailjs-com";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { OverlayEventDetail } from "@ionic/core";
-import { ActionSheetController, IonModal, IonSlides } from "@ionic/angular";
+import { ActionSheetController, IonModal } from "@ionic/angular";
 import { TabActionService } from "src/app/services/tab-action.service";
 import { ThemeService } from "src/app/services/theme.service";
 import { LanguageService } from "src/app/services/language.service";
@@ -33,22 +33,6 @@ export class FooterComponent implements OnInit {
   isWeightTrackerModalOpen: boolean = false;
   selectedMealType: string | undefined = undefined;
   updateLoggedFood: any[] = [];
-
-  @ViewChild("slides", { static: false }) slides!: IonSlides;
-  selectedSegment = "0";
-
-  slideOpts = {
-    initialSlide: 0,
-    speed: 400,
-  };
-
-  @ViewChild("discoverSlides", { static: false }) discoverSlides!: IonSlides;
-  selectedDiscoverSegment = "0";
-
-  discoverSlideOpts = {
-    initialSlide: 0,
-    speed: 400,
-  };
 
   languageList: Language[] = [
     {
@@ -342,25 +326,5 @@ export class FooterComponent implements OnInit {
     ev.stopPropagation();
   }
 
-  async onSegmentChange(event: any) {
-    const index = parseInt(event.detail.value, 10);
-    await this.slides.slideTo(index);
-    this.mealToggle(index);
-  }
-
-  async onSlideDidChange() {
-    const index = await this.slides.getActiveIndex();
-    this.selectedSegment = index.toString();
-  }
-
-  async onDiscoverSegmentChange(event: any) {
-    const index = parseInt(event.detail.value, 10);
-    await this.discoverSlides.slideTo(index);
-    this.mealToggle(index);
-  }
-
-  async onDiscoverSlideDidChange() {
-    const index = await this.discoverSlides.getActiveIndex();
-    this.selectedDiscoverSegment = index.toString();
-  }
+ 
 }

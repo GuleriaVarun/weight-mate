@@ -159,4 +159,8 @@ export class TabActionService {
       return foodData;
     }
   }
+
+  getLoggedInUserData() {
+    return localStorage.getItem('loggedInUser');
+  }
 }

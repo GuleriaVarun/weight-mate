@@ -6,6 +6,7 @@ import emailjs from "emailjs-com";
 import { IonModal } from "@ionic/angular";
 import { AdsService } from "src/app/services/ads.service";
 import { LanguageService } from "src/app/services/language.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-dashboard-footer-menu",
@@ -46,7 +47,8 @@ export class DashboardFooterMenuComponent implements OnInit {
     public tabActionService: TabActionService,
     public themeService: ThemeService,
     public adsService: AdsService,
-    public languageService: LanguageService
+    public languageService: LanguageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -96,7 +98,8 @@ export class DashboardFooterMenuComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    window.location.reload();
+    this.modal.dismiss(null, "cancel");
+    this.router.navigate(['/login']);
   }
 
   openAccountModal() {
