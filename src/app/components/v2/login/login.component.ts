@@ -48,7 +48,7 @@ export class LoginComponent implements AfterViewInit {
 
   loadGoogleSignIn() {
     google.accounts.id.initialize({
-      client_id: '60993485374-lqif3b58m0sh6sf3e0leek2m62o6vvh3.apps.googleusercontent.com',
+      client_id: '60993485374-ivmnsdeuqvsp54pol5ra1vqthd5sm25e.apps.googleusercontent.com',
       callback: (response: any) => this.handleCredentialResponse(response)
     });
 
@@ -62,7 +62,6 @@ export class LoginComponent implements AfterViewInit {
     this.ngZone.run(() => {
       const token = response.credential;
       const user = this.decodeJwt(token);
-
       const loggedInUser: LoggedInUser = {
         name: user.name,
         emailId: user.email,

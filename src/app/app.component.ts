@@ -6,6 +6,8 @@ import { AlertController } from '@ionic/angular';
 import { StatusBar } from '@capacitor/status-bar';
 import { MicroNutrients } from './interfaces/food.interface';
 import { LanguageService } from './services/language.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -69,7 +71,9 @@ export class AppComponent implements OnInit {
     public readonly tabActionService: TabActionService,
     private readonly bmrService: CalculateBmrService,
     private alertController: AlertController,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private router: Router,
+
   ) {
     this.languageService.initializeLanguage();
   }
@@ -78,7 +82,7 @@ export class AppComponent implements OnInit {
     this.setStatusBarColor();
     const userInfo = JSON.parse(localStorage.getItem('userInfo') as any);
 
-    const TIMER = this.userInfo?.name ? 1000 : 3000;
+    const TIMER = 1000;
     setTimeout(() => {
       this.showDeatils = true;
       this.welcomeScreen = false;
@@ -96,6 +100,7 @@ export class AppComponent implements OnInit {
         this.selectedLifeStyle = userInfo.lifestyle;
         this.setDetails();
         this.userInfo.macros = this.macros;
+        this.router.navigate(['/home']);
       }
     }, TIMER);
   }
@@ -142,7 +147,7 @@ export class AppComponent implements OnInit {
     this.showWelcomeMessage = true;
     const firstName = this.userName.split(' ')[0];
     const userInfo: UserInfo = {
-      id: `${firstName}_${Math.random()}`,
+      id: `${Math.random()}`,
       name: this.userName,
       age: this.userAge,
       gender: this.selectedGender,
@@ -175,6 +180,9 @@ export class AppComponent implements OnInit {
       this.showInfoDialog = false;
       this.showWelcomeMessage = false;
       this.showMainScreen = true;
+
+      this.router.navigate(['/home']);
+
     }, 3500);
   }
 

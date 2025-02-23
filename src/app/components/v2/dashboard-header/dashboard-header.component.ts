@@ -13,6 +13,8 @@ export class DashboardHeaderComponent implements OnInit {
     name: '',
     profilePicture: ''
   }
+  profileImage: string | null = null; // To store the selected image
+
   constructor(public tabActionService: TabActionService) { }
 
   ngOnInit(): void {
@@ -20,4 +22,7 @@ export class DashboardHeaderComponent implements OnInit {
     this.loggedInUserData = storage ? JSON.parse(storage) : {};
   }
 
+  getUserName() {
+    return this.loggedInUserData.name || this.tabActionService.userInfo.name;
+  }
 }

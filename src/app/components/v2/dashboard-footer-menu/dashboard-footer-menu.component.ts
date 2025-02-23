@@ -3,10 +3,11 @@ import { Language } from "src/app/interfaces/language.interface";
 import { TabActionService } from "src/app/services/tab-action.service";
 import { ThemeService } from "src/app/services/theme.service";
 import emailjs from "emailjs-com";
-import { IonModal } from "@ionic/angular";
+import { ActionSheetController, IonModal } from "@ionic/angular";
 import { AdsService } from "src/app/services/ads.service";
 import { LanguageService } from "src/app/services/language.service";
 import { Router } from "@angular/router";
+import { Camera, CameraResultType, CameraSource } from "@capacitor/camera";
 
 @Component({
   selector: "app-dashboard-footer-menu",
@@ -48,10 +49,57 @@ export class DashboardFooterMenuComponent implements OnInit {
     public themeService: ThemeService,
     public adsService: AdsService,
     public languageService: LanguageService,
-    private router: Router
+    private actionSheetCtrl: ActionSheetController
   ) {}
 
   ngOnInit(): void {}
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Select Image',
+      buttons: [
+        {
+          text: 'Choose from Gallery',
+          icon: 'images',
+          handler: () => {
+            this.selectImage(CameraSource.Photos);
+          }
+        },
+        {
+          text: 'Open Camera',
+          icon: 'camera',
+          handler: () => {
+            this.selectImage(CameraSource.Camera);
+          }
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel'
+        }
+      ]
+    });
+
+    await actionSheet.present();
+  }
+
+  async selectImage(source: CameraSource) {
+    try {
+      const image = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: false,
+        resultType: CameraResultType.Base64,
+        source
+      });
+
+      this.tabActionService.userInfo.profilePicture = `data:image/jpeg;base64,${image.base64String}`;
+
+      this.tabActionService.setUserInfo(this.tabActionService.userInfo);
+      this.tabActionService.updateLocalStorage(this.tabActionService.userInfo);
+    } catch (error) {
+      console.error('Image selection failed:', error);
+    }
+  }
 
   sendFeedback() {
     if (!this.feedback.message) {
@@ -98,8 +146,9 @@ export class DashboardFooterMenuComponent implements OnInit {
 
   logout() {
     localStorage.clear();
+    this.isAccountModalOpen = false;
     this.modal.dismiss(null, "cancel");
-    this.router.navigate(['/login']);
+    window.location.reload();
   }
 
   openAccountModal() {
