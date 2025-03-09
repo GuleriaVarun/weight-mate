@@ -17,3 +17,16 @@ ion-toolbar {
 .header-md::after {
     background-image: none;
 }
+
+ion-content {
+    --background: #f5f5f5;
+    padding: 10px;
+}
+
+ion-card {
+    margin: 10px auto;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

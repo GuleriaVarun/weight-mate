@@ -1,5 +1,50 @@
-:host {
-}
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 80vh;
+    overflow: auto;
+  }
+  
+  .message-wrapper {
+    display: flex;
+    margin-bottom: 10px;
+    max-width: 80%;
+  }
+  
+  .message-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+  
+  .sent {
+    align-self: flex-end;
+  }
+  
+  .sent .message-bubble {
+    background-color: #0078ff;
+    color: white;
+  }
+  
+  .received {
+    align-self: flex-start;
+  }
+  
+  .received .message-bubble {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .first-response {
+    font-size: 12px;
+    color: #777;
+    display: block;
+    margin-top: 5px;
+  }
+  
 .profile-items {
     --background: #a8a837 !important;
     --color: #fff !important;

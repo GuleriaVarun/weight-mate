@@ -10,11 +10,16 @@
             <ion-icon name="person-outline"></ion-icon>
         </ion-fab-button>
     </ion-fab-list>
+    <ion-fab-list side="start">
+        <ion-fab-button color="success">
+            <ion-icon name="chatbox-ellipses-outline" (click)="openChat()"></ion-icon>
+        </ion-fab-button>
+    </ion-fab-list>
 </ion-fab>
 
 <!-- Feedback Modal -->
-<ion-modal [isOpen]="isFeedbackModalOpen" trigger="open-feedback-modal" [initialBreakpoint]="0.5"
-    [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
+<ion-modal [isOpen]="isFeedbackModalOpen" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle">
     <ng-template>
         <ion-content style="--background: linear-gradient(171deg, #ff9898 0%, rgba(255, 255, 255, 1) 100%)">
             <ion-toolbar>
@@ -32,8 +37,8 @@
                         feedback would let us improve app's overall experience.
                     </p>
                 </div>
-                <ion-textarea class="textareaClass" style="border: rgba(63, 81, 181, 0.2) solid; height: 10rem;" labelPlacement="floating"
-                    [(ngModel)]="feedback.message">
+                <ion-textarea class="textareaClass" style="border: rgba(63, 81, 181, 0.2) solid; height: 10rem;"
+                    labelPlacement="floating" [(ngModel)]="feedback.message">
                     <div slot="label">
                         {{ "comment" | translate }}
                         <ion-text color="danger">{{ "required" | translate }}</ion-text>
@@ -48,7 +53,7 @@
 </ion-modal>
 
 <!-- Account Modal -->
-<ion-modal class="account-modal" [isOpen]="isAccountModalOpen" trigger="open-account-modal" [initialBreakpoint]="0.75"
+<ion-modal class="account-modal" [isOpen]="isAccountModalOpen" [initialBreakpoint]="0.75"
     [breakpoints]="[0, 0.25, 0.5, 0.75, 1]" handleBehavior="cycle">
     <ng-template>
         <ion-content style="--background: linear-gradient(171deg, #e3e641 0%, rgba(255, 255, 255, 1) 100%)">
@@ -65,8 +70,7 @@
                 <ion-accordion-group>
                     <ion-accordion value="first">
                         <ion-item slot="header" class="profile-items">
-                            <ion-icon class="profile-icon" slot="start"
-                                name="person-circle-outline"></ion-icon>
+                            <ion-icon class="profile-icon" slot="start" name="person-circle-outline"></ion-icon>
                             <ion-label>{{ "profile" | translate }}</ion-label>
                         </ion-item>
                         <div class="ion-padding" slot="content">
@@ -86,8 +90,8 @@
                                 </ion-item>
                             </ion-list>
                             <div class="ion-padding" slot="content">
-                                <!-- <ion-button (click)="presentActionSheet()" expand="block" color="success">Upload Profile
-                    Picture</ion-button> -->
+                                <ion-button (click)="presentActionSheet()" expand="block" color="success">Upload Profile
+                                    Picture</ion-button>
                             </div>
                         </div>
                     </ion-accordion>
@@ -129,8 +133,7 @@
 
                     <ion-accordion value="fivth">
                         <ion-item slot="header" class="profile-items">
-                            <ion-icon class="profile-icon" slot="start"
-                                name="information-circle-outline"></ion-icon>
+                            <ion-icon class="profile-icon" slot="start" name="information-circle-outline"></ion-icon>
                             <ion-label>{{ "about" | translate }}</ion-label>
                         </ion-item>
                         <div class="ion-padding" slot="content">
@@ -165,8 +168,7 @@
                     </ion-accordion>
                     <ion-accordion value="forth">
                         <ion-item slot="header" class="profile-items">
-                            <ion-icon class="profile-icon" slot="start"
-                                name="log-out-outline"></ion-icon>
+                            <ion-icon class="profile-icon" slot="start" name="log-out-outline"></ion-icon>
                             <ion-label>{{ "logout" | translate }}</ion-label>
                         </ion-item>
                         <div class="ion-padding" slot="content">
@@ -178,6 +180,36 @@
                     </ion-accordion>
                 </ion-accordion-group>
             </div>
+        </ion-content>
+    </ng-template>
+</ion-modal>
+
+<!-- Chat Modal -->
+<ion-modal [isOpen]="isChatModalOpen" [initialBreakpoint]="1" [breakpoints]="[0, 0.25, 0.5, 0.75, 1]"
+    handleBehavior="cycle">
+    <ng-template>
+        <ion-content style="--background: linear-gradient(171deg, #98ffa1 0%, rgba(255, 255, 255, 1) 100%)">
+            <ion-toolbar style="--background: #79e098;">
+                <ion-title>Chat with AI</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button color="light" (click)="cancel()">Close</ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+            <div class="chat-container">
+                <div *ngFor="let message of messages" class="message-wrapper"
+                    [ngClass]="{'sent': message.sent, 'received': !message.sent}">
+                    <div class="message-bubble" [innerHTML]="message.text"></div>
+                </div>
+            </div>
+
+            <ion-footer>
+                <ion-item>
+                    <ion-input [(ngModel)]="newMessage" placeholder="Type a message..."></ion-input>
+                    <ion-button (click)="sendMessage()">
+                        <ion-icon name="send"></ion-icon>
+                    </ion-button>
+                </ion-item>
+            </ion-footer>
         </ion-content>
     </ng-template>
 </ion-modal>

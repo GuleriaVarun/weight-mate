@@ -12,7 +12,7 @@ export class LanguageService {
   }
 
   initializeLanguage() {
-    const lang = this.tabActionService?.userInfo?.selectedLanguage ? this.tabActionService?.userInfo?.selectedLanguage : 'en';
+    const lang = this.tabActionService.userInfo?.selectedLanguage ? this.tabActionService.userInfo?.selectedLanguage : 'en';
     this.translate.setDefaultLang(lang);
     this.setUserLanguage('en');
   }

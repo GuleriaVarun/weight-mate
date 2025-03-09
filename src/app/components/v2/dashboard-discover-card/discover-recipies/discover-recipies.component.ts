@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { PlayRecepieComponent } from "./play-recepie/play-recepie.component";
 
 @Component({
   selector: "app-discover-recipies",
@@ -7,8 +6,8 @@ import { PlayRecepieComponent } from "./play-recepie/play-recepie.component";
   styleUrls: ["./discover-recipies.component.scss"],
 })
 export class DiscoverRecipiesComponent implements OnInit {
-  videoPlayComponent = PlayRecepieComponent;
-  constructor() {}
+  constructor() {
+  }
 
   recipiesList: any[] = [
     {
@@ -104,8 +103,4 @@ export class DiscoverRecipiesComponent implements OnInit {
   ];
 
   ngOnInit(): void {}
-
-  playVideoFun(recepie: any) {
-    sessionStorage.setItem('recepie', JSON.stringify(recepie));
-  }
 }

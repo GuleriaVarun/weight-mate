@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { TabActionService } from './services/tab-action.service';
-import { UserInfo } from './interfaces/userInfo.interface';
-import { CalculateBmrService } from './services/calculate-bmr.service';
-import { AlertController, Platform } from '@ionic/angular';
-import { StatusBar } from '@capacitor/status-bar';
-import { MicroNutrients } from './interfaces/food.interface';
-import { LanguageService } from './services/language.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { MicroNutrients } from 'src/app/interfaces/food.interface';
+import { UserInfo } from 'src/app/interfaces/userInfo.interface';
+import { CalculateBmrService } from 'src/app/services/calculate-bmr.service';
+import { LanguageService } from 'src/app/services/language.service';
+import { TabActionService } from 'src/app/services/tab-action.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-user-details',
+  templateUrl: './user-details.component.html',
+  styleUrls: ['./user-details.component.scss']
 })
-export class AppComponent implements OnInit {
+export class UserDetailsComponent {
   title = 'weightMate';
   welcomeScreen: boolean = true;
   showMainScreen: boolean = false;
@@ -71,24 +70,14 @@ export class AppComponent implements OnInit {
     private readonly bmrService: CalculateBmrService,
     private alertController: AlertController,
     private languageService: LanguageService,
-    private router: Router,
-    private platform: Platform
+    private router: Router
   ) {
     this.languageService.initializeLanguage();
-    this.platform.ready().then(() => {
-      this.disableBackButton();
-    });
-  }
-
-  disableBackButton() {
-    this.platform.backButton.subscribeWithPriority(9999, () => {
-      // Do nothing when the back button is pressed
-    });
   }
 
   ngOnInit() {
-    this.setStatusBarColor();
     const userInfo = JSON.parse(localStorage.getItem('userInfo') as any);
+    // const loggedInUser = JSON.parse(this.tabActionService.getLoggedInUserData() as any);
 
     const TIMER = 1000;
     setTimeout(() => {
@@ -100,6 +89,7 @@ export class AppComponent implements OnInit {
         this.showMainScreen = true;
         this.tabActionService.setUserInfo(userInfo);
 
+        // this.userName = loggedInUser.name;
         this.userAge = userInfo.age as any;
         this.weight = userInfo.weight as any;
         this.feet = userInfo.heightFt as any;
@@ -108,7 +98,6 @@ export class AppComponent implements OnInit {
         this.selectedLifeStyle = userInfo.lifestyle;
         this.setDetails();
         this.userInfo.macros = this.macros;
-        this.router.navigate(['/login']);
       }
     }, TIMER);
   }
@@ -119,7 +108,7 @@ export class AppComponent implements OnInit {
     }
     
     if (
-      this.userName === '' ||
+      // this.userName === '' ||
       this.userAge === 0 ||
       this.weight === 0 ||
       this.feet === 0
@@ -153,10 +142,10 @@ export class AppComponent implements OnInit {
   submitPreferences() {
     this.showPreferences = false;
     this.showWelcomeMessage = true;
-    const firstName = this.userName.split(' ')[0];
+    // const firstName = this.userName.split(' ')[0];
     const userInfo: UserInfo = {
       id: `${Math.random()}`,
-      name: this.userName,
+      // name: this.userName,
       age: this.userAge,
       gender: this.selectedGender,
       heightFt: this.feet,
@@ -188,9 +177,7 @@ export class AppComponent implements OnInit {
       this.showInfoDialog = false;
       this.showWelcomeMessage = false;
       this.showMainScreen = true;
-
-      this.router.navigate(['/login']);
-
+      this.router.navigate(['/home']);
     }, 3500);
   }
 
@@ -275,9 +262,5 @@ export class AppComponent implements OnInit {
     });
 
     await alert.present();
-  }
-
-  setStatusBarColor() {
-    StatusBar.setBackgroundColor({ color: '#072214' });
   }
 }

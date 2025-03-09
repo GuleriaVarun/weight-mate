@@ -91,7 +91,7 @@ export class LogFoodComponent implements OnInit {
       this.servingSizes.push(i);
     }
 
-    this.servingSizeSelected = this.servingSizes[0];
+    this.servingSizeSelected = this.servingSizes[1];
     this.servingSizeBelow1Selected = this.servingSizeBelow1[0];
   }
 

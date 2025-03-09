@@ -37,7 +37,7 @@ First, ensure that you have the required version of Angular CLI installed global
 npm install -g @angular/cli@~13.1.2
 
 ### 2. Build Project
-ng build --prod
+ng build --configuration=production
 npx cap add android
 npx cap sync
 npx cap open android

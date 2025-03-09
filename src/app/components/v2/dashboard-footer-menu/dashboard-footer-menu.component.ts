@@ -3,9 +3,12 @@ import { Language } from "src/app/interfaces/language.interface";
 import { TabActionService } from "src/app/services/tab-action.service";
 import { ThemeService } from "src/app/services/theme.service";
 import emailjs from "emailjs-com";
-import { IonModal } from "@ionic/angular";
+import { ActionSheetController, IonModal } from "@ionic/angular";
 import { AdsService } from "src/app/services/ads.service";
 import { LanguageService } from "src/app/services/language.service";
+import { Router } from "@angular/router";
+import { Camera, CameraResultType, CameraSource } from "@capacitor/camera";
+import { GeminiService } from "src/app/services/gemini.service";
 
 @Component({
   selector: "app-dashboard-footer-menu",
@@ -46,10 +49,59 @@ export class DashboardFooterMenuComponent implements OnInit {
     public tabActionService: TabActionService,
     public themeService: ThemeService,
     public adsService: AdsService,
-    public languageService: LanguageService
+    public languageService: LanguageService,
+    private actionSheetCtrl: ActionSheetController,
+    private geminiService: GeminiService
   ) {}
 
   ngOnInit(): void {}
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Select Image',
+      buttons: [
+        {
+          text: 'Choose from Gallery',
+          icon: 'images',
+          handler: () => {
+            this.selectImage(CameraSource.Photos);
+          }
+        },
+        {
+          text: 'Open Camera',
+          icon: 'camera',
+          handler: () => {
+            this.selectImage(CameraSource.Camera);
+          }
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel'
+        }
+      ]
+    });
+
+    await actionSheet.present();
+  }
+
+  async selectImage(source: CameraSource) {
+    try {
+      const image = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: false,
+        resultType: CameraResultType.Base64,
+        source
+      });
+
+      this.tabActionService.userInfo.profilePicture = `data:image/jpeg;base64,${image.base64String}`;
+
+      this.tabActionService.setUserInfo(this.tabActionService.userInfo);
+      this.tabActionService.updateLocalStorage(this.tabActionService.userInfo);
+    } catch (error) {
+      console.error('Image selection failed:', error);
+    }
+  }
 
   sendFeedback() {
     if (!this.feedback.message) {
@@ -96,6 +148,8 @@ export class DashboardFooterMenuComponent implements OnInit {
 
   logout() {
     localStorage.clear();
+    this.isAccountModalOpen = false;
+    this.modal.dismiss(null, "cancel");
     window.location.reload();
   }
 
@@ -128,6 +182,59 @@ export class DashboardFooterMenuComponent implements OnInit {
     this.isFeedbackModalOpen = false;
     this.isFoodLogModalOpen = false;
     this.isWeightTrackerModalOpen = false;
+    this.isChatModalOpen = false;
     this.adsService.hideAdBanner();
+  }
+
+  isChatModalOpen: boolean = false;
+  openChat() {
+    this.isChatModalOpen = true;
+  }
+
+  userInput: string = '';
+  responseText: string = '';
+  messages: { text: string; sent: boolean }[] = [];
+  newMessage = '';
+  generateResponse() {
+    if (!this.userInput) return;
+    
+    this.geminiService.generateText(this.userInput).subscribe(
+      (res) => {
+        this.responseText = res?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
+      },
+      (err) => {
+        console.error('Error:', err);
+        this.responseText = 'Error generating response.';
+      }
+    );
+  }
+
+  sendMessage() {
+    if (!this.newMessage) return;
+
+    if (this.newMessage.trim()) {
+      this.messages.push({ text: this.newMessage, sent: true });
+      
+      this.geminiService.generateText(this.newMessage).subscribe(
+        (res) => {
+          this.responseText = res?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
+          let formattedResponse = this.formatBotResponse(this.responseText);
+          this.messages.push({ text: formattedResponse, sent: false });
+          this.newMessage = '';
+        },
+        (err) => {
+          console.error('Error:', err);
+          this.responseText = 'Error generating response.';
+        }
+      );
+    }
+  }
+
+  formatBotResponse(response: string): string {
+    return response
+      .replace(/\n/g, '<br>')                      // Convert newlines to <br>
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Convert **bold** to <strong>
+      .replace(/\* (.*?)<br>/g, '<li>$1</li>')     // Convert * bullets to <li>
+      .replace(/<br><li>/g, '<ul><li>') + '</ul>'; // Wrap <li> in <ul>
   }
 }

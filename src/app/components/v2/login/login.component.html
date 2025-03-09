@@ -1,0 +1,57 @@
+<ion-content *ngIf="!isUserLoggedIn">
+    <ion-grid class="new-user">
+        <ion-row style="width: 100%;">
+            <ion-col></ion-col>
+            <ion-col size="auto">
+                <ion-avatar>
+                    <img class="logo" src="assets/img/weight-mate-logo.png">
+                </ion-avatar>
+            </ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="welcomeDialog">
+                    <h2 style="font-size: 1rem;">Ready to achieve your goals ?</h2>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <img src="assets/img/login-illustration.svg" class="illustration">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="welcomeDialog">
+                    <h2 class="welcome-text">Let's Get You Started</h2>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button shape="round" color="primary" expand="full" (click)="signInWithGoogle()">
+                    <ion-icon slot="start" src="assets/img/google.svg"></ion-icon>
+                    Sign in with Google
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                OR
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input placeholder="Enter your name" class="userName" label="Full Name" fill="outline"
+                    [(ngModel)]="tabActionService.userInfo.name"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="full" shape="round" color="primary" [disabled]="!tabActionService.userInfo.name"
+                    (click)="signIn()">Sign in via username</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

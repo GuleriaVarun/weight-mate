@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { TabActionService } from "src/app/services/tab-action.service";
 import { AdMob } from '@capacitor-community/admob';
 import ideasList from '../../utilities/healthy-ideas.json';
+import { Platform, ToastController } from "@ionic/angular";
+import { Router } from "@angular/router";
+declare let navigator: any; // Avoids TypeScript error
 
 @Component({
   selector: "app-dashboard",
@@ -13,6 +16,9 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     public tabActionService: TabActionService,
+    private platform: Platform,
+    private toastCtrl: ToastController,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +30,7 @@ export class DashboardComponent implements OnInit {
 
     AdMob.initialize();
     this.getIdeaForTheDay();
+    this.initializeBackButton();
   }
 
   getIdeaForTheDay() {
@@ -31,4 +38,27 @@ export class DashboardComponent implements OnInit {
     const randomIndex = Math.floor(Math.random() * ideas.length);
     this.ideaOfTheDay = ideas[randomIndex];
   }
+
+  initializeBackButton() {
+    this.platform.ready().then(() => {
+      this.platform.backButton.subscribeWithPriority(10, async () => {
+        // Check if we can go back in history
+        if (this.router.url !== '/home') {
+          window.history.back();
+        } else {
+          this.showExitConfirmation();
+        }
+      });
+    });
+  }
+
+  async showExitConfirmation() {
+      const toast = await this.toastCtrl.create({
+        message: 'Press back again to exit',
+        duration: 2000,
+        position: 'bottom',
+      });
+      await toast.present();
+  }
+
 }

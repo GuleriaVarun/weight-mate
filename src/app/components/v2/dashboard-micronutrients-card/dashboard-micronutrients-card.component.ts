@@ -25,15 +25,15 @@ export class DashboardMicronutrientsCardComponent implements OnInit {
   }
 
   getProteinProgress() {
-    return this.tabActionService.totalProtein / (Number(this.tabActionService?.userInfo?.macros?.protein?.grams) || 0);
+    return this.tabActionService.totalProtein / (Number(this.tabActionService.userInfo.macros?.protein?.grams) || 0);
   }
 
   getCarbsProgress() {
-    return this.tabActionService.totalCarbs / (Number(this.tabActionService?.userInfo?.macros?.carbs?.grams) || 0);
+    return this.tabActionService.totalCarbs / (Number(this.tabActionService.userInfo.macros?.carbs?.grams) || 0);
   }
 
   getFatProgress() {
-    return this.tabActionService.totalFat / (Number(this.tabActionService?.userInfo?.macros?.fats?.grams) || 0);
+    return this.tabActionService.totalFat / (Number(this.tabActionService.userInfo.macros?.fats?.grams) || 0);
   }
 
   getWaterIntake() {

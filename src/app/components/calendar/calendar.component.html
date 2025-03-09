@@ -1,8 +1,9 @@
-<div class="swiper-container-date" style="color: black;">
-    <span class="swiper-btn" (click)="changeDate(-1)">&#10094;</span>
-    <div class="date-display">
-        <h2 id="date"></h2>
-        <h2>{{date}}</h2>
-    </div>
-    <span class="swiper-btn" (click)="changeDate(1)">&#10095;</span>
+<div class="date-toggle-container">
+    <button class="arrow-btn" (click)="changeDate(-1)">
+        <ion-icon color="dark" name="chevron-back-outline"></ion-icon>
+    </button>
+    <div class="date-display" id="dateDisplay">{{date}}</div>
+    <button class="arrow-btn" (click)="changeDate(1)">
+        <ion-icon color="dark" name="chevron-forward-outline"></ion-icon>
+    </button>
 </div>
