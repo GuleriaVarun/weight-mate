@@ -6,6 +6,7 @@
     .welcomeDialog {
         h2 {
             margin: 3rem;
+            margin-top: 0.5em;
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 15px;
@@ -16,8 +17,12 @@
         }
     }
 
+    .userName {
+        border: 1px solid rgb(161, 152, 152);
+    }
+
     .welcome-text, .next-text {
-        font-size: 1.5rem !important;
+        font-size: 1rem !important;
         font-weight: 300;
         text-align: center;
         opacity: 0;

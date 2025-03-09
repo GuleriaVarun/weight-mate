@@ -12,7 +12,7 @@
         <ion-row>
             <ion-col>
                 <div class="welcomeDialog">
-                    <h2>Ready to achieve your goals,</h2>
+                    <h2 style="font-size: 1rem;">Ready to achieve your goals ?</h2>
                 </div>
             </ion-col>
         </ion-row>
@@ -30,14 +30,27 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <div id="g_id_onload"
-                    data-client_id="60993485374-ivmnsdeuqvsp54pol5ra1vqthd5sm25e.apps.googleusercontent.com"
-                    data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
-                    data-auto_prompt="false">
-                </div>
-
-                <div class="g_id_signin" data-type="standard" data-theme="filled_black"
-                data-shape="pill"></div>
+                <ion-button shape="round" color="primary" expand="full" (click)="signInWithGoogle()">
+                    <ion-icon slot="start" src="assets/img/google.svg"></ion-icon>
+                    Sign in with Google
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                OR
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input placeholder="Enter your name" class="userName" label="Full Name" fill="outline"
+                    [(ngModel)]="tabActionService.userInfo.name"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="full" shape="round" color="primary" [disabled]="!tabActionService.userInfo.name"
+                    (click)="signIn()">Sign in via username</ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>

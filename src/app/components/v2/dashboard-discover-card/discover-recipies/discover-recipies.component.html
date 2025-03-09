@@ -17,18 +17,16 @@
         </ion-row>
 
         <ion-row>
-          <ion-col *ngFor="let receipe of recipiesList">
-            <ion-card class="food-card" [style.background]="receipe.background" (click)="playVideoFun(receipe)">
+          <ion-col>
+            <ion-card *ngFor="let recipe of recipiesList" [style.background]="recipe.background">
               <ion-card-header>
-                <ion-nav-link router-direction="forward" [component]="videoPlayComponent">
-                  <ion-card-title>{{receipe.name}}</ion-card-title>
-              </ion-nav-link>
+                <ion-card-title>{{ recipe.name }}</ion-card-title>
               </ion-card-header>
-
               <ion-card-content>
-                <ion-nav-link router-direction="forward" [component]="videoPlayComponent">
-                  {{receipe.description}}
-                </ion-nav-link>
+                <p>{{ recipe.description }}</p>
+                <div class="video-container">
+                  <iframe [src]="recipe.url | safeUrl" allowfullscreen></iframe>
+                </div>
               </ion-card-content>
             </ion-card>
           </ion-col>

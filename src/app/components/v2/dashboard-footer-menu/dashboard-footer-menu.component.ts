@@ -8,6 +8,7 @@ import { AdsService } from "src/app/services/ads.service";
 import { LanguageService } from "src/app/services/language.service";
 import { Router } from "@angular/router";
 import { Camera, CameraResultType, CameraSource } from "@capacitor/camera";
+import { GeminiService } from "src/app/services/gemini.service";
 
 @Component({
   selector: "app-dashboard-footer-menu",
@@ -49,7 +50,8 @@ export class DashboardFooterMenuComponent implements OnInit {
     public themeService: ThemeService,
     public adsService: AdsService,
     public languageService: LanguageService,
-    private actionSheetCtrl: ActionSheetController
+    private actionSheetCtrl: ActionSheetController,
+    private geminiService: GeminiService
   ) {}
 
   ngOnInit(): void {}
@@ -180,6 +182,59 @@ export class DashboardFooterMenuComponent implements OnInit {
     this.isFeedbackModalOpen = false;
     this.isFoodLogModalOpen = false;
     this.isWeightTrackerModalOpen = false;
+    this.isChatModalOpen = false;
     this.adsService.hideAdBanner();
+  }
+
+  isChatModalOpen: boolean = false;
+  openChat() {
+    this.isChatModalOpen = true;
+  }
+
+  userInput: string = '';
+  responseText: string = '';
+  messages: { text: string; sent: boolean }[] = [];
+  newMessage = '';
+  generateResponse() {
+    if (!this.userInput) return;
+    
+    this.geminiService.generateText(this.userInput).subscribe(
+      (res) => {
+        this.responseText = res?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
+      },
+      (err) => {
+        console.error('Error:', err);
+        this.responseText = 'Error generating response.';
+      }
+    );
+  }
+
+  sendMessage() {
+    if (!this.newMessage) return;
+
+    if (this.newMessage.trim()) {
+      this.messages.push({ text: this.newMessage, sent: true });
+      
+      this.geminiService.generateText(this.newMessage).subscribe(
+        (res) => {
+          this.responseText = res?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
+          let formattedResponse = this.formatBotResponse(this.responseText);
+          this.messages.push({ text: formattedResponse, sent: false });
+          this.newMessage = '';
+        },
+        (err) => {
+          console.error('Error:', err);
+          this.responseText = 'Error generating response.';
+        }
+      );
+    }
+  }
+
+  formatBotResponse(response: string): string {
+    return response
+      .replace(/\n/g, '<br>')                      // Convert newlines to <br>
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Convert **bold** to <strong>
+      .replace(/\* (.*?)<br>/g, '<li>$1</li>')     // Convert * bullets to <li>
+      .replace(/<br><li>/g, '<ul><li>') + '</ul>'; // Wrap <li> in <ul>
   }
 }

@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TabActionService } from './services/tab-action.service';
 import { UserInfo } from './interfaces/userInfo.interface';
 import { CalculateBmrService } from './services/calculate-bmr.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, Platform } from '@ionic/angular';
 import { StatusBar } from '@capacitor/status-bar';
 import { MicroNutrients } from './interfaces/food.interface';
 import { LanguageService } from './services/language.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -73,9 +72,18 @@ export class AppComponent implements OnInit {
     private alertController: AlertController,
     private languageService: LanguageService,
     private router: Router,
-
+    private platform: Platform
   ) {
     this.languageService.initializeLanguage();
+    this.platform.ready().then(() => {
+      this.disableBackButton();
+    });
+  }
+
+  disableBackButton() {
+    this.platform.backButton.subscribeWithPriority(9999, () => {
+      // Do nothing when the back button is pressed
+    });
   }
 
   ngOnInit() {
@@ -100,7 +108,7 @@ export class AppComponent implements OnInit {
         this.selectedLifeStyle = userInfo.lifestyle;
         this.setDetails();
         this.userInfo.macros = this.macros;
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
       }
     }, TIMER);
   }
@@ -181,7 +189,7 @@ export class AppComponent implements OnInit {
       this.showWelcomeMessage = false;
       this.showMainScreen = true;
 
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
 
     }, 3500);
   }
