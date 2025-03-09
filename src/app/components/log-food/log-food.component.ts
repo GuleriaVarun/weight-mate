@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import foodList from "../../utilities/food-list.json";
 import { TabActionService } from "src/app/services/tab-action.service";
 import { FoodItem } from "src/app/interfaces/food.interface";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-log-food",
@@ -10,7 +11,10 @@ import { FoodItem } from "src/app/interfaces/food.interface";
 })
 export class LogFoodComponent implements OnInit {
   @Input("mealType") mealType: string = "";
-  public results = [...foodList];
+  public results: any[] = [];
+
+  apiUrl = 'https://weighmate-server-7t30uaymc-guleriavaruns-projects.vercel.app/api/data';
+
   showResults: boolean = false;
   loggedInUser: any;
   isAddServingModalOpen: boolean = false;
@@ -53,7 +57,7 @@ export class LogFoodComponent implements OnInit {
   ];
   foodSuggestions: any[] = this.tabActionService.getFoodSuggestions() as any[];
 
-  constructor(public readonly tabActionService: TabActionService) {}
+  constructor(public readonly tabActionService: TabActionService, private http: HttpClient) {}
 
   handleServingSizeChange(ev: any) {
     this.servingSizeSelected = ev.target.value;
@@ -71,6 +75,7 @@ export class LogFoodComponent implements OnInit {
     } else {
       this.showResults = false;
     }
+
     this.results = foodList.filter(
       (d: any) => d.name.toLowerCase().indexOf(query) > -1
     );
@@ -79,6 +84,21 @@ export class LogFoodComponent implements OnInit {
   ngOnInit(): void {
     let userInfo = JSON.parse(localStorage.getItem("userInfo") as any) || {};
     this.loggedInUser = userInfo;
+
+    this.fetchData();
+  }
+
+  fetchData(): void {
+    this.http.get(this.apiUrl).subscribe(
+      (response: any) => {
+        console.log('API Response:', response);
+        this.results = response.data || [...foodList];
+      },
+      (error) => {
+        console.error('Error fetching API data:', error);
+        this.results = [...foodList];
+      }
+    );
   }
 
   selectServing(selectedFood: FoodItem) {
