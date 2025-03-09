@@ -1,35 +1,56 @@
-<ion-header>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title style="font-weight: bold;">Homemade Recepies</ion-title>
-      </ion-toolbar>
-    </ion-header>
+<ion-header *ngIf="!showDetails">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title style="font-weight: bold;">Homemade Recepies</ion-title>
+    </ion-toolbar>
   </ion-header>
-  
-  <ion-content class="ion-padding"
-    style="--background: linear-gradient(171deg, rgb(170 170 229) 0%, rgba(255, 255, 255, 1) 100%);">
-    <ion-grid>
-        <ion-row>
-          <img class="img-class" src="assets/img/ytVarun.jpg">
-        </ion-row>
+</ion-header>
 
-        <ion-row>
-          <ion-col>
-            <ion-card *ngFor="let recipe of recipiesList" [style.background]="recipe.background">
-              <ion-card-header>
-                <ion-card-title>{{ recipe.name }}</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <p>{{ recipe.description }}</p>
-                <div class="video-container">
-                  <iframe [src]="recipe.url | safeUrl" allowfullscreen></iframe>
-                </div>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-  </ion-content>
+<ion-content class="ion-padding"
+  style="--background: linear-gradient(171deg, rgb(170 170 229) 0%, rgba(255, 255, 255, 1) 100%);">
+  <ion-grid *ngIf="!showDetails">
+    <ion-row style="padding-bottom: 1em;">
+      <img class="img-class" src="assets/img/ytVarun.jpg">
+    </ion-row>
+
+    <ion-item *ngFor="let recipe of recipiesList" (click)="openDetails(recipe)"
+      style="width: 100%; margin-bottom: 0.5em; border-radius: 0.5em;">
+      <ion-avatar slot="start" style="font-size: 2em; border-radius: 50%;">
+        <span>
+          {{recipe.emoji}}
+        </span>
+      </ion-avatar>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-label class="meal-label">{{recipe.name}}</ion-label>
+          <p class="meta-text">{{recipe.subtitle}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-button slot="end" fill="clear">
+        <ion-icon slot="icon-only" color="primary" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-grid>
+
+  <ion-grid *ngIf="showDetails">
+    <ion-row>
+      <ion-toolbar style="background: transparent; border-radius: 2em;">
+        <ion-buttons slot="start">
+          <ion-icon (click)="goBack()" slot="icon-only" color="primary" name="chevron-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title style="font-weight: bold;">{{selectedRecipie.name}}</ion-title>
+      </ion-toolbar>
+    </ion-row>
+    <ion-row style="padding: 0.5em;">
+      {{ selectedRecipie.description }}
+    </ion-row>
+    <ion-row>
+      <div class="video-container">
+        <iframe [src]="selectedRecipie.url | safeUrl" allowfullscreen></iframe>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

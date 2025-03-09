@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header *ngIf="!showDetails">
     <ion-header>
         <ion-toolbar>
             <ion-buttons slot="start">
@@ -11,16 +11,48 @@
 
 <ion-content class="ion-padding"
     style="--background: linear-gradient(171deg, rgb(170 170 229) 0%, rgba(255, 255, 255, 1) 100%);">
-    <ion-grid>
+    <div *ngIf="!showDetails">
+        <ion-item *ngFor="let workout of workouts" style="width: 100%; margin-bottom: 0.5em; border-radius: 0.5em;"
+            (click)="openDetails(workout)">
+            <ion-avatar slot="start" style="font-size: 2em; border-radius: 50%;">
+                <span>
+                    {{workout.emoji}}
+                </span>
+            </ion-avatar>
+            <ion-row class="ion-align-items-center">
+                <ion-col>
+                    <ion-label class="meal-label">{{workout.title}}</ion-label>
+                    <p class="meta-text">{{workout.subtitle}}</p>
+                    <p class="meta-text" style="margin-bottom: 4px;">🕒 {{workout.time}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-progress-bar [value]="0.5" buffer=".5"></ion-progress-bar>
+                </ion-col>
+            </ion-row>
+            <ion-button slot="end" fill="clear">
+                <ion-icon slot="icon-only" color="primary" name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </div>
+
+    <ion-grid *ngIf="showDetails">
         <ion-row>
-            <ion-card *ngFor="let workout of workouts" [style.background]="workout.background">
-                <ion-card-header>
-                  <ion-card-title>{{ workout.title }}</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                  <p>{{ workout.description }}</p>
-                </ion-card-content>
-              </ion-card>
+            <ion-toolbar style="background: transparent; border-radius: 2em;">
+                <ion-buttons slot="start">
+                    <ion-icon (click)="goBack()" slot="icon-only" color="primary"
+                        name="chevron-back-outline"></ion-icon>
+                </ion-buttons>
+                <ion-title style="font-weight: bold;">{{selectedWorkout.subtitle}}</ion-title>
+            </ion-toolbar>
+        </ion-row>
+        <ion-row>
+            <ion-item *ngIf="showDetails" style="padding: 1em; border-radius: 0.5em;">
+                <ion-label class="ion-text-wrap">
+                    {{selectedWorkout.description}}
+                </ion-label>
+            </ion-item>
         </ion-row>
     </ion-grid>
 </ion-content>

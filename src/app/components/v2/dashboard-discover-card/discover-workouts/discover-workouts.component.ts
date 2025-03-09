@@ -6,48 +6,82 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discover-workouts.component.scss']
 })
 export class DiscoverWorkoutsComponent implements OnInit {
-
   workouts = [
     {
-      title: "Day 1: Full Body Strength Training",
-      description: "Focus on squats, push-ups, and glute bridges to build muscle and burn fat.",
-      background: "linear-gradient(171deg, rgba(255,87,34,1) 0%, rgba(255,255,255,1) 100%)",
+      title: "Day 1",
+      subtitle: "Full Body Strength Training",
+      description: "A full-body strength training session focusing on major muscle groups. Perform squats, push-ups, and glute bridges to build muscle and burn fat. Use moderate to heavy weights and aim for 3-4 sets of 8-12 reps per exercise. Ensure proper rest between sets to maximize strength gains.",
+      calories: "350-500 kcal",
+      time: "45-60 min",
+      emoji: "🏋️‍♂️"
     },
     {
-      title: "Day 2: Cardio + Core",
-      description: "Go for a 20–30 minute cardio session followed by core exercises like crunches and leg raises.",
-      background: "linear-gradient(171deg, rgba(33,150,243,1) 0%, rgba(255,255,255,1) 100%)",
+      title: "Day 2",
+      subtitle: "Cardio + Core",
+      description: "Kickstart your cardiovascular system with a 20-30 minute cardio session such as running, cycling, or jumping rope. Follow it with core exercises like crunches, leg raises, and planks to strengthen abdominal muscles. Focus on high-intensity intervals for maximum fat burn.",
+      calories: "400-550 kcal",
+      time: "40-50 min",
+      emoji: "🏃‍♂️"
     },
     {
-      title: "Day 3: Lower Body Focus",
-      description: "Target your legs with squats, lunges, and glute bridges to strengthen and tone.",
-      background: "linear-gradient(171deg, rgba(76,175,80,1) 0%, rgba(255,255,255,1) 100%)",
+      title: "Day 3",
+      subtitle: "Lower Body Focus",
+      description: "Target your legs and glutes with a combination of squats, lunges, and glute bridges. This workout improves lower body strength and endurance. Incorporate resistance bands or weights to add intensity. End with calf raises and hamstring curls for muscle definition.",
+      calories: "300-450 kcal",
+      time: "50-60 min",
+      emoji: "🦵"
     },
     {
-      title: "Day 4: Cardio + Upper Body",
-      description: "Do 20–30 minutes of HIIT cardio followed by push-ups and dumbbell exercises for your upper body.",
-      background: "linear-gradient(171deg, rgba(255,193,7,1) 0%, rgba(255,255,255,1) 100%)",
+      title: "Day 4",
+      subtitle: "Cardio + Upper Body",
+      description: "Start with 20-30 minutes of high-intensity cardio (HIIT, jump rope, or sprinting). Follow with an upper-body workout, including push-ups, pull-ups, and dumbbell exercises like shoulder presses and bicep curls. Maintain proper form to prevent injuries.",
+      calories: "450-600 kcal",
+      time: "45-60 min",
+      emoji: "💪🏽"
     },
     {
-      title: "Day 5: Active Recovery / Yoga",
-      description: "Engage in yoga or a light walk to improve flexibility and promote recovery.",
-      background: "linear-gradient(171deg, rgba(103,58,183,1) 0%, rgba(255,255,255,1) 100%)",
+      title: "Day 5",
+      subtitle: "Active Recovery / Yoga",
+      description: "A low-intensity day to promote recovery. Engage in yoga, stretching, or a light walk to improve flexibility and reduce muscle soreness. Focus on deep breathing and mobility exercises to enhance relaxation and mental well-being.",
+      calories: "200-300 kcal",
+      time: "30-45 min",
+      emoji: "🧘‍♂️"
     },
     {
-      title: "Day 6: Total Body Circuit",
-      description: "Perform a full-body circuit with jump squats, burpees, and mountain climbers.",
-      background: "linear-gradient(171deg, rgba(0,150,136,1) 0%, rgba(255,255,255,1) 100%)",
+      title: "Day 6",
+      subtitle: "Total Body Circuit",
+      description: "Perform a high-energy circuit workout that includes jump squats, burpees, mountain climbers, and push-ups. This routine boosts endurance, strength, and fat burn. Do each exercise for 45 seconds with minimal rest in between rounds.",
+      calories: "500-700 kcal",
+      time: "40-50 min",
+      emoji: "🔄"
     },
     {
-      title: "Day 7: Cardio + Flexibility",
-      description: "Finish the week with a moderate cardio session and focus on full-body stretches.",
-      background: "linear-gradient(171deg, rgba(244,67,54,1) 0%, rgba(255,255,255,1) 100%)",
-    },
+      title: "Day 7",
+      subtitle: "Cardio + Flexibility",
+      description: "Wrap up the week with a moderate cardio session (brisk walking, jogging, or cycling) followed by full-body stretching. Focus on improving flexibility and mobility to aid muscle recovery and prevent stiffness.",
+      calories: "250-400 kcal",
+      time: "40-50 min",
+      emoji: "🚶‍♂️"
+    }
   ];
+   
   
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showDetails: boolean = false;
+  selectedWorkout: any = "";
+  openDetails(workout: any) {
+    this.showDetails = false;
+    this.showDetails = true;
+    this.selectedWorkout = workout;
+  }
+
+  goBack() {
+    this.showDetails = false;
+    this.selectedWorkout = undefined;
   }
 
 }

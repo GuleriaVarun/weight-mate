@@ -3,4 +3,68 @@
         border-radius: 1.5em;
         font-family: 'Metropolis-Regular', "Segoe UI", Helvetica Neue, Helvetica, sans-serif !important;
     }
+
+    .container {
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+    }
+    .water-icon {
+        font-size: 80px;
+        margin: 20px 0;
+    }
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .progress-container {
+        margin-top: 20px;
+    }
+
 }
+ion-modal {
+    --border-radius: 16px !important;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(236, 237, 239, 0.656) !important;
+    opacity: 1 !important;
+    pointer-events: none;
+}
+
+ion-modal ion-toolbar {
+    --background: #ff9898;
+    --color: white !important;
+}
+
+
+.water-tracker {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .full-height {
+    align-items: center;
+  }
+  
+  .progress {
+    width: 50px;
+    height: 150px;
+    border-radius: 10px;
+    background: #e0f7fa;
+    overflow: hidden;
+    margin: 10px auto;
+    position: relative;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background: #007bff;
+    position: absolute;
+    bottom: 0;
+  }
+  

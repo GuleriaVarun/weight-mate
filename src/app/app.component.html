@@ -39,17 +39,9 @@
           <input type="number" name="inch" [(ngModel)]="inch" required />
         </ion-col>
       </ion-row>
-      <ion-select
-        class="selectClass"
-        placeholder="Select Gender"
-        interface="action-sheet"
-        (ionChange)="handleGenderChange($event)"
-      >
-        <ion-select-option
-          *ngFor="let gender of genderOptions"
-          [value]="gender"
-          >{{ gender.name }}</ion-select-option
-        >
+      <ion-select class="selectClass" placeholder="Select Gender" interface="action-sheet"
+        (ionChange)="handleGenderChange($event)">
+        <ion-select-option *ngFor="let gender of genderOptions" [value]="gender">{{ gender.name }}</ion-select-option>
       </ion-select>
       <button type="submit" (click)="submitDetails()">Next</button>
     </form>
@@ -58,17 +50,9 @@
   <div class="dialog" *ngIf="showGoals">
     <h2>What's your <span class="mate">Goal</span> ?</h2>
     <form>
-      <ion-select
-        class="selectClass"
-        interface="action-sheet"
-        placeholder="Select your Goal"
-        (ionChange)="handleGoalChange($event)"
-      >
-        <ion-select-option
-          *ngFor="let goal of goalsOptions"
-          [value]="goal.value"
-          >{{ goal.name }}</ion-select-option
-        >
+      <ion-select class="selectClass" interface="action-sheet" placeholder="Select your Goal"
+        (ionChange)="handleGoalChange($event)">
+        <ion-select-option *ngFor="let goal of goalsOptions" [value]="goal.value">{{ goal.name }}</ion-select-option>
       </ion-select>
       <button type="submit" (click)="submitGoal()">Next</button>
     </form>
@@ -77,62 +61,43 @@
   <div class="dialog" *ngIf="showLifeStyle">
     <h2>How's your <span class="mate">life style</span> ?</h2>
     <form>
-      <ion-select
-        class="selectClass"
-        interface="action-sheet"
-        placeholder="Select your lifestyle"
-        (ionChange)="handleLifeStyleChange($event)"
-      >
-        <ion-select-option
-          *ngFor="let lifestyle of lifestyleOptions"
-          [value]="lifestyle.value"
-          >{{ lifestyle.name }}</ion-select-option
-        >
+      <ion-select class="selectClass" interface="action-sheet" placeholder="Select your lifestyle"
+        (ionChange)="handleLifeStyleChange($event)">
+        <ion-select-option *ngFor="let lifestyle of lifestyleOptions" [value]="lifestyle.value">{{ lifestyle.name
+          }}</ion-select-option>
       </ion-select>
       <button type="submit" (click)="submitLifeStyle()">Next</button>
     </form>
   </div>
 
-  <div class="dialog full-width-dialog" *ngIf="showPreferences">
+  <div class="dialog" style="padding: 20px;" *ngIf="showPreferences">
     <div class="calorie-info">
-      <h2>Your daily <span class="mate">calories</span> requirement</h2>
+      <h2>Your Calorie <span class="mate">Guide</span></h2>
 
       <div class="calorie-section">
-        <h3>Daily calories to maintain weight</h3>
+        <h4>💪 Maintain Weight</h4>
         <span class="calorie-value">{{ maintainWeight }}</span>
       </div>
 
       <div class="calorie-section" *ngIf="selectedGoal === 'lose'">
-        <h3>Daily calories to lose weight fast</h3>
+        <h4>⚡ Lose Weight Fast</h4>
         <span class="calorie-value">{{ loseWeightFastCalsRequired }}</span>
       </div>
 
       <div class="calorie-section" *ngIf="selectedGoal === 'gain'">
-        <h3>Daily calories to gain weight fast</h3>
+        <h4>⚡ Gain weight fast</h4>
         <span class="calorie-value">{{ gainWeightFastCalsRequired }}</span>
       </div>
-
-      <!-- <div class="calorie-section" *ngIf="selectedGoal === 'lose'">
-                <h3>Your estimated weight loss</h3>
-                <span class="calorie-value">{{ estimatedWeightLoss }}</span>
-            </div>
-
-            <div class="calorie-section" *ngIf="selectedGoal === 'gain'">
-                <h3>Your estimated weight loss</h3>
-                <span class="calorie-value">{{ estimatedWeightGain }}</span>
-            </div> -->
     </div>
 
     <button type="submit" (click)="submitPreferences()">Next</button>
   </div>
 
-  <div class="dialog full-width-dialog" *ngIf="showWelcomeMessage">
-    <h2>Welcome</h2>
-    <h2>
-      <span class="mate">{{ tabActionService.userInfo.name }}</span>
-    </h2>
-    <h4>Let's start your fitness journey.</h4>
-    <h4>We will take few seconds to calculate your preferences</h4>
+  <div class="dialog" style="padding: 20px;" *ngIf="showWelcomeMessage">
+    <h1>Welcome, <span class="mate">Varun</span>! 🎉</h1>
+    <h4 style="margin-top: 20px; margin-bottom: 40px;">Ready to kickstart your fitness journey? 🚀</h4>
+    <h4 style="margin-top: 20px; margin-bottom: 40px;">Hang tight! We’re crunching the numbers to personalize your plan.
+      ⏳</h4>
     <div class="spinner"></div>
   </div>
 </div>

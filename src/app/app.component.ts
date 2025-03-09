@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
         this.selectedLifeStyle = userInfo.lifestyle;
         this.setDetails();
         this.userInfo.macros = this.macros;
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       }
     }, TIMER);
   }
@@ -189,9 +189,13 @@ export class AppComponent implements OnInit {
       this.showWelcomeMessage = false;
       this.showMainScreen = true;
 
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
 
     }, 3500);
+  }
+
+  getFirstName() {
+    return this.userName.split(' ')[0];
   }
 
   setDetails() {

@@ -69,7 +69,6 @@ export class TabActionService {
       date = this.currentDate;
     }
 
-    console.log('Date : ', date);
     const foodList = foodLogged
       .filter((food: any) => food.date === date)
       .map((food: any) => food.foodList)
@@ -91,7 +90,6 @@ export class TabActionService {
     this.totalProtein = totalNutrition.protein;
     this.totalFat = totalNutrition.fat;
 
-    console.log('***** debug : ', totalNutrition);
     return totalNutrition;
   }
 
